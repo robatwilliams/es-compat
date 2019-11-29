@@ -3,6 +3,6 @@
   "editor.rulers": [90], // Prettier: printWidth
 
   "[markdown]": {
-    "editor.rulers": [] // Prettier: proseWrap
+    "editor.rulers": [120] // Prettier: *.md printWidth
   }
 }
