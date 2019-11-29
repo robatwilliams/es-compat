@@ -1,5 +1,17 @@
 # native-js-compat
 
+## Classes of features
+
+| Class             | Example                | Static detectability        |
+| ----------------- | ---------------------- | --------------------------- |
+| Syntax-related    | `{ ...obj }`           | Reliable                    |
+| Built-in objects  | `Set`                  | Reliable in practice        |
+| Static methods    | `Object.fromEntries`   | Reliable in practice        |
+| Prototype methods | `Array.prototype.flat` | Not without false positives |
+| Others            | ?                      |                             |
+
+Note that features may belong to multiple classes; see the ES2020 built-in `BigInt` which has literal syntax.
+
 ## Compatibility data sources
 
 The best source of language feature compatibility data is MDN's [mdn-browser-compat-data](https://github.com/mdn/browser-compat-data).
