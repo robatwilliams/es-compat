@@ -1,6 +1,10 @@
 const esPlugin = require('eslint-plugin-es');
 
-const delegatees = [esPlugin.rules['no-rest-spread-properties']];
+const delegatees = [
+  esPlugin.rules['no-json-superset'],
+  esPlugin.rules['no-optional-catch-binding'],
+  esPlugin.rules['no-rest-spread-properties'],
+];
 
 module.exports = {
   meta: {
@@ -16,11 +20,14 @@ module.exports = {
 function createDelegatee(definition, rootContext) {
   const context = {
     ...rootContext,
+    getSourceCode: () => rootContext.getSourceCode(), // ESLint adds this later
     report,
   };
 
   function report(params) {
-    const { message, messageId, ...otherParams } = params;
+    // Discard fixer; we can't declare the rule as fixable because not all delegatees are.
+    // Look up messageId on delegate meta; report() would look it up on root rule meta.
+    const { fix, message, messageId, ...otherParams } = params;
 
     rootContext.report({
       ...otherParams,
