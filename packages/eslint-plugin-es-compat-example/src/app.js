@@ -12,4 +12,7 @@ Object.fromEntries();
 try {
 } catch {}
 
+/**
+ * ES2018
+ */
 const foo = { ...bar };
