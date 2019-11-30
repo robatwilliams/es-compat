@@ -1,5 +1,5 @@
 {
-  "name": "es-native-compat",
+  "name": "es-compat",
   "private": true,
   "devDependencies": {
     "lerna": "^3.19.0"

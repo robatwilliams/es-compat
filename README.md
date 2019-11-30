@@ -1,1 +1,1 @@
-# es-native-compat
+# es-compat
