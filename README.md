@@ -1,43 +1,44 @@
 # native-js-compat
 
-## Classes of features
+## Classes of language features
 
-| Class             | Example                | Static detectability        | Polyfillable |
-| ----------------- | ---------------------- | --------------------------- | ------------ |
-| Syntax-related    | `{ ...obj }`           | Reliable                    | No           |
-| Built-in objects  | `Set`                  | Reliable in practice        | Yes          |
-| Static methods    | `Object.fromEntries`   | Reliable in practice        | Yes          |
-| Prototype methods | `Array.prototype.flat` | Not without false positives | Yes          |
-| Others            | Stable array `sort()`  | No                          |
+| Class             | Example                | Static detectability          | Polyfillable |
+| ----------------- | ---------------------- | ----------------------------- | ------------ |
+| Syntax-related    | `{ ...obj }`           | Reliable                      | No           |
+| Built-in objects  | `Set`                  | Reliable in practice          | Yes          |
+| Static methods    | `Object.fromEntries`   | Reliable in practice          | Yes          |
+| Prototype methods | `Array.prototype.flat` | Reliable with false positives | Yes          |
+| Others            | Stable array `sort()`  | No                            |
 
 Note that features may belong to multiple classes; see the ES2020 built-in `BigInt` which has literal syntax.
 
 ## Static detectability of recently-added features
 
-⛔ = not statically detectable, or not reliably so
+- ⛔ = not statically detectable
+- 😐 = statically detectable with, but chance of false positives
 
 ### ES2020 (draft)
 
-| Name                        | ESLint / eslint-plugin-es |
-| --------------------------- | ------------------------- |
-| `BigInt`                    | es/no-bigint              |
-| Dynamic `import()`          | es/no-dynamic-import      |
-| `globalThis`                | no-undef                  |
-| `Promise.allSettled`        | es/no-promise-all-settled |
-| `String.prototype.matchAll` | ⛔                        |
+| Name                        | ESLint / eslint-plugin-es   |
+| --------------------------- | --------------------------- |
+| `BigInt`                    | es/no-bigint                |
+| Dynamic `import()`          | es/no-dynamic-import        |
+| `globalThis`                | no-undef                    |
+| `Promise.allSettled`        | es/no-promise-all-settled   |
+| `String.prototype.matchAll` | 😐 no-restricted-properties |
 
 ### ES2019
 
 | Name                                  | ESLint / eslint-plugin-es    |
 | ------------------------------------- | ---------------------------- |
-| `Array.prototype.{flat, flatMap}`     | ⛔                           |
+| `Array.prototype.{flat, flatMap}`     | 😐 no-restricted-properties  |
 | JSON superset                         | es/no-json-superset          |
 | `Object.fromEntries`                  | no-restricted-properties     |
 | Optional `catch` binding              | es/no-optional-catch-binding |
 | Revised `Function.prototype.toString` | ⛔                           |
 | Stable `Array.prototype.sort`         | ⛔                           |
-| `String.prototype.trim` methods       | ⛔                           |
-| `Symbol.prototype.description`        | ⛔                           |
+| `String.prototype.trim` methods       | 😐 no-restricted-properties  |
+| `Symbol.prototype.description`        | 😐 no-restricted-properties  |
 | Well-formed `JSON.stringify`          | ⛔                           |
 
 ### ES2018
@@ -46,7 +47,7 @@ Note that features may belong to multiple classes; see the ES2020 built-in `BigI
 | ----------------------------------- | ------------------------------------- |
 | Async iteration (loop & generators) | es/no-async-iteration                 |
 | Object rest and spread operators    | es/no-rest-spread-properties          |
-| `Promise.prototype.finally`         | ⛔                                    |
+| `Promise.prototype.finally`         | 😐 no-restricted-properties           |
 | RegExp look-behind assertions       | es/no-regexp-lookbehind-assertions    |
 | RegExp named capture groups         | es/no-regexp-named-capture-groups     |
 | RegExp `/s` (dotAll) flag           | es/no-regexp-s-flag                   |
@@ -63,7 +64,7 @@ Note that features may belong to multiple classes; see the ES2020 built-in `BigI
 | `Object.values`                       | es/no-object-values                    |
 | RegExp `/u` flag                      | no-invalid-regexp                      |
 | SharedArrayBuffer                     | es/no-shared-array-buffer              |
-| `String.prototype.{padStart, padEnd}` | ⛔                                     |
+| `String.prototype.{padStart, padEnd}` | 😐 no-restricted-properties            |
 | Trailing commas in parameter lists    | es/no-trailing-function-commas         |
 
 ## Compatibility data sources
