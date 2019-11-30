@@ -15,7 +15,7 @@ Note that features may belong to multiple classes; see the ES2020 built-in `BigI
 ## Static detectability of recently-added features
 
 - ❌ = not statically detectable
-- 😐 = statically detectable with, but chance of false positives
+- 😐 = statically detectable, but chance of false positives
 
 ### ES2020 (draft)
 
