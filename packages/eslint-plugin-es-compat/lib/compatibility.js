@@ -18,7 +18,7 @@ function isFeatureSupportedByTarget(feature, target) {
 }
 
 function isCompatFeatureSupportedByTarget(compatFeature, target) {
-  const versionAdded = compatFeature.__compat.support[target.name].version_added;
+  const versionAdded = getSimpleSupportStatement(compatFeature, target).version_added;
   const support = interpretSupport(versionAdded);
 
   if (support.isUnknown || support.isVersionUnknown) {
@@ -27,6 +27,13 @@ function isCompatFeatureSupportedByTarget(compatFeature, target) {
   }
 
   return !support.isNone && target.version >= versionAdded;
+}
+
+function getSimpleSupportStatement(compatFeature, target) {
+  const statement = compatFeature.__compat.support[target.name];
+
+  // https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data-schema.md#the-support_statement-object
+  return Array.isArray(statement) ? statement[0] : statement;
 }
 
 function interpretSupport(versionAdded) {
