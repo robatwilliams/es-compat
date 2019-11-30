@@ -1,4 +1,4 @@
-const delegateeConfigs = require('./delegateeConfigs');
+const delegateeConfigs = require('./delegateeConfigs').all;
 const { createDelegatee, delegatingVisitor } = require('./delegation');
 
 module.exports = {
