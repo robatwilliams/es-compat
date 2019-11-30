@@ -1,11 +1,11 @@
-const delegatees = require('./delegatees');
+const delegateeConfigs = require('./delegateeConfigs');
 
 module.exports = {
   meta: {
     schema: [], // no options
   },
   create(context) {
-    const visitors = delegatees.map(config => createDelegatee(config, context));
+    const visitors = delegateeConfigs.map(config => createDelegatee(config, context));
 
     return delegatingVisitor(visitors);
   },
