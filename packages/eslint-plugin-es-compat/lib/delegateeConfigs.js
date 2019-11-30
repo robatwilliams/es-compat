@@ -72,5 +72,3 @@ exports.noOptionalCatchBinding = {
 exports.noRestSpreadProperties = {
   definition: esPlugin.rules['no-rest-spread-properties'],
 };
-
-exports.all = Object.values(exports);
