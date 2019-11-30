@@ -1,29 +1,14 @@
 const eslint = require('eslint');
 const esPlugin = require('eslint-plugin-es');
+const { noRestrictedSyntaxPrototypeMethod } = require('../ruleOptionsUtil');
 
 const coreRules = new eslint.Linter().getRules();
 
 exports.noArrayFlatMethods = {
   definition: coreRules.get('no-restricted-syntax'),
   options: [
-    {
-      selector: 'CallExpression[callee.property.name="flat"]',
-      message: "ES2019 method 'Array.prototype.flat' is forbidden",
-    },
-    {
-      selector:
-        'MemberExpression[object.object.name="Array"][object.property.name="prototype"][property.name="flat"]',
-      message: "ES2019 method 'Array.prototype.flat' is forbidden",
-    },
-    {
-      selector: 'CallExpression[callee.property.name="flatMap"]',
-      message: "ES2019 method 'Array.prototype.flatMap' is forbidden",
-    },
-    {
-      selector:
-        'MemberExpression[object.object.name="Array"][object.property.name="prototype"][property.name="flatMap"]',
-      message: "ES2019 method 'Array.prototype.flatMap' is forbidden",
-    },
+    ...noRestrictedSyntaxPrototypeMethod('Array.prototype.flat', 'ES2019'),
+    ...noRestrictedSyntaxPrototypeMethod('Array.prototype.flatMap', 'ES2019'),
   ],
 };
 
@@ -43,42 +28,10 @@ exports.noOptionalCatchBinding = {
 exports.noStringTrimSideMethods = {
   definition: coreRules.get('no-restricted-syntax'),
   options: [
-    {
-      selector: 'CallExpression[callee.property.name="trimLeft"]',
-      message: "ES2019 method 'String.prototype.trimLeft' is forbidden",
-    },
-    {
-      selector:
-        'MemberExpression[object.object.name="String"][object.property.name="prototype"][property.name="trimLeft"]',
-      message: "ES2019 method 'String.prototype.trimLeft' is forbidden",
-    },
-    {
-      selector: 'CallExpression[callee.property.name="trimRight"]',
-      message: "ES2019 method 'String.prototype.trimRight' is forbidden",
-    },
-    {
-      selector:
-        'MemberExpression[object.object.name="String"][object.property.name="prototype"][property.name="trimRight"]',
-      message: "ES2019 method 'String.prototype.trimRight' is forbidden",
-    },
-    {
-      selector: 'CallExpression[callee.property.name="trimStart"]',
-      message: "ES2019 method 'String.prototype.trimStart' is forbidden",
-    },
-    {
-      selector:
-        'MemberExpression[object.object.name="String"][object.property.name="prototype"][property.name="trimStart"]',
-      message: "ES2019 method 'String.prototype.trimStart' is forbidden",
-    },
-    {
-      selector: 'CallExpression[callee.property.name="trimEnd"]',
-      message: "ES2019 method 'String.prototype.trimEnd' is forbidden",
-    },
-    {
-      selector:
-        'MemberExpression[object.object.name="String"][object.property.name="prototype"][property.name="trimEnd"]',
-      message: "ES2019 method 'String.prototype.trimEnd' is forbidden",
-    },
+    ...noRestrictedSyntaxPrototypeMethod('String.prototype.trimLeft', 'ES2019'),
+    ...noRestrictedSyntaxPrototypeMethod('String.prototype.trimRight', 'ES2019'),
+    ...noRestrictedSyntaxPrototypeMethod('String.prototype.trimStart', 'ES2019'),
+    ...noRestrictedSyntaxPrototypeMethod('String.prototype.trimEnd', 'ES2019'),
   ],
 };
 

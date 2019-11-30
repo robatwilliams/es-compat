@@ -1,5 +1,6 @@
 const eslint = require('eslint');
 const esPlugin = require('eslint-plugin-es');
+const { noRestrictedSyntaxPrototypeMethod } = require('../ruleOptionsUtil');
 
 const coreRules = new eslint.Linter().getRules();
 
@@ -13,17 +14,7 @@ exports.noRestSpreadProperties = {
 
 exports.noPromiseFinally = {
   definition: coreRules.get('no-restricted-syntax'),
-  options: [
-    {
-      selector: 'CallExpression[callee.property.name="finally"]',
-      message: "ES2018 method 'Promise.prototype.finally' is forbidden",
-    },
-    {
-      selector:
-        'MemberExpression[object.object.name="Promise"][object.property.name="prototype"][property.name="finally"]',
-      message: "ES2018 method 'Promise.prototype.finally' is forbidden",
-    },
-  ],
+  options: noRestrictedSyntaxPrototypeMethod('Promise.prototype.finally', 'ES2018'),
 };
 
 exports.noRegExpLookBehindAssertions = {
