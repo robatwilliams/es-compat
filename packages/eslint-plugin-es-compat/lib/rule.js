@@ -20,6 +20,17 @@ const delegatees = [
         message: "ES2019 method 'Array.prototype.flatMap' is forbidden",
       },
       {
+        // It's a read-only accessor, so can safely ignore assignments to namesakes
+        selector:
+          ':not(AssignmentExpression) > MemberExpression[property.name="description"]',
+        message: "ES2019 property 'Symbol.prototype.description' is forbidden",
+      },
+      {
+        selector:
+          'AssignmentExpression > MemberExpression.right[property.name="description"]',
+        message: "ES2019 property 'Symbol.prototype.description' is forbidden",
+      },
+      {
         selector: 'CallExpression[callee.property.name="trim"]',
         message: "ES2019 method 'String.prototype.trim' is forbidden",
       },

@@ -14,6 +14,10 @@ try {
 
 foo.trim();
 
+mySymbol.description;
+photo.description = 'My dog'; // no error please
+img.alt = photo.description; // has to be an error unfortunately
+
 /**
  * ES2018
  */
