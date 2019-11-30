@@ -6,7 +6,7 @@ function forbiddenFeatures() {
 
 function isFeatureSupportedByAllTargets(feature) {
   // TODO read this from browserslist
-  const targets = [{ name: 'chrome', version: 66 }];
+  const targets = [{ name: 'chrome', version: 59 }];
 
   return targets.every(target => isFeatureSupportedByTarget(feature, target));
 }

@@ -1,9 +1,16 @@
 function createDelegatee(config, rootContext) {
   const { definition, options } = config;
 
+  // All methods except report() are added later. Define necessary ones for used rules.
+  const contextLaterAddedMethods = {
+    getScope: () => rootContext.getScope(),
+    getSourceCode: () => rootContext.getSourceCode(),
+  };
+
+  // Would use ES Proxy, but report isn't overridable
   const context = {
     ...rootContext,
-    getSourceCode: () => rootContext.getSourceCode(), // ESLint adds this later
+    ...contextLaterAddedMethods,
     options,
     report,
   };

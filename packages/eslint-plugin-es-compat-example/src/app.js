@@ -24,5 +24,21 @@ img.alt = photo.description; // has to be an error unfortunately
 /**
  * ES2018
  */
+async function* asyncGenerator() {}
+async function interestingBitIsInside() {
+  for await (const bar of bar) {
+  }
+}
+
 const foo = { ...bar };
 const { a, ...rest } = foo;
+
+foo.finally();
+
+/(?<=a)b/.test('look-behind assertion');
+
+/(?<a>b)c/.test('named capture group');
+
+/./s.test('dotAll flag');
+
+/\p{Script=Hiragana}+/u.test('Unicode property escape');
