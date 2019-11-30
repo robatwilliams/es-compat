@@ -6,6 +6,6 @@
   },
   "devDependencies": {
     "eslint": "^6.7.1",
-    "eslint-plugin-es": "^2.0.0"
+    "eslint-plugin-es-compat": "^0.0.0"
   }
 }

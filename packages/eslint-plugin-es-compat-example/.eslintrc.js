@@ -1,8 +1,8 @@
 module.exports = {
   root: true,
-  plugins: ['es'],
+  plugins: ['es-compat'],
   parserOptions: { ecmaVersion: 2020 },
   rules: {
-    'es/no-rest-spread-properties': 'error',
+    'es-compat/compat': 'error',
   },
 };

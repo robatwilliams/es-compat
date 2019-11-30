@@ -1,0 +1,8 @@
+{
+  "name": "eslint-plugin-es-compat",
+  "version": "0.0.0",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "eslint-plugin-es": "^2.0.0"
+  }
+}
