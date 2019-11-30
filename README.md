@@ -1,4 +1,4 @@
-# native-js-compat
+# es-native-compat
 
 > Feasibility of statically checking JavaScript code compatibility with target runtime environments
 
