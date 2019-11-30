@@ -12,6 +12,8 @@ Object.fromEntries();
 try {
 } catch {}
 
+foo.trim();
+
 /**
  * ES2018
  */

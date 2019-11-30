@@ -19,6 +19,10 @@ const delegatees = [
         selector: 'CallExpression[callee.property.name="flatMap"]',
         message: "ES2019 method 'Array.prototype.flatMap' is forbidden",
       },
+      {
+        selector: 'CallExpression[callee.property.name="trim"]',
+        message: "ES2019 method 'String.prototype.trim' is forbidden",
+      },
     ],
   },
   { definition: esPlugin.rules['no-json-superset'] },
