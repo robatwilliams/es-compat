@@ -14,7 +14,7 @@ Note that features may belong to multiple classes; see the ES2020 built-in `BigI
 
 ## Static detectability of recently-added features
 
-- ⛔ = not statically detectable
+- ❌ = not statically detectable
 - 😐 = statically detectable with, but chance of false positives
 
 ### ES2020 (draft)
@@ -35,11 +35,11 @@ Note that features may belong to multiple classes; see the ES2020 built-in `BigI
 | JSON superset                         | es/no-json-superset          |
 | `Object.fromEntries`                  | no-restricted-properties     |
 | Optional `catch` binding              | es/no-optional-catch-binding |
-| Revised `Function.prototype.toString` | ⛔                           |
-| Stable `Array.prototype.sort`         | ⛔                           |
+| Revised `Function.prototype.toString` | ❌                           |
+| Stable `Array.prototype.sort`         | ❌                           |
 | `String.prototype.trim` methods       | 😐 no-restricted-properties  |
 | `Symbol.prototype.description`        | 😐 no-restricted-properties  |
-| Well-formed `JSON.stringify`          | ⛔                           |
+| Well-formed `JSON.stringify`          | ❌                           |
 
 ### ES2018
 
