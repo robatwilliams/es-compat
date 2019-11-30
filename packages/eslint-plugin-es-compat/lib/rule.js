@@ -8,6 +8,19 @@ const delegatees = [
     definition: eslintCoreRules.get('no-restricted-properties'),
     options: [{ object: 'Object', property: 'fromEntries', message: '(ES2019)' }],
   },
+  {
+    definition: eslintCoreRules.get('no-restricted-syntax'),
+    options: [
+      {
+        selector: 'CallExpression[callee.property.name="flat"]',
+        message: "ES2019 method 'Array.prototype.flat' is forbidden",
+      },
+      {
+        selector: 'CallExpression[callee.property.name="flatMap"]',
+        message: "ES2019 method 'Array.prototype.flatMap' is forbidden",
+      },
+    ],
+  },
   { definition: esPlugin.rules['no-json-superset'] },
   { definition: esPlugin.rules['no-optional-catch-binding'] },
   { definition: esPlugin.rules['no-rest-spread-properties'] },
