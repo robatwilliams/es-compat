@@ -1,15 +1,15 @@
 const eslint = require('eslint');
 const esPlugin = require('eslint-plugin-es');
 
-const eslintCoreRules = new eslint.Linter().getRules();
+const coreRules = new eslint.Linter().getRules();
 
 exports.noObjectFromEntries = {
-  definition: eslintCoreRules.get('no-restricted-properties'),
+  definition: coreRules.get('no-restricted-properties'),
   options: [{ object: 'Object', property: 'fromEntries', message: '(ES2019)' }],
 };
 
 exports.noArrayFlatMethods = {
-  definition: eslintCoreRules.get('no-restricted-syntax'),
+  definition: coreRules.get('no-restricted-syntax'),
   options: [
     {
       selector: 'CallExpression[callee.property.name="flat"]',
@@ -23,7 +23,7 @@ exports.noArrayFlatMethods = {
 };
 
 exports.noSymbolDescription = {
-  definition: eslintCoreRules.get('no-restricted-syntax'),
+  definition: coreRules.get('no-restricted-syntax'),
   options: [
     {
       // It's a read-only accessor, so can safely ignore assignments to namesakes
@@ -40,7 +40,7 @@ exports.noSymbolDescription = {
 };
 
 exports.noStringTrimSideMethods = {
-  definition: eslintCoreRules.get('no-restricted-syntax'),
+  definition: coreRules.get('no-restricted-syntax'),
   options: [
     {
       selector: 'CallExpression[callee.property.name="trimLeft"]',
