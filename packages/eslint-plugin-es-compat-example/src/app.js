@@ -12,7 +12,10 @@ Object.fromEntries();
 try {
 } catch {}
 
-foo.trim();
+foo.trimLeft();
+foo.trimRight();
+foo.trimStart();
+foo.trimEnd();
 
 mySymbol.description;
 photo.description = 'My dog'; // no error please

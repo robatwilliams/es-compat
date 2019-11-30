@@ -41,8 +41,20 @@ module.exports = [
     definition: eslintCoreRules.get('no-restricted-syntax'),
     options: [
       {
-        selector: 'CallExpression[callee.property.name="trim"]',
-        message: "ES2019 method 'String.prototype.trim' is forbidden",
+        selector: 'CallExpression[callee.property.name="trimLeft"]',
+        message: "ES2019 method 'String.prototype.trimLeft' is forbidden",
+      },
+      {
+        selector: 'CallExpression[callee.property.name="trimRight"]',
+        message: "ES2019 method 'String.prototype.trimRight' is forbidden",
+      },
+      {
+        selector: 'CallExpression[callee.property.name="trimStart"]',
+        message: "ES2019 method 'String.prototype.trimStart' is forbidden",
+      },
+      {
+        selector: 'CallExpression[callee.property.name="trimEnd"]',
+        message: "ES2019 method 'String.prototype.trimEnd' is forbidden",
       },
     ],
   },

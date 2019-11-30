@@ -65,7 +65,7 @@ Note that features may belong to multiple classes; see the ES2020 built-in `BigI
 | Optional `catch` binding              | es/no-optional-catch-binding | 66           |
 | Revised `Function.prototype.toString` | ❌                           |
 | Stable `Array.prototype.sort`         | ❌                           |
-| `String.prototype.trim` methods       | 😐 no-restricted-syntax      | 66           |
+| `String.prototype.trimX` methods      | 😐 no-restricted-syntax      | 66           |
 | `Symbol.prototype.description`        | 😐 no-restricted-syntax      | 70           |
 | Well-formed `JSON.stringify`          | ❌                           |
 
