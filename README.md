@@ -8,7 +8,7 @@
 | Built-in objects  | `Set`                  | Reliable in practice        | Yes          |
 | Static methods    | `Object.fromEntries`   | Reliable in practice        | Yes          |
 | Prototype methods | `Array.prototype.flat` | Not without false positives | Yes          |
-| Others            | ?                      |                             |
+| Others            | Stable array `sort()`  | No                          |
 
 Note that features may belong to multiple classes; see the ES2020 built-in `BigInt` which has literal syntax.
 
