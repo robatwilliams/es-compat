@@ -19,6 +19,11 @@ module.exports = [
         selector: 'CallExpression[callee.property.name="flatMap"]',
         message: "ES2019 method 'Array.prototype.flatMap' is forbidden",
       },
+    ],
+  },
+  {
+    definition: eslintCoreRules.get('no-restricted-syntax'),
+    options: [
       {
         // It's a read-only accessor, so can safely ignore assignments to namesakes
         selector:
@@ -30,6 +35,11 @@ module.exports = [
           'AssignmentExpression > MemberExpression.right[property.name="description"]',
         message: "ES2019 property 'Symbol.prototype.description' is forbidden",
       },
+    ],
+  },
+  {
+    definition: eslintCoreRules.get('no-restricted-syntax'),
+    options: [
       {
         selector: 'CallExpression[callee.property.name="trim"]',
         message: "ES2019 method 'String.prototype.trim' is forbidden",
