@@ -35,7 +35,7 @@ Once all features used are detected, it's an algorithm against the compatibility
 | Syntax-related    | `{ ...obj }`           | Reliable                      | No           |
 | Built-in objects  | `Set`                  | Reliable in practice          | Yes          |
 | Static methods    | `Object.fromEntries`   | Reliable in practice          | Yes          |
-| Prototype methods | `Array.prototype.flat` | Reliable with false positives | Yes          |
+| Prototype members | `Array.prototype.flat` | Reliable with false positives | Yes          |
 | Others            | Stable array `sort()`  | No                            |
 
 "Reliable in practice" is because it's poor practice to define custom types with the same names as built-ins.
@@ -49,26 +49,26 @@ Note that features may belong to multiple classes; see the ES2020 built-in `BigI
 
 ### ES2020 (draft)
 
-| Name                        | ESLint / eslint-plugin-es   |
-| --------------------------- | --------------------------- |
-| `BigInt`                    | es/no-bigint                |
-| Dynamic `import()`          | es/no-dynamic-import        |
-| `globalThis`                | no-undef                    |
-| `Promise.allSettled`        | es/no-promise-all-settled   |
-| `String.prototype.matchAll` | 😐 no-restricted-properties |
+| Name                        | ESLint / eslint-plugin-es |
+| --------------------------- | ------------------------- |
+| `BigInt`                    | es/no-bigint              |
+| Dynamic `import()`          | es/no-dynamic-import      |
+| `globalThis`                | no-undef                  |
+| `Promise.allSettled`        | es/no-promise-all-settled |
+| `String.prototype.matchAll` | 😐 no-restricted-syntax   |
 
 ### ES2019
 
 | Name                                  | ESLint / eslint-plugin-es    |
 | ------------------------------------- | ---------------------------- |
-| `Array.prototype.{flat, flatMap}`     | 😐 no-restricted-properties  |
+| `Array.prototype.{flat, flatMap}`     | 😐 no-restricted-syntax      |
 | JSON superset                         | es/no-json-superset          |
-| `Object.fromEntries`                  | no-restricted-properties     |
+| `Object.fromEntries`                  | no-restricted-syntax         |
 | Optional `catch` binding              | es/no-optional-catch-binding |
 | Revised `Function.prototype.toString` | ❌                           |
 | Stable `Array.prototype.sort`         | ❌                           |
-| `String.prototype.trim` methods       | 😐 no-restricted-properties  |
-| `Symbol.prototype.description`        | 😐 no-restricted-properties  |
+| `String.prototype.trim` methods       | 😐 no-restricted-syntax      |
+| `Symbol.prototype.description`        | 😐 no-restricted-syntax      |
 | Well-formed `JSON.stringify`          | ❌                           |
 
 ### ES2018
@@ -77,7 +77,7 @@ Note that features may belong to multiple classes; see the ES2020 built-in `BigI
 | ----------------------------------- | ------------------------------------- |
 | Async iteration (loop & generators) | es/no-async-iteration                 |
 | Object rest and spread operators    | es/no-rest-spread-properties          |
-| `Promise.prototype.finally`         | 😐 no-restricted-properties           |
+| `Promise.prototype.finally`         | 😐 no-restricted-syntax               |
 | RegExp look-behind assertions       | es/no-regexp-lookbehind-assertions    |
 | RegExp named capture groups         | es/no-regexp-named-capture-groups     |
 | RegExp `/s` (dotAll) flag           | es/no-regexp-s-flag                   |
@@ -94,7 +94,7 @@ Note that features may belong to multiple classes; see the ES2020 built-in `BigI
 | `Object.values`                       | es/no-object-values                    |
 | RegExp `/u` flag                      | no-invalid-regexp                      |
 | SharedArrayBuffer                     | es/no-shared-array-buffer              |
-| `String.prototype.{padStart, padEnd}` | 😐 no-restricted-properties            |
+| `String.prototype.{padStart, padEnd}` | 😐 no-restricted-syntax                |
 | Trailing commas in parameter lists    | es/no-trailing-function-commas         |
 
 ## Compatibility data sources
