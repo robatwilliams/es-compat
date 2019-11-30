@@ -18,6 +18,11 @@ exports.noPromiseFinally = {
       selector: 'CallExpression[callee.property.name="finally"]',
       message: "ES2018 method 'Promise.prototype.finally' is forbidden",
     },
+    {
+      selector:
+        'MemberExpression[object.object.name="Promise"][object.property.name="prototype"][property.name="finally"]',
+      message: "ES2018 method 'Promise.prototype.finally' is forbidden",
+    },
   ],
 };
 

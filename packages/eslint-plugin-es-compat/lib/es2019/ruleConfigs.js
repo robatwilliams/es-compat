@@ -11,7 +11,17 @@ exports.noArrayFlatMethods = {
       message: "ES2019 method 'Array.prototype.flat' is forbidden",
     },
     {
+      selector:
+        'MemberExpression[object.object.name="Array"][object.property.name="prototype"][property.name="flat"]',
+      message: "ES2019 method 'Array.prototype.flat' is forbidden",
+    },
+    {
       selector: 'CallExpression[callee.property.name="flatMap"]',
+      message: "ES2019 method 'Array.prototype.flatMap' is forbidden",
+    },
+    {
+      selector:
+        'MemberExpression[object.object.name="Array"][object.property.name="prototype"][property.name="flatMap"]',
       message: "ES2019 method 'Array.prototype.flatMap' is forbidden",
     },
   ],
@@ -38,7 +48,17 @@ exports.noStringTrimSideMethods = {
       message: "ES2019 method 'String.prototype.trimLeft' is forbidden",
     },
     {
+      selector:
+        'MemberExpression[object.object.name="String"][object.property.name="prototype"][property.name="trimLeft"]',
+      message: "ES2019 method 'String.prototype.trimLeft' is forbidden",
+    },
+    {
       selector: 'CallExpression[callee.property.name="trimRight"]',
+      message: "ES2019 method 'String.prototype.trimRight' is forbidden",
+    },
+    {
+      selector:
+        'MemberExpression[object.object.name="String"][object.property.name="prototype"][property.name="trimRight"]',
       message: "ES2019 method 'String.prototype.trimRight' is forbidden",
     },
     {
@@ -46,7 +66,17 @@ exports.noStringTrimSideMethods = {
       message: "ES2019 method 'String.prototype.trimStart' is forbidden",
     },
     {
+      selector:
+        'MemberExpression[object.object.name="String"][object.property.name="prototype"][property.name="trimStart"]',
+      message: "ES2019 method 'String.prototype.trimStart' is forbidden",
+    },
+    {
       selector: 'CallExpression[callee.property.name="trimEnd"]',
+      message: "ES2019 method 'String.prototype.trimEnd' is forbidden",
+    },
+    {
+      selector:
+        'MemberExpression[object.object.name="String"][object.property.name="prototype"][property.name="trimEnd"]',
       message: "ES2019 method 'String.prototype.trimEnd' is forbidden",
     },
   ],

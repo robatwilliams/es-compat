@@ -2,7 +2,9 @@
  * ES2019
  */
 foo.flat();
+Array.prototype.flat;
 residentialAddress.flat; // no error please
+Array.prototype.flatMap;
 foo.flatMap();
 
 const u2028 = ' '; // line separator character \u2028 is in this string
@@ -13,9 +15,13 @@ try {
 } catch {}
 
 foo.trimLeft();
+String.prototype.trimLeft;
 foo.trimRight();
+String.prototype.trimRight;
 foo.trimStart();
+String.prototype.trimStart;
 foo.trimEnd();
+String.prototype.trimEnd;
 
 mySymbol.description;
 photo.description = 'My dog'; // no error please
@@ -34,6 +40,7 @@ const foo = { ...bar };
 const { a, ...rest } = foo;
 
 foo.finally();
+Promise.prototype.finally;
 
 /(?<=a)b/.test('look-behind assertion');
 
