@@ -3,11 +3,6 @@ const esPlugin = require('eslint-plugin-es');
 
 const coreRules = new eslint.Linter().getRules();
 
-exports.noObjectFromEntries = {
-  definition: coreRules.get('no-restricted-properties'),
-  options: [{ object: 'Object', property: 'fromEntries', message: '(ES2019)' }],
-};
-
 exports.noArrayFlatMethods = {
   definition: coreRules.get('no-restricted-syntax'),
   options: [
@@ -22,21 +17,17 @@ exports.noArrayFlatMethods = {
   ],
 };
 
-exports.noSymbolDescription = {
-  definition: coreRules.get('no-restricted-syntax'),
-  options: [
-    {
-      // It's a read-only accessor, so can safely ignore assignments to namesakes
-      selector:
-        ':not(AssignmentExpression) > MemberExpression[property.name="description"]',
-      message: "ES2019 property 'Symbol.prototype.description' is forbidden",
-    },
-    {
-      selector:
-        'AssignmentExpression > MemberExpression.right[property.name="description"]',
-      message: "ES2019 property 'Symbol.prototype.description' is forbidden",
-    },
-  ],
+exports.noJSONSuperset = {
+  definition: esPlugin.rules['no-json-superset'],
+};
+
+exports.noObjectFromEntries = {
+  definition: coreRules.get('no-restricted-properties'),
+  options: [{ object: 'Object', property: 'fromEntries', message: '(ES2019)' }],
+};
+
+exports.noOptionalCatchBinding = {
+  definition: esPlugin.rules['no-optional-catch-binding'],
 };
 
 exports.noStringTrimSideMethods = {
@@ -61,14 +52,19 @@ exports.noStringTrimSideMethods = {
   ],
 };
 
-exports.noJSONSuperset = {
-  definition: esPlugin.rules['no-json-superset'],
-};
-
-exports.noOptionalCatchBinding = {
-  definition: esPlugin.rules['no-optional-catch-binding'],
-};
-
-exports.noRestSpreadProperties = {
-  definition: esPlugin.rules['no-rest-spread-properties'],
+exports.noSymbolDescription = {
+  definition: coreRules.get('no-restricted-syntax'),
+  options: [
+    {
+      // It's a read-only accessor, so can safely ignore assignments to namesakes
+      selector:
+        ':not(AssignmentExpression) > MemberExpression[property.name="description"]',
+      message: "ES2019 property 'Symbol.prototype.description' is forbidden",
+    },
+    {
+      selector:
+        'AssignmentExpression > MemberExpression.right[property.name="description"]',
+      message: "ES2019 property 'Symbol.prototype.description' is forbidden",
+    },
+  ],
 };
