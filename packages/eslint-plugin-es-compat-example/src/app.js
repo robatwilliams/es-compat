@@ -25,3 +25,4 @@ img.alt = photo.description; // has to be an error unfortunately
  * ES2018
  */
 const foo = { ...bar };
+const { a, ...rest } = foo;
