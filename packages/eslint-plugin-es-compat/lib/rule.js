@@ -1,9 +1,16 @@
+const eslint = require('eslint');
 const esPlugin = require('eslint-plugin-es');
 
+const eslintCoreRules = new eslint.Linter().getRules();
+
 const delegatees = [
-  esPlugin.rules['no-json-superset'],
-  esPlugin.rules['no-optional-catch-binding'],
-  esPlugin.rules['no-rest-spread-properties'],
+  {
+    definition: eslintCoreRules.get('no-restricted-properties'),
+    options: [{ object: 'Object', property: 'fromEntries', message: '(ES2019)' }],
+  },
+  { definition: esPlugin.rules['no-json-superset'] },
+  { definition: esPlugin.rules['no-optional-catch-binding'] },
+  { definition: esPlugin.rules['no-rest-spread-properties'] },
 ];
 
 module.exports = {
@@ -11,16 +18,19 @@ module.exports = {
     schema: [], // no options
   },
   create(context) {
-    const visitors = delegatees.map(definition => createDelegatee(definition, context));
+    const visitors = delegatees.map(config => createDelegatee(config, context));
 
     return delegatingVisitor(visitors);
   },
 };
 
-function createDelegatee(definition, rootContext) {
+function createDelegatee(config, rootContext) {
+  const { definition, options } = config;
+
   const context = {
     ...rootContext,
     getSourceCode: () => rootContext.getSourceCode(), // ESLint adds this later
+    options,
     report,
   };
 

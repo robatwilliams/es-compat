@@ -63,7 +63,7 @@ Note that features may belong to multiple classes; see the ES2020 built-in `BigI
 | ------------------------------------- | ---------------------------- |
 | `Array.prototype.{flat, flatMap}`     | 😐 no-restricted-syntax      |
 | JSON superset                         | es/no-json-superset          |
-| `Object.fromEntries`                  | no-restricted-syntax         |
+| `Object.fromEntries`                  | no-restricted-properties     |
 | Optional `catch` binding              | es/no-optional-catch-binding |
 | Revised `Function.prototype.toString` | ❌                           |
 | Stable `Array.prototype.sort`         | ❌                           |
