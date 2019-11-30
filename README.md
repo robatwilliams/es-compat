@@ -12,6 +12,60 @@
 
 Note that features may belong to multiple classes; see the ES2020 built-in `BigInt` which has literal syntax.
 
+## Static detectability of recently-added features
+
+⛔ = not statically detectable, or not reliably so
+
+### ES2020 (draft)
+
+| Name                        | ESLint / eslint-plugin-es |
+| --------------------------- | ------------------------- |
+| `BigInt`                    | es/no-bigint              |
+| Dynamic `import()`          | es/no-dynamic-import      |
+| `globalThis`                | no-undef                  |
+| `Promise.allSettled`        | es/no-promise-all-settled |
+| `String.prototype.matchAll` | ⛔                        |
+
+### ES2019
+
+| Name                                  | ESLint / eslint-plugin-es    |
+| ------------------------------------- | ---------------------------- |
+| `Array.prototype.{flat, flatMap}`     | ⛔                           |
+| JSON superset                         | es/no-json-superset          |
+| `Object.fromEntries`                  | no-restricted-properties     |
+| Optional `catch` binding              | es/no-optional-catch-binding |
+| Revised `Function.prototype.toString` | ⛔                           |
+| Stable `Array.prototype.sort`         | ⛔                           |
+| `String.prototype.trim` methods       | ⛔                           |
+| `Symbol.prototype.description`        | ⛔                           |
+| Well-formed `JSON.stringify`          | ⛔                           |
+
+### ES2018
+
+| Name                                | ESLint / eslint-plugin-es             |
+| ----------------------------------- | ------------------------------------- |
+| Async iteration (loop & generators) | es/no-async-iteration                 |
+| Object rest and spread operators    | es/no-rest-spread-properties          |
+| `Promise.prototype.finally`         | ⛔                                    |
+| RegExp look-behind assertions       | es/no-regexp-lookbehind-assertions    |
+| RegExp named capture groups         | es/no-regexp-named-capture-groups     |
+| RegExp `/s` (dotAll) flag           | es/no-regexp-s-flag                   |
+| RegExp Unicode property escapes     | es/no-regexp-unicode-property-escapes |
+
+### ES2017
+
+| Name                                  | ESLint / eslint-plugin-es              |
+| ------------------------------------- | -------------------------------------- |
+| Async functions                       | es/no-async-functions                  |
+| Atomics                               | es/no-atomics                          |
+| `Object.getOwnPropertyDescriptors`    | es/no-object-getownpropertydescriptors |
+| `Object.entries`                      | es/no-object-entries                   |
+| `Object.values`                       | es/no-object-values                    |
+| RegExp `/u` flag                      | no-invalid-regexp                      |
+| SharedArrayBuffer                     | es/no-shared-array-buffer              |
+| `String.prototype.{padStart, padEnd}` | ⛔                                     |
+| Trailing commas in parameter lists    | es/no-trailing-function-commas         |
+
 ## Compatibility data sources
 
 The best source of language feature compatibility data is MDN's [mdn-browser-compat-data](https://github.com/mdn/browser-compat-data).
