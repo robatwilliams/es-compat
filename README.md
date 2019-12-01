@@ -9,6 +9,12 @@ Checks that the language features used in your code are [supported](https://gith
 - [check-es-compat](/packages/check-es-compat/README.md) - standalone CLI tool
 - [eslint-plugin-es-compat](/packages/eslint-plugin-es-compat/README.md) - ESLint plugin
 
+## Limitations
+
+Because JavaScript is untyped, detection of some features' usage (namely prototype methods) through static analysis requires some assumptions to be made. This shouldn't be a problem as long as you avoid creating your own methods having the same names, or write code in an unusual way to deliberately evade detection.
+
+The MDN compatibility dataset has very good coverage of the top ~6 desktop and mobile browsers, and Node.js. In case of missing data (support unknown, or unknown in which version support was added), we currently assume support.
+
 ## Backlog
 
 ### Tools
@@ -23,11 +29,11 @@ Checks that the language features used in your code are [supported](https://gith
 
 - Document supported ES versions
 - Document rationale
-- Document limitations (detection, compat data completeness)
 - Comment on [module-requests#103](https://github.com/sindresorhus/module-requests/issues/103), [eslint-plugin-es#22](https://github.com/mysticatea/eslint-plugin-es/issues/22), [eslint-plugin-compat#206](https://github.com/amilajack/eslint-plugin-compat/issues/206)
 
 ### Future ideas
 
+- Option to forbid features if compatibility data is missing for a target runtime
 - Given no targets, report where the code will work
 - Provide suggestions on how to make code more widely compatible
 
