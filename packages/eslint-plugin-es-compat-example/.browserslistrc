@@ -1,17 +1,17 @@
-# Supports all ES2019 features
+### Supports all ES2019 features
 # Chrome >= 73
 
-# Supports some ES2019 features
+### Supports some ES2019 features
 # Chrome >= 66
 
-# Supports no ES2019 features
+### Supports no ES2019 features
 # Chrome >= 65
 
-# Supports all ES2018 features
+### Supports all ES2018 features
 # Chrome >= 64
 
-# Supports some ES2018 features
+### Supports some ES2018 features
 # Chrome >= 62
 
-# Supports no ES2018 features
+### Supports no ES2018 features
 Chrome >= 59
