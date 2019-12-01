@@ -44,6 +44,7 @@ Note that features may belong to multiple classes; see the ES2020 built-in `BigI
 
 - ❌ = not statically detectable
 - 😐 = statically detectable, but chance of false positives
+- 👎 = statically detectable, but not worth the false positives
 
 ### ES2020 (draft)
 
@@ -66,7 +67,7 @@ Note that features may belong to multiple classes; see the ES2020 built-in `BigI
 | Revised `Function.prototype.toString` | ❌                           |
 | Stable `Array.prototype.sort`         | ❌                           |
 | `String.prototype.trimX` methods      | 😐 no-restricted-syntax      | 66           |
-| `Symbol.prototype.description`        | 😐 no-restricted-syntax      | 70           |
+| `Symbol.prototype.description`        | 👎 no-restricted-syntax      | 70           |
 | Well-formed `JSON.stringify`          | ❌                           |
 
 ### ES2018
