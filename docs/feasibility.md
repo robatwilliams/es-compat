@@ -83,17 +83,17 @@ Note that features may belong to multiple classes; see the ES2020 built-in `BigI
 
 ### ES2017
 
-| Name                                  | ESLint / eslint-plugin-es              |
-| ------------------------------------- | -------------------------------------- |
-| Async functions                       | es/no-async-functions                  |
-| Atomics                               | es/no-atomics                          |
-| `Object.getOwnPropertyDescriptors`    | es/no-object-getownpropertydescriptors |
-| `Object.entries`                      | es/no-object-entries                   |
-| `Object.values`                       | es/no-object-values                    |
-| RegExp `/u` flag                      | no-invalid-regexp                      |
-| SharedArrayBuffer                     | es/no-shared-array-buffer              |
-| `String.prototype.{padStart, padEnd}` | 😐 no-restricted-syntax                |
-| Trailing commas in parameter lists    | es/no-trailing-function-commas         |
+| Name                                  | ESLint / eslint-plugin-es              | Chrome since |
+| ------------------------------------- | -------------------------------------- | ------------ |
+| Async functions                       | es/no-async-functions                  | 55           |
+| Atomics                               | es/no-atomics                          | 68           |
+| `Object.getOwnPropertyDescriptors`    | es/no-object-getownpropertydescriptors | 54           |
+| `Object.entries`                      | es/no-object-entries                   | 54           |
+| `Object.values`                       | es/no-object-values                    | 54           |
+| RegExp `/u` (Unicode) flag            | no-invalid-regexp                      | 50           |
+| SharedArrayBuffer                     | es/no-shared-array-buffer              | 68           |
+| `String.prototype.{padStart, padEnd}` | 😐 no-restricted-syntax                | 57           |
+| Trailing commas in parameter lists    | es/no-trailing-function-commas         | 58           |
 
 ## Compatibility data sources
 
