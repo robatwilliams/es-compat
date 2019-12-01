@@ -30,7 +30,7 @@ It doesn't check browser/runtime-specific APIs (see [eslint-plugin-compat](https
 
 Contributions welcome to fill the gaps - it's mostly straightforward joining-up of the features list, existing ESLint rules, and the compatibility data.
 
-<sup>1</sup>Excluding features not statically detectable: revised `Function.prototype.toString`, stable `Array.prototype.sort`, well-formed `JSON.stringify`.
+<sup>1</sup> Excluding features not statically detectable: revised `Function.prototype.toString`, stable `Array.prototype.sort`, well-formed `JSON.stringify`.
 
 ## Limitations
 
