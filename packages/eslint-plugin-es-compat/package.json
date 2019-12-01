@@ -20,6 +20,7 @@
     "eslint-plugin-compat",
     "eslint-plugin-es"
   ],
+  "homepage": "https://github.com/robatwilliams/es-compat#readme",
   "bugs": {
     "url": "https://github.com/robatwilliams/es-compat/issues"
   },

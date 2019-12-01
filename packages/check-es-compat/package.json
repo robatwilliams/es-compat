@@ -16,6 +16,7 @@
     "caniuse",
     "kangax"
   ],
+  "homepage": "https://github.com/robatwilliams/es-compat#readme",
   "bugs": {
     "url": "https://github.com/robatwilliams/es-compat/issues"
   },
