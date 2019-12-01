@@ -29,8 +29,13 @@ function isCompatFeatureSupportedByTarget(compatFeature, target) {
 function getSimpleSupportStatement(compatFeature, target) {
   const statement = compatFeature.__compat.support[target.name];
 
+  // Take the most relevant and general entry when there are entries for behind-a-flag etc.
   // https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data-schema.md#the-support_statement-object
-  return Array.isArray(statement) ? statement[0] : statement;
+  const simpleStatement = Array.isArray(statement) ? statement[0] : statement;
+
+  // Only mandatory for desktop browsers
+  // https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data-schema.md#browser-identifiers
+  return simpleStatement || { version_added: null };
 }
 
 function interpretSupport(versionAdded) {

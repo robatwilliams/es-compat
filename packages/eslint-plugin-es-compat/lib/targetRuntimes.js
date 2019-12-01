@@ -18,10 +18,10 @@ module.exports = function targetRuntimes() {
     .mapValues(familyMember => _.sortBy(familyMember, 'version')[0].version)
     .value();
 
-  // TODO mapping needed for mobile browsers
-  const mapped = oldestOfEach;
+  const mapped = _.mapKeys(oldestOfEach, (version, name) => mapFamilyName(name));
+  const final = _.pickBy(mapped, (version, name) => isKnownFamily(name));
 
-  const final = _.pickBy(oldestOfEach, (version, name) => isKnownFamily(name));
+  console.log('es-compat: checking compatibility for targets', final);
 
   // [ { name, oldestVersion } ]
   return Object.entries(final).map(([name, version]) => ({ name, version }));
@@ -35,4 +35,21 @@ function isKnownFamily(name) {
   }
 
   return isKnown;
+}
+
+// browserslist -> mdn-browser-compat-data (where necessary and available)
+const familyNameMapping = {
+  and_chr: 'chrome_android',
+  and_ff: 'firefox_android',
+  and_qq: 'qq_android',
+  and_uc: 'uc_android',
+  android: 'webview_android',
+  ios_saf: 'safari_ios',
+  node: 'nodejs',
+  op_mob: 'opera_android',
+  samsung: 'samsunginternet_android',
+};
+
+function mapFamilyName(browserslistName) {
+  return familyNameMapping[browserslistName] || browserslistName;
 }
