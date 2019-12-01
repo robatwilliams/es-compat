@@ -22,6 +22,8 @@ Chrome >= 64
 Firefox >= 58
 ```
 
+For example usage, see sibling directory: `eslint-plugin-es-compat-example`
+
 <!--- Absolute link, in order to work from NPM website --->
 
 ➡ For more information, see the [main readme](https://github.com/robatwilliams/es-compat#readme).
