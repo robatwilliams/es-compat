@@ -27,7 +27,7 @@
     "type": "git",
     "url": "https://github.com/robatwilliams/es-compat.git"
   },
-  "license": "UNLICENSED",
+  "license": "MIT",
   "author": "Robat Williams",
   "main": "lib/index.js",
   "dependencies": {

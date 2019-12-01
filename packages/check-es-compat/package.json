@@ -23,7 +23,7 @@
     "type": "git",
     "url": "https://github.com/robatwilliams/es-compat.git"
   },
-  "license": "UNLICENSED",
+  "license": "MIT",
   "author": "Robat Williams",
   "bin": {
     "check-es-compat": "lib/cli.js"

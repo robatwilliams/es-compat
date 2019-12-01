@@ -26,7 +26,6 @@ ESLint plugin.
 - Document rationale
 - Document limitations (detection, compat data completeness)
 - Document briefly how it works
-- License
 - Credits / see-also
 - Contributions and feedback welcome
 - Comment on [module-requests#103](https://github.com/sindresorhus/module-requests/issues/103), [eslint-plugin-es#22](https://github.com/mysticatea/eslint-plugin-es/issues/22), [eslint-plugin-compat#206](https://github.com/amilajack/eslint-plugin-compat/issues/206)
@@ -35,3 +34,9 @@ ESLint plugin.
 
 - Given no targets, report where the code will work
 - Provide suggestions on how to make code more widely compatible
+
+## License
+
+es-compat tools, Copyright (C) Robat Williams
+
+This project is licensed under the terms of the [MIT](https://choosealicense.com/licenses/mit) license.
