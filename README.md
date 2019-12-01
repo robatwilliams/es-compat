@@ -54,17 +54,11 @@ The MDN compatibility dataset has very good coverage of the top ~6 desktop and m
 - Publish betas to NPM
 - Comment on [module-requests#103](https://github.com/sindresorhus/module-requests/issues/103), [eslint-plugin-es#22](https://github.com/mysticatea/eslint-plugin-es/issues/22), [eslint-plugin-compat#206](https://github.com/amilajack/eslint-plugin-compat/issues/206)
 
-### Completeness
+### Later
 
 - Cover all ECMAScript versions 2015-20 (see section above)
-
-### Ideas: small
-
 - Option to forbid features if compatibility data is missing for a target runtime
 - Log reason(s) for forbidden features (enableable). Or just look it up on MDN yourself...
-
-### Ideas: big
-
 - Given no targets (or a flag), report where the code will work
 - Provide suggestions on how to make code more widely compatible
 
