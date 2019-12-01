@@ -24,7 +24,7 @@ ESLint plugin.
 
 - Document supported ES versions
 - Document rationale
-- Document limitations
+- Document limitations (detection, compat data completeness)
 - Document briefly how it works
 - License
 - Credits / see-also
