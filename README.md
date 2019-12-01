@@ -2,7 +2,7 @@
 
 > Check JavaScript code compatibility with target browsers and Node.js versions
 
-Checks that the language features used in your code are [supported](https://github.com/mdn/browser-compat-data) by your [browserslist](https://github.com/browserslist/browserslist) targets.
+Checks that the language features used in your code are supported by your [browserslist](https://github.com/browserslist/browserslist) targets.
 
 ## Tools
 
@@ -11,7 +11,7 @@ Checks that the language features used in your code are [supported](https://gith
 
 ## Rationale
 
-[ESLint](https://eslint.org) supports targeting a specific ECMAScript version, and [eslint-plugin-es](https://github.com/mysticatea/eslint-plugin-es) allows forbidding individual language features. However when building applications, what we target are particular browser/runtime versions. This project lets you check compatibility by specifying those targets directly via a browserslist. It will figure out which individual features you can use, by looking up those targets in the MDN compatibility dataset.
+[ESLint](https://eslint.org) supports targeting a specific ECMAScript version, and [eslint-plugin-es](https://github.com/mysticatea/eslint-plugin-es) allows forbidding individual language features. However when building applications, what we target are particular browser/runtime versions. This project lets you check compatibility by specifying those targets directly via a browserslist. It will figure out which individual features you can use, by looking up those targets in the [MDN compatibility dataset](https://github.com/mdn/browser-compat-data).
 
 ## Scope
 
