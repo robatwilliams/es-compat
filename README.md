@@ -4,7 +4,7 @@
 
 ## [check-es-compat](/packages/check-es-compat/README.md)
 
-Standalone tool.
+Standalone CLI tool.
 
 ## [eslint-plugin-es-compat](/packages/eslint-plugin-es-compat/README.md)
 

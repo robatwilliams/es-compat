@@ -1,11 +1,22 @@
 {
   "name": "eslint-plugin-es-compat",
   "version": "0.0.0",
+  "description": "ESLint plugin for checking JavaScript code compatibility with target runtime environments",
   "keywords": [
+    "browser-compat-data",
+    "browserslist",
     "eslint",
     "eslintplugin"
   ],
+  "bugs": {
+    "url": "https://github.com/robatwilliams/es-compat/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robatwilliams/es-compat.git"
+  },
   "license": "UNLICENSED",
+  "author": "Robat Williams",
   "main": "lib/index.js",
   "dependencies": {
     "eslint": "^6.7.1",

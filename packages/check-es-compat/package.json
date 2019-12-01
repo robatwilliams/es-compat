@@ -1,7 +1,20 @@
 {
   "name": "check-es-compat",
   "version": "0.0.0",
+  "description": "CLI tool for checking JavaScript code compatibility with target runtime environments",
+  "keywords": [
+    "browser-compat-data",
+    "browserslist"
+  ],
+  "bugs": {
+    "url": "https://github.com/robatwilliams/es-compat/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robatwilliams/es-compat.git"
+  },
   "license": "UNLICENSED",
+  "author": "Robat Williams",
   "bin": {
     "check-es-compat": "lib/cli.js"
   },
