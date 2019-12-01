@@ -57,8 +57,8 @@ The MDN compatibility dataset has very good coverage of the top ~6 desktop and m
 
 - 💡 Given no targets (or a flag), report where the code will work
 - 💡 Provide suggestions on how to make code more widely compatible
+- Error messages should include target runtimes where the forbidden feature is not supported. Or look it up on MDN yourself...
 - Option to forbid features if compatibility data is missing for a target runtime
-- Log reason(s) for forbidden features (enablable). Or just look it up on MDN yourself...
 
 ## Contributing
 
