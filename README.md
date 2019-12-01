@@ -40,22 +40,33 @@ The MDN compatibility dataset has very good coverage of the top ~6 desktop and m
 
 ## Backlog
 
-### Tools
+### MVP
 
 - Use browserslist for target browsers/runtimes (needs names mapping)
-- ES2020 features
-- ES2017 features
-- Log reason(s) for forbidden features (enableable)
+- CLI should take path argument(s) instead of using current working directory
+- Remove `Symbol.prototype.description`; it's a debug feature, so not worth the false positives
+- Add homepage link (#readme) to `package.json`s
+- Link to main readme from package readmes
+- Relax packages' required ESLint versions
+
+### MVP meta
+
+- Make the repo public
 - Publish betas to NPM
-
-### Meta
-
 - Comment on [module-requests#103](https://github.com/sindresorhus/module-requests/issues/103), [eslint-plugin-es#22](https://github.com/mysticatea/eslint-plugin-es/issues/22), [eslint-plugin-compat#206](https://github.com/amilajack/eslint-plugin-compat/issues/206)
 
-### Future ideas
+### Completeness
+
+- Cover all ECMAScript versions 2015-20 (see section above)
+
+### Ideas: small
 
 - Option to forbid features if compatibility data is missing for a target runtime
-- Given no targets, report where the code will work
+- Log reason(s) for forbidden features (enableable). Or just look it up on MDN yourself...
+
+### Ideas: big
+
+- Given no targets (or a flag), report where the code will work
 - Provide suggestions on how to make code more widely compatible
 
 ## Contributing
