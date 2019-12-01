@@ -7,7 +7,7 @@ function createDelegatee(config, rootContext) {
     getSourceCode: () => rootContext.getSourceCode(),
   };
 
-  // Would use ES Proxy, but report isn't overridable
+  // Would use ES Proxy, but context's properties aren't overridable
   const context = {
     ...rootContext,
     ...contextLaterAddedMethods,
