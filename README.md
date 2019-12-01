@@ -9,6 +9,14 @@ Checks that the language features used in your code are [supported](https://gith
 - [check-es-compat](/packages/check-es-compat/README.md) - standalone CLI tool
 - [eslint-plugin-es-compat](/packages/eslint-plugin-es-compat/README.md) - ESLint plugin
 
+## Rationale
+
+[ESLint](https://eslint.org) supports targeting a specific ECMAScript version, and [eslint-plugin-es](https://github.com/mysticatea/eslint-plugin-es) allows forbidding individual language features. However when building applications, what we target are particular browser/runtime versions. This project lets you check compatibility by specifying those targets directly via a browserslist. It will figure out which individual features you can use, by looking up those targets in the MDN compatibility dataset.
+
+## Scope
+
+The scope of this project is ECMAScript language features; this includes syntax, built-ins, and methods. It doesn't check browser/runtime-specific APIs (see [eslint-plugin-compat](https://github.com/amilajack/eslint-plugin-compat)), or CSS (see [doiuse](https://github.com/anandthakker/doiuse)).
+
 ## Limitations
 
 Because JavaScript is untyped, detection of some features' usage (namely prototype methods) through static analysis requires some assumptions to be made. This shouldn't be a problem as long as you avoid creating your own methods having the same names, or write code in an unusual way to deliberately evade detection.
@@ -28,7 +36,6 @@ The MDN compatibility dataset has very good coverage of the top ~6 desktop and m
 ### Meta
 
 - Document supported ES versions
-- Document rationale
 - Comment on [module-requests#103](https://github.com/sindresorhus/module-requests/issues/103), [eslint-plugin-es#22](https://github.com/mysticatea/eslint-plugin-es/issues/22), [eslint-plugin-compat#206](https://github.com/amilajack/eslint-plugin-compat/issues/206)
 
 ### Future ideas
@@ -49,8 +56,9 @@ This project is licensed under the terms of the [MIT](https://choosealicense.com
 
 ## Related
 
+- [eslint-plugin-compat](https://github.com/amilajack/eslint-plugin-compat) - for browser APIs
+- [doiuse](https://github.com/anandthakker/doiuse) - for CSS
 - [eslint-plugin-es](https://github.com/mysticatea/eslint-plugin-es)\*
-- [eslint-plugin-compat](https://github.com/amilajack/eslint-plugin-compat)
 - [mdn-browser-compat-data](https://github.com/mdn/browser-compat-data)\*
 
 \* Thanks to these projects in particular (and many other mainstream ones) for making this project possible.
