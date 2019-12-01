@@ -30,9 +30,14 @@ It doesn't check browser/runtime-specific APIs (see [eslint-plugin-compat](https
 
 Contributions welcome to fill the gaps - it's mostly straightforward joining-up of the features list, existing ESLint rules, and the compatibility data.
 
+<details>
+<summary><sup>n</sup> Expand for footnotes...</summary>
+
 <sup>1</sup> Excluding features not statically detectable: revised `Function.prototype.toString`, stable `Array.prototype.sort`, well-formed `JSON.stringify`.
 
 <sup>2</sup> Excluding `Symbol.prototype.description`; as a debug feature, it's not worth the false positives that arise due to its name and not being a method.
+
+</details>
 
 ## Limitations
 
