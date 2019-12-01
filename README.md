@@ -2,13 +2,10 @@
 
 > Check JavaScript code compatibility with target runtime environments
 
-## [check-es-compat](/packages/check-es-compat/README.md)
+## Tools
 
-Standalone CLI tool.
-
-## [eslint-plugin-es-compat](/packages/eslint-plugin-es-compat/README.md)
-
-ESLint plugin.
+- [check-es-compat](/packages/check-es-compat/README.md) - standalone CLI tool
+- [eslint-plugin-es-compat](/packages/eslint-plugin-es-compat/README.md) - ESLint plugin
 
 ## Backlog
 
