@@ -22,7 +22,7 @@ It doesn't check browser/runtime-specific APIs (see [eslint-plugin-compat](https
 ## ECMAScript version coverage
 
 - ❌ [ES2020](https://v8.dev/features/tags/es2020) (draft)
-- ✅ [ES2019](https://flaviocopes.com/es2019)<sup>1</sup>
+- ✅ [ES2019](https://flaviocopes.com/es2019)<sup>1, 2</sup>
 - ✅ [ES2018](https://flaviocopes.com/es2018)
 - ❌ [ES2017](https://flaviocopes.com/es2017)
 - ❌ [ES2016](https://flaviocopes.com/es2016)
@@ -31,6 +31,8 @@ It doesn't check browser/runtime-specific APIs (see [eslint-plugin-compat](https
 Contributions welcome to fill the gaps - it's mostly straightforward joining-up of the features list, existing ESLint rules, and the compatibility data.
 
 <sup>1</sup> Excluding features not statically detectable: revised `Function.prototype.toString`, stable `Array.prototype.sort`, well-formed `JSON.stringify`.
+
+<sup>2</sup> Excluding `Symbol.prototype.description`; as a debug feature, it's not worth the false positives that arise due to its name and not being a method.
 
 ## Limitations
 
@@ -44,7 +46,6 @@ The MDN compatibility dataset has very good coverage of the top ~6 desktop and m
 
 - Use browserslist for target browsers/runtimes (needs names mapping)
 - CLI should take path argument(s) instead of using current working directory
-- Remove `Symbol.prototype.description`; it's a debug feature, so not worth the false positives
 
 ### Beta: meta
 

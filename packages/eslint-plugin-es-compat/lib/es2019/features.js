@@ -29,8 +29,4 @@ module.exports = [
       compatData.javascript.builtins.String.trimStart,
     ],
   },
-  {
-    ruleConfig: ruleConfigs.noSymbolDescription,
-    compatFeatures: [compatData.javascript.builtins.Symbol.description],
-  },
 ];
