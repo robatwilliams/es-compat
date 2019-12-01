@@ -1,6 +1,6 @@
 # es-compat
 
-> Check JavaScript code compatibility with target runtime environments
+> Check JavaScript code compatibility with target browsers and Node.js versions
 
 ## Tools
 

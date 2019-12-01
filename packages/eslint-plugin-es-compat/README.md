@@ -1,6 +1,6 @@
 # eslint-plugin-es-compat
 
-> ESLint plugin for checking JavaScript code compatibility with target runtime environments
+> ESLint plugin for checking JavaScript code compatibility with target browsers and Node.js versions
 
 ```bash
 npm install --save-dev eslint-plugin-es-compat

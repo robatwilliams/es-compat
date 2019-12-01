@@ -1,6 +1,6 @@
 # check-es-compat
 
-> CLI tool for checking JavaScript code compatibility with target runtime environments
+> CLI tool for checking JavaScript code compatibility with target browsers and Node.js versions
 
 ```bash
 $ npx check-es-compat

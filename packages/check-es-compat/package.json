@@ -1,7 +1,7 @@
 {
   "name": "check-es-compat",
   "version": "0.0.0",
-  "description": "CLI tool for checking JavaScript code compatibility with target runtime environments",
+  "description": "CLI tool for checking JavaScript code compatibility with target browsers and Node.js versions",
   "keywords": [
     "browser",
     "compatibility",
