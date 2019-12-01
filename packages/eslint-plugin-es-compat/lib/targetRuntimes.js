@@ -1,5 +1,6 @@
 const browserslist = require('browserslist');
 const _ = require('lodash');
+const compatData = require('mdn-browser-compat-data');
 
 module.exports = function targetRuntimes() {
   // ['chrome 50', ...]
@@ -18,8 +19,20 @@ module.exports = function targetRuntimes() {
     .value();
 
   // TODO mapping needed for mobile browsers
-  // TODO handle browsers not in compat data
+  const mapped = oldestOfEach;
+
+  const final = _.pickBy(oldestOfEach, (version, name) => isKnownFamily(name));
 
   // [ { name, oldestVersion } ]
-  return Object.entries(oldestOfEach).map(([name, version]) => ({ name, version }));
+  return Object.entries(final).map(([name, version]) => ({ name, version }));
 };
+
+function isKnownFamily(name) {
+  const isKnown = compatData.browsers[name] != null;
+
+  if (!isKnown) {
+    console.warn(`es-compat: No compatibility data for target family '${name}'`);
+  }
+
+  return isKnown;
+}
