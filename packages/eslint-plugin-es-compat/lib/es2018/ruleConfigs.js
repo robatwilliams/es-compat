@@ -29,6 +29,11 @@ exports.noRegExpDotAllFlag = {
   definition: esPlugin.rules['no-regexp-s-flag'],
 };
 
+/**
+ * New values were added in the following ES2019.
+ * The rule no-regexp-unicode-property-escapes-2019 accepts these, but is omitted
+ * because the compatibility data doesn't distinguish the two.
+ */
 exports.noRegExpUnicodePropertyEscapes = {
   definition: esPlugin.rules['no-regexp-unicode-property-escapes'],
 };
