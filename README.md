@@ -85,4 +85,4 @@ This project is licensed under the terms of the [MIT](https://choosealicense.com
 - [eslint-plugin-es](https://github.com/mysticatea/eslint-plugin-es)\*
 - [mdn-browser-compat-data](https://github.com/mdn/browser-compat-data)\*
 
-\* Thanks to these projects in particular (and many other mainstream ones) for making this project possible.
+\* Thanks to these projects in particular (and many others) for making this project possible.
