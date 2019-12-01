@@ -47,10 +47,6 @@ The MDN compatibility dataset has very good coverage of the top ~6 desktop and m
 
 ## Backlog
 
-### Beta
-
-- Use browserslist for target browsers/runtimes (needs names mapping, ignore unknowns)
-
 ### MVP
 
 - Cover all ECMAScript versions 2015-20 (see section above)

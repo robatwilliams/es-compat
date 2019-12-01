@@ -1,13 +1,10 @@
 const features = require('./features');
 
-function forbiddenFeatures() {
-  return features.filter(feature => !isFeatureSupportedByAllTargets(feature));
+function forbiddenFeatures(targets) {
+  return features.filter(feature => !isFeatureSupportedByTargets(feature, targets));
 }
 
-function isFeatureSupportedByAllTargets(feature) {
-  // TODO read this from browserslist
-  const targets = [{ name: 'chrome', version: 59 }];
-
+function isFeatureSupportedByTargets(feature, targets) {
   return targets.every(target => isFeatureSupportedByTarget(feature, target));
 }
 
