@@ -3,10 +3,22 @@
   "version": "0.0.0",
   "description": "ESLint plugin for checking JavaScript code compatibility with target runtime environments",
   "keywords": [
-    "browser-compat-data",
-    "browserslist",
+    "browser",
+    "compatibility",
+    "compat",
+    "support",
+    "javascript",
+    "ecmascript",
+    "es",
+    "lint",
     "eslint",
-    "eslintplugin"
+    "eslintplugin",
+    "browserslist",
+    "browser-compat-data",
+    "caniuse",
+    "kangax",
+    "eslint-plugin-compat",
+    "eslint-plugin-es"
   ],
   "bugs": {
     "url": "https://github.com/robatwilliams/es-compat/issues"

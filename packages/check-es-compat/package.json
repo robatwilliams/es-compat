@@ -3,8 +3,18 @@
   "version": "0.0.0",
   "description": "CLI tool for checking JavaScript code compatibility with target runtime environments",
   "keywords": [
+    "browser",
+    "compatibility",
+    "compat",
+    "support",
+    "javascript",
+    "ecmascript",
+    "es",
+    "checker",
+    "browserslist",
     "browser-compat-data",
-    "browserslist"
+    "caniuse",
+    "kangax"
   ],
   "bugs": {
     "url": "https://github.com/robatwilliams/es-compat/issues"
