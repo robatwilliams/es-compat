@@ -27,13 +27,16 @@ ESLint plugin.
 - Document limitations (detection, compat data completeness)
 - Document briefly how it works
 - Credits / see-also
-- Contributions and feedback welcome
 - Comment on [module-requests#103](https://github.com/sindresorhus/module-requests/issues/103), [eslint-plugin-es#22](https://github.com/mysticatea/eslint-plugin-es/issues/22), [eslint-plugin-compat#206](https://github.com/amilajack/eslint-plugin-compat/issues/206)
 
 ### Future ideas
 
 - Given no targets, report where the code will work
 - Provide suggestions on how to make code more widely compatible
+
+## Contributing
+
+Contributions (code, bug reports, ideas...) and feedback welcome. Please create an issue or submit a PR.
 
 ## License
 
