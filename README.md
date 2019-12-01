@@ -17,6 +17,20 @@ Checks that the language features used in your code are [supported](https://gith
 
 The scope of this project is ECMAScript language features; this includes syntax, built-ins, and methods. It doesn't check browser/runtime-specific APIs (see [eslint-plugin-compat](https://github.com/amilajack/eslint-plugin-compat)), or CSS (see [doiuse](https://github.com/anandthakker/doiuse)).
 
+## ECMAScript version coverage
+
+- ❌ [ES2020](https://v8.dev/features/tags/es2020) (draft)
+- ✅ [ES2019](https://flaviocopes.com/es2019)<sup>1</sup>
+- ✅ [ES2018](https://flaviocopes.com/es2018)
+- ❌ [ES2017](https://flaviocopes.com/es2017)
+- ❌ [ES2016](https://flaviocopes.com/es2016)
+- ❌ [ES2015 (ES6)](https://flaviocopes.com/es6)
+- ⛔ ES5
+
+Contributions welcome to fill the gaps - it's mostly straightforward joining-up of the features list, existing ESLint rules, and the compatibility data.
+
+<sup>1</sup>Excluding non-detectable features: revised `Function.prototype.toString`, stable `Array.prototype.sort`, well-formed `JSON.stringify`.
+
 ## Limitations
 
 Because JavaScript is untyped, detection of some features' usage (namely prototype methods) through static analysis requires some assumptions to be made. This shouldn't be a problem as long as you avoid creating your own methods having the same names, or write code in an unusual way to deliberately evade detection.
@@ -35,7 +49,6 @@ The MDN compatibility dataset has very good coverage of the top ~6 desktop and m
 
 ### Meta
 
-- Document supported ES versions
 - Comment on [module-requests#103](https://github.com/sindresorhus/module-requests/issues/103), [eslint-plugin-es#22](https://github.com/mysticatea/eslint-plugin-es/issues/22), [eslint-plugin-compat#206](https://github.com/amilajack/eslint-plugin-compat/issues/206)
 
 ### Future ideas
