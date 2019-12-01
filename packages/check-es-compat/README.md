@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/check-es-compat.svg)](https://badge.fury.io/js/check-es-compat)
+
 # check-es-compat
 
 > CLI tool for checking JavaScript code compatibility with target browsers and Node.js versions

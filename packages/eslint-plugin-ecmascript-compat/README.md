@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/eslint-plugin-ecmascript-compat.svg)](https://badge.fury.io/js/eslint-plugin-ecmascript-compat)
+
 # eslint-plugin-ecmascript-compat
 
 > ESLint plugin for checking JavaScript code compatibility with target browsers and Node.js versions
