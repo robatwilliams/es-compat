@@ -1,0 +1,12 @@
+{
+  "name": "check-es-compat",
+  "version": "0.0.0",
+  "license": "UNLICENSED",
+  "bin": {
+    "check-es-compat": "lib/cli.js"
+  },
+  "dependencies": {
+    "eslint": "^6.7.2",
+    "eslint-plugin-es-compat": "^0.0.0"
+  }
+}
