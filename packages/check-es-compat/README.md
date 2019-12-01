@@ -1,5 +1,7 @@
 # check-es-compat
 
+> Standalone tool for checking JavaScript code compatibility with target runtime environments
+
 ```bash
 $ npx check-es-compat
 ```

@@ -1,5 +1,7 @@
 # eslint-plugin-es-compat
 
+> ESLint plugin for checking JavaScript code compatibility with target runtime environments
+
 ```bash
 npm install --save-dev eslint-plugin-es-compat
 ```
