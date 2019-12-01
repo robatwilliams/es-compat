@@ -4,7 +4,10 @@ const eslint = require('eslint');
 const eslintCLI = new eslint.CLIEngine({
   useEslintrc: false, // ignore any config files
   plugins: ['es-compat'],
-  parserOptions: { ecmaVersion: 2020 },
+  parserOptions: {
+    // Latest version, so all features work
+    ecmaVersion: 2020,
+  },
   rules: {
     'es-compat/compat': 'error',
   },
