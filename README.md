@@ -50,7 +50,6 @@ The MDN compatibility dataset has very good coverage of the top ~6 desktop and m
 ### Beta
 
 - Use browserslist for target browsers/runtimes (needs names mapping, ignore unknowns)
-- CLI should take path argument(s) instead of using current working directory
 
 ### Beta: meta
 

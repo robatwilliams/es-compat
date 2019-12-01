@@ -1,15 +1,22 @@
 #!/usr/bin/env node
 const eslint = require('eslint');
 
-const { hasErrors } = execute();
+const args = process.argv.slice(2);
 
-if (hasErrors) {
+if (args.length === 0) {
+  console.log('Usage: check-es-compat file.js [file.js] [dir]');
   process.exitCode = 1;
 } else {
-  console.log('No issues found. Files analysed are compatible with the target runtimes.');
+  const { hasErrors } = execute(args);
+
+  if (hasErrors) {
+    process.exitCode = 1;
+  } else {
+    console.log('No issues found. Files are compatible with the target runtimes.');
+  }
 }
 
-function execute() {
+function execute(files) {
   const eslintCLI = new eslint.CLIEngine({
     useEslintrc: false, // ignore any config files
     plugins: ['es-compat'],
@@ -22,7 +29,7 @@ function execute() {
     },
   });
 
-  const report = eslintCLI.executeOnFiles(['.']);
+  const report = eslintCLI.executeOnFiles(files);
 
   const formatter = eslintCLI.getFormatter();
   console.log(formatter(report.results));
