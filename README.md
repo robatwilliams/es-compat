@@ -2,6 +2,8 @@
 
 > Check JavaScript code compatibility with target browsers and Node.js versions
 
+Checks that the language features used in your code are [supported](https://github.com/mdn/browser-compat-data) by your [browserslist](https://github.com/browserslist/browserslist) targets.
+
 ## Tools
 
 - [check-es-compat](/packages/check-es-compat/README.md) - standalone CLI tool
@@ -22,7 +24,6 @@
 - Document supported ES versions
 - Document rationale
 - Document limitations (detection, compat data completeness)
-- Document briefly how it works
 - Comment on [module-requests#103](https://github.com/sindresorhus/module-requests/issues/103), [eslint-plugin-es#22](https://github.com/mysticatea/eslint-plugin-es/issues/22), [eslint-plugin-compat#206](https://github.com/amilajack/eslint-plugin-compat/issues/206)
 
 ### Future ideas
