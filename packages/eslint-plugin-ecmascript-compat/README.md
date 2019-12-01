@@ -1,17 +1,17 @@
-# eslint-plugin-es-compat
+# eslint-plugin-ecmascript-compat
 
 > ESLint plugin for checking JavaScript code compatibility with target browsers and Node.js versions
 
 ```bash
-npm install --save-dev eslint-plugin-es-compat
+npm install --save-dev eslint-plugin-ecmascript-compat
 ```
 
 ```json
 // .eslintrc.json
 {
-  "plugins": ["es-compat"],
+  "plugins": ["ecmascript-compat"],
   "rules": {
-    "es-compat/compat": "error"
+    "ecmascript-compat/compat": "error"
   }
 }
 ```
@@ -22,7 +22,7 @@ Chrome >= 64
 Firefox >= 58
 ```
 
-For example usage, see sibling directory: `eslint-plugin-es-compat-example`
+For example usage, see sibling directory: `eslint-plugin-ecmascript-compat-example`
 
 <!--- Absolute link, in order to work from NPM website --->
 

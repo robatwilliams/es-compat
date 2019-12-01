@@ -7,7 +7,7 @@ Checks that the language features used in your code are supported by your [brows
 ## Tools
 
 - [check-es-compat](/packages/check-es-compat/README.md) - standalone CLI tool
-- [eslint-plugin-es-compat](/packages/eslint-plugin-es-compat/README.md) - ESLint plugin
+- [eslint-plugin-ecmascript-compat](/packages/eslint-plugin-ecmascript-compat/README.md) - ESLint plugin
 
 ## Rationale
 
