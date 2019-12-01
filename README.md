@@ -15,7 +15,9 @@ Checks that the language features used in your code are [supported](https://gith
 
 ## Scope
 
-The scope of this project is ECMAScript language features; this includes syntax, built-ins, and methods. It doesn't check browser/runtime-specific APIs (see [eslint-plugin-compat](https://github.com/amilajack/eslint-plugin-compat)), or CSS (see [doiuse](https://github.com/anandthakker/doiuse)).
+ECMAScript language features only; this includes syntax, built-ins, and methods.
+
+It doesn't check browser/runtime-specific APIs (see [eslint-plugin-compat](https://github.com/amilajack/eslint-plugin-compat)), or CSS (see [doiuse](https://github.com/anandthakker/doiuse)).
 
 ## ECMAScript version coverage
 
