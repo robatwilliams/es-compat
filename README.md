@@ -28,7 +28,7 @@ It doesn't check browser/runtime-specific APIs (see [eslint-plugin-compat](https
 - ❌ [ES2016](https://flaviocopes.com/es2016)
 - ❌ [ES2015 (ES6)](https://flaviocopes.com/es6)
 
-Contributions welcome to fill the gaps - it's mostly straightforward joining-up of the features list, existing ESLint rules, and the compatibility data.
+Contributions welcome to fill the gaps - it's mostly straightforward joining-up of the [features list](docs/ecmaScript-versions.md), existing ESLint rules, and the compatibility data.
 
 <details>
 <summary><sup>n</sup> Expand for footnotes...</summary>
