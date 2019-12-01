@@ -11,3 +11,7 @@ $ npx check-es-compat
 Chrome >= 64
 Firefox >= 58
 ```
+
+<!--- Absolute link, in order to work from NPM website --->
+
+➡ For more information, see the [main readme](https://github.com/robatwilliams/es-compat#readme).
