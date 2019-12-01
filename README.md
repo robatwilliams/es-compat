@@ -45,7 +45,6 @@ The MDN compatibility dataset has very good coverage of the top ~6 desktop and m
 - Use browserslist for target browsers/runtimes (needs names mapping)
 - CLI should take path argument(s) instead of using current working directory
 - Remove `Symbol.prototype.description`; it's a debug feature, so not worth the false positives
-- Relax packages' required ESLint versions
 
 ### Beta: meta
 

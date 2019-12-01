@@ -32,7 +32,7 @@
   "author": "Robat Williams",
   "main": "lib/index.js",
   "peerDependencies": {
-    "eslint": "^6.7.1"
+    "eslint": ">=4.19.1"
   },
   "dependencies": {
     "eslint-plugin-es": "^2.0.0",
