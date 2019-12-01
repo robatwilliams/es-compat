@@ -90,7 +90,6 @@ Note that features may belong to multiple classes; see the ES2020 built-in `BigI
 | `Object.getOwnPropertyDescriptors`    | es/no-object-getownpropertydescriptors | 54           |
 | `Object.entries`                      | es/no-object-entries                   | 54           |
 | `Object.values`                       | es/no-object-values                    | 54           |
-| RegExp `/u` (Unicode) flag            | no-invalid-regexp                      | 50           |
 | SharedArrayBuffer                     | es/no-shared-array-buffer              | 68           |
 | `String.prototype.{padStart, padEnd}` | 😐 no-restricted-syntax                | 57           |
 | Trailing commas in parameter lists    | es/no-trailing-function-commas         | 58           |
