@@ -21,6 +21,7 @@ module.exports = function targetRuntimes() {
   const mapped = _.mapKeys(oldestOfEach, (version, name) => mapFamilyName(name));
   const final = _.pickBy(mapped, (version, name) => isKnownFamily(name));
 
+  // eslint-disable-next-line no-console
   console.log('es-compat: checking compatibility for targets', final);
 
   // [ { name, oldestVersion } ]
@@ -31,6 +32,7 @@ function isKnownFamily(name) {
   const isKnown = compatData.browsers[name] != null;
 
   if (!isKnown) {
+    // eslint-disable-next-line no-console
     console.warn(`es-compat: No compatibility data for target family '${name}'`);
   }
 
@@ -38,6 +40,7 @@ function isKnownFamily(name) {
 }
 
 // browserslist -> mdn-browser-compat-data (where necessary and available)
+/* eslint-disable camelcase */
 const familyNameMapping = {
   and_chr: 'chrome_android',
   and_ff: 'firefox_android',
@@ -49,6 +52,7 @@ const familyNameMapping = {
   op_mob: 'opera_android',
   samsung: 'samsunginternet_android',
 };
+/* eslint-enable camelcase */
 
 function mapFamilyName(browserslistName) {
   return familyNameMapping[browserslistName] || browserslistName;

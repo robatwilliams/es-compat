@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable no-console */
 const eslint = require('eslint');
 
 const args = process.argv.slice(2);

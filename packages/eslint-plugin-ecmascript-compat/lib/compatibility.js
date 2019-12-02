@@ -1,3 +1,4 @@
+/* eslint-disable camelcase, no-underscore-dangle */
 const features = require('./features');
 
 function forbiddenFeatures(targets) {
@@ -29,7 +30,7 @@ function isCompatFeatureSupportedByTarget(compatFeature, target) {
 function getSimpleSupportStatement(compatFeature, target) {
   const statement = compatFeature.__compat.support[target.name];
 
-  // Take the most relevant and general entry when there are entries for behind-a-flag etc.
+  // Take the most relevant and general entry when there are ones for behind-a-flag etc.
   // https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data-schema.md#the-support_statement-object
   const simpleStatement = Array.isArray(statement) ? statement[0] : statement;
 
@@ -41,7 +42,7 @@ function getSimpleSupportStatement(compatFeature, target) {
 function interpretSupport(versionAdded) {
   // https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data-schema.md#version_added
   return {
-    isUnknown: versionAdded === null,
+    isUnknown: versionAdded == null,
     isNone: versionAdded === false,
     isVersionUnknown: versionAdded === true,
   };

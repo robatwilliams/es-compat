@@ -1,5 +1,16 @@
 {
-  "extends": ["eslint:recommended"],
+  "extends": [
+    // Prettier presets are partial "anti-presets" for other presets, that disable unnecessary/conflicting rules.
+
+    /*
+     * Enable all rules:
+     *   1. Majority of rules and default options are good
+     *   2. eslint:recommended is only a small subset
+     *   3. We automatically gain new rules when they are released
+     */
+    "eslint:all",
+    "prettier"
+  ],
   "parserOptions": {
     "ecmaVersion": 2018
   },
@@ -8,7 +19,46 @@
     "node": true
   },
   "rules": {
-    // eslint:recommended - modify default options
-    "no-unused-vars": ["error", { "ignoreRestSiblings": true }]
+    // eslint:all - Disable unwanted rules. Add appropriate others as and when they're discovered.
+    "capitalized-comments": "off",
+    "global-require": "off",
+    "line-comment-position": "off",
+    "multiline-comment-style": "off",
+    "no-eq-null": "off",
+    "no-inline-comments": "off",
+    "no-magic-numbers": "off",
+    "no-ternary": "off",
+    "one-var": "off",
+    "sort-keys": "off",
+    "strict": "off",
+
+    // eslint:all - Modify default options
+    "eqeqeq": ["error", "always", { "null": "never" }],
+    "func-style": ["error", "declaration"],
+    "id-length": ["error", { "exceptions": ["_"] }],
+    "no-unused-vars": ["error", { "ignoreRestSiblings": true }],
+    "no-use-before-define": ["error", "nofunc"],
+
+    // eslint:all & prettier - Re-enable some of the rules that are compatible when certain options are used
+    //   (https://github.com/prettier/eslint-config-prettier#special-rules)
+    "curly": "error",
+    "max-len": ["error", { "code": 1000, "comments": 90, "ignoreUrls": true }],
+    "quotes": [
+      "error",
+      "single",
+      { "avoidEscape": true, "allowTemplateLiterals": false }
+    ],
+
+    // eslint:all - Rules whose default options do nothing. Options need to be compatible with Prettier.
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": "*", "next": ["cjs-export"] },
+
+      { "blankLine": "always", "prev": "*", "next": "block-like" },
+      { "blankLine": "always", "prev": "block-like", "next": "*" },
+
+      { "blankLine": "always", "prev": "cjs-import", "next": "*" },
+      { "blankLine": "any", "prev": "cjs-import", "next": "cjs-import" }
+    ]
   }
 }
