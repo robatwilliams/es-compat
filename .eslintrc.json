@@ -18,6 +18,7 @@
     "es2017": true,
     "node": true
   },
+  "reportUnusedDisableDirectives": true,
   "rules": {
     // eslint:all - Disable unwanted rules. Add appropriate others as and when they're discovered.
     "capitalized-comments": "off",
