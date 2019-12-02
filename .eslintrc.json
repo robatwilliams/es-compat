@@ -13,6 +13,7 @@
 
     "plugin:node/recommended"
   ],
+  "plugins": ["import"],
   "parserOptions": {
     "ecmaVersion": 2018
   },
@@ -67,6 +68,10 @@
 
       { "blankLine": "always", "prev": "cjs-import", "next": "*" },
       { "blankLine": "any", "prev": "cjs-import", "next": "cjs-import" }
-    ]
+    ],
+
+    // eslint-plugin-import - Selection from the ones that are compatible with CommonJS
+    "import/no-extraneous-dependencies": "error",
+    "import/order": ["error", { "newlines-between": "never" }]
   }
 }
