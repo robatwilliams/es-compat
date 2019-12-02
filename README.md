@@ -40,7 +40,7 @@ It doesn't check browser/runtime-specific APIs (see [eslint-plugin-compat](https
 
 <sup>2</sup> Excluding `Symbol.prototype.description`; as a debug feature, it's not worth the false positives that arise due to its name and not being a method.
 
-<sup>3</sup> ES5 is out of scope; it's over 10 years old and [supported](https://caniuse.com/#feat=es5) in IE10 even.
+<sup>3</sup> ES5 is out of scope; it's over 10 years old and [supported](https://caniuse.com/#feat=es5) even in IE10.
 
 </details>
 
