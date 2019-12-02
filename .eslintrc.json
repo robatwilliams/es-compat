@@ -9,7 +9,9 @@
      *   3. We automatically gain new rules when they are released
      */
     "eslint:all",
-    "prettier"
+    "prettier",
+
+    "plugin:node/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": 2018
