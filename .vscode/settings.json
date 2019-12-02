@@ -10,6 +10,10 @@
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
 
+  // Prevent ESLint extension getting confused in monorepo
+  // https://github.com/microsoft/vscode-eslint/issues/696#issuecomment-553697002
+  "eslint.workingDirectories": ["./"],
+
   "[markdown]": {
     "editor.rulers": [120] // Prettier: *.md printWidth
   }
