@@ -32,8 +32,6 @@ It doesn't check browser/runtime-specific APIs (see [eslint-plugin-compat](https
 - ❌ [ES2016](https://flaviocopes.com/es2016)
 - ❌ [ES2015 (ES6)](https://flaviocopes.com/es6)
 
-Contributions welcome to fill the gaps - it's mostly straightforward joining-up of the [features list](docs/ecmaScript-versions.md), existing ESLint rules, and the compatibility data.
-
 <details>
 <summary><sup>n</sup> Expand for footnotes...</summary>
 
@@ -51,12 +49,7 @@ The MDN compatibility dataset has very good coverage of the top ~6 desktop and m
 
 ## Backlog
 
-### MVP
-
-- Cover all ECMAScript versions 2015-20 (see section above)
-
-### Future
-
+- 🙏 Cover all ECMAScript versions 2015-20 (see section above) - for v1.0.0 MVP
 - 💡 Given no targets (or a flag), report where the code will work
 - 💡 Provide suggestions on how to make code more widely compatible
 - Error messages should include target runtimes where the forbidden feature is not supported. Or look it up on MDN yourself...
@@ -65,12 +58,6 @@ The MDN compatibility dataset has very good coverage of the top ~6 desktop and m
 ## Contributing
 
 Contributions (code, bug reports, ideas...) and [feedback](https://github.com/robatwilliams/es-compat/issues/1) welcome.
-
-## License
-
-es-compat tools, Copyright (C) Robat Williams
-
-This project is licensed under the terms of the [MIT](https://choosealicense.com/licenses/mit) license.
 
 ## Related
 
