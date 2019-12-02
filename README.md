@@ -31,6 +31,7 @@ It doesn't check browser/runtime-specific APIs (see [eslint-plugin-compat](https
 - ❌ [ES2017](https://flaviocopes.com/es2017)
 - ❌ [ES2016](https://flaviocopes.com/es2016)
 - ❌ [ES2015 (ES6)](https://flaviocopes.com/es6)
+- ⛔ ES5<sup>3</sup>
 
 <details>
 <summary><sup>n</sup> Expand for footnotes...</summary>
@@ -38,6 +39,8 @@ It doesn't check browser/runtime-specific APIs (see [eslint-plugin-compat](https
 <sup>1</sup> Excluding features not statically detectable: revised `Function.prototype.toString`, stable `Array.prototype.sort`, well-formed `JSON.stringify`.
 
 <sup>2</sup> Excluding `Symbol.prototype.description`; as a debug feature, it's not worth the false positives that arise due to its name and not being a method.
+
+<sup>3</sup> ES5 is out of scope; it's over 10 years old and [supported](https://caniuse.com/#feat=es5) in IE10 even.
 
 </details>
 
