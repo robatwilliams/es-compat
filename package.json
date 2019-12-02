@@ -1,7 +1,11 @@
 {
   "name": "es-compat",
   "private": true,
+  "scripts": {
+    "check:prettier": "prettier --check **/*.{js,json,md}"
+  },
   "devDependencies": {
-    "lerna": "^3.19.0"
+    "lerna": "^3.19.0",
+    "prettier": "^1.19.1"
   }
 }
