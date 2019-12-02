@@ -22,22 +22,27 @@
     // eslint:all - Disable unwanted rules. Add appropriate others as and when they're discovered.
     "capitalized-comments": "off",
     "global-require": "off",
+    "init-declarations": "off",
     "line-comment-position": "off",
     "multiline-comment-style": "off",
     "no-eq-null": "off",
     "no-inline-comments": "off",
     "no-magic-numbers": "off",
+    "no-plusplus": "off",
     "no-ternary": "off",
+    "no-undefined": "off",
     "one-var": "off",
     "sort-keys": "off",
     "strict": "off",
 
     // eslint:all - Modify default options
     "eqeqeq": ["error", "always", { "null": "never" }],
+    "func-names": ["error", "as-needed"],
     "func-style": ["error", "declaration"],
     "id-length": ["error", { "exceptions": ["_"] }],
     "no-unused-vars": ["error", { "ignoreRestSiblings": true }],
     "no-use-before-define": ["error", "nofunc"],
+    "spaced-comment": ["error", "always", { "block": { "balanced": true } }],
 
     // eslint:all & prettier - Re-enable some of the rules that are compatible when certain options are used
     //   (https://github.com/prettier/eslint-config-prettier#special-rules)
