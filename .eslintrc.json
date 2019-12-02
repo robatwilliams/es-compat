@@ -1,0 +1,14 @@
+{
+  "extends": ["eslint:recommended"],
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "env": {
+    "es2017": true,
+    "node": true
+  },
+  "rules": {
+    // eslint:recommended - modify default options
+    "no-unused-vars": ["error", { "ignoreRestSiblings": true }]
+  }
+}

@@ -2,6 +2,10 @@
   "editor.formatOnSave": true,
   "editor.rulers": [90], // Prettier: printWidth
 
+  "files.associations": {
+    ".eslintrc.json": "jsonc"
+  },
+
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
