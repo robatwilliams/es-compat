@@ -53,7 +53,7 @@ The MDN compatibility dataset has very good coverage of the top ~6 desktop and m
 - 💡 Given no targets (or a flag), report where the code will work
 - 💡 Provide suggestions on how to make code more widely compatible
 - Allow specifying polyfills used, to exclude them from support checking
-- Error messages should include target runtimes where the forbidden feature is not supported. Or look it up on MDN yourself...
+- Include in error messages details of target runtimes not supporting the feature. Or look it up on MDN yourself...
 - Option to forbid features if compatibility data is missing for a target runtime
 
 ## Contributing
