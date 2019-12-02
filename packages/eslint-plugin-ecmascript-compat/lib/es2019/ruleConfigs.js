@@ -1,5 +1,4 @@
 const eslint = require('eslint');
-const esPlugin = require('eslint-plugin-es');
 const { noRestrictedSyntaxPrototypeMethod } = require('../ruleOptionsUtil');
 
 const coreRules = new eslint.Linter().getRules();
@@ -12,17 +11,9 @@ exports.noArrayFlatMethods = {
   ],
 };
 
-exports.noJSONSuperset = {
-  definition: esPlugin.rules['no-json-superset'],
-};
-
 exports.noObjectFromEntries = {
   definition: coreRules.get('no-restricted-properties'),
   options: [{ object: 'Object', property: 'fromEntries', message: '(ES2019)' }],
-};
-
-exports.noOptionalCatchBinding = {
-  definition: esPlugin.rules['no-optional-catch-binding'],
 };
 
 exports.noStringTrimSideMethods = {

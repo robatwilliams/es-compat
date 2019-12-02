@@ -1,3 +1,4 @@
+const esPlugin = require('eslint-plugin-es');
 const compatData = require('mdn-browser-compat-data');
 const ruleConfigs = require('./ruleConfigs');
 
@@ -10,7 +11,7 @@ module.exports = [
     ],
   },
   {
-    ruleConfig: ruleConfigs.noJSONSuperset,
+    ruleConfig: { definition: esPlugin.rules['no-json-superset'] },
     compatFeatures: [compatData.javascript.builtins.JSON.json_superset],
   },
   {
@@ -18,7 +19,7 @@ module.exports = [
     compatFeatures: [compatData.javascript.builtins.Object.fromEntries],
   },
   {
-    ruleConfig: ruleConfigs.noOptionalCatchBinding,
+    ruleConfig: { definition: esPlugin.rules['no-optional-catch-binding'] },
     compatFeatures: [compatData.javascript.statements.try_catch.optional_catch_binding],
   },
   {
