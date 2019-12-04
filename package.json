@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "check:lint": "eslint --no-eslintrc --config=.eslintrc.json **/*.js",
-    "check:prettier": "prettier --check **/*.{js,json,md}"
+    "check:prettier": "prettier --check **/*.{js,json,md}",
+    "test": "lerna run test"
   },
   "devDependencies": {
     "eslint": "^6.7.2",

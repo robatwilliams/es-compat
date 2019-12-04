@@ -31,6 +31,9 @@
   "license": "MIT",
   "author": "Robat Williams",
   "main": "lib/index.js",
+  "scripts": {
+    "test": "jest --env=node"
+  },
   "dependencies": {
     "browserslist": "^4.8.0",
     "eslint-plugin-es": "^2.0.0",
@@ -38,7 +41,8 @@
     "mdn-browser-compat-data": "^1.0.0"
   },
   "devDependencies": {
-    "eslint": "^6.7.1"
+    "eslint": "^6.7.1",
+    "jest": "^24.9.0"
   },
   "peerDependencies": {
     "eslint": ">=4.19.1"

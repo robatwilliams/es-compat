@@ -73,5 +73,13 @@
     // eslint-plugin-import - Selection from the ones that are compatible with CommonJS
     "import/no-extraneous-dependencies": "error",
     "import/order": ["error", { "newlines-between": "never" }]
-  }
+  },
+  "overrides": [
+    {
+      "files": "*.spec.js",
+      "rules": {
+        "no-process-env": "off"
+      }
+    }
+  ]
 }
