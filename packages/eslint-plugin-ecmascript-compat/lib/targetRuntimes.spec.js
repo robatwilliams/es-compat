@@ -12,7 +12,7 @@ it('targets the oldest version of each family', () => {
   expect(targetRuntimes()).toEqual([{ name: 'chrome', version: '50' }]);
 });
 
-it.only('maps browserslist names to mdn names where necessary', () => {
+it('maps browserslist names to mdn names where necessary', () => {
   process.env.BROWSERSLIST = 'Android >= 0';
 
   expect(targetRuntimes()).toEqual([{ name: 'webview_android', version: '2.1' }]);
