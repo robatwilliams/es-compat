@@ -31,9 +31,6 @@
   "license": "MIT",
   "author": "Robat Williams",
   "main": "lib/index.js",
-  "peerDependencies": {
-    "eslint": ">=4.19.1"
-  },
   "dependencies": {
     "browserslist": "^4.8.0",
     "eslint-plugin-es": "^2.0.0",
@@ -42,6 +39,9 @@
   },
   "devDependencies": {
     "eslint": "^6.7.1"
+  },
+  "peerDependencies": {
+    "eslint": ">=4.19.1"
   },
   "engines": {
     "node": ">=8.10.0"
