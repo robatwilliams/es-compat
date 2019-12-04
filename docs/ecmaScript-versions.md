@@ -54,3 +54,10 @@ Static detectability of recently-added features
 | SharedArrayBuffer                     | es/no-shared-array-buffer              | 68           |
 | `String.prototype.{padStart, padEnd}` | 😐 no-restricted-syntax                | 57           |
 | Trailing commas in parameter lists    | es/no-trailing-function-commas         | 58           |
+
+### ES2016
+
+| Name                       | ESLint / eslint-plugin-es   | Chrome since |
+| -------------------------- | --------------------------- | ------------ |
+| `Array.prototype.includes` | 😐 no-restricted-syntax     | 47           |
+| Exponentiation operator    | es/no-exponential-operators | 52           |
