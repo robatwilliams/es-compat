@@ -52,12 +52,21 @@ The MDN compatibility dataset has very good coverage of the top ~6 desktop and m
 
 ## Backlog
 
-- 🙏 Cover all ECMAScript versions 2015-20 (see section above) - for v1.0.0 MVP
-- 💡 Given no targets (or a flag), report where the code will work
-- 💡 Provide suggestions on how to make code more widely compatible
+### Completeness
+
+- 🙏 Cover all ECMAScript versions 2016-20 (see section above) - for v1.0.0 MVP
+- Cover ES2015 (ES6). It's pretty old, and includes a _lot_ of features.
+
+### Enhancements
+
 - Allow specifying polyfills used, to exclude them from support checking
 - Include in error messages details of target runtimes not supporting the feature. Or look it up on MDN yourself...
 - Option to forbid features if compatibility data is missing for a target runtime
+
+### Ideas
+
+- Given no targets (or a flag), report where the code will work
+- Provide suggestions on how to make code more widely compatible
 
 ## Contributing
 
