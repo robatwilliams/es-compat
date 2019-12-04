@@ -1,7 +1,6 @@
 /* eslint-disable camelcase, no-underscore-dangle */
-const features = require('./features');
 
-function forbiddenFeatures(targets) {
+function forbiddenFeatures(features, targets) {
   return features.filter(feature => !isFeatureSupportedByTargets(feature, targets));
 }
 

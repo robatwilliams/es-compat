@@ -1,5 +1,6 @@
 const compatibility = require('./compatibility');
 const { createDelegatee, delegatingVisitor } = require('./delegation');
+const features = require('./features');
 const targetRuntimes = require('./targetRuntimes');
 
 module.exports = {
@@ -9,7 +10,7 @@ module.exports = {
   create(context) {
     const targets = targetRuntimes();
     const delegateeConfigs = compatibility
-      .forbiddenFeatures(targets)
+      .forbiddenFeatures(features, targets)
       .map(feature => feature.ruleConfig);
     const visitors = delegateeConfigs.map(config => createDelegatee(config, context));
 

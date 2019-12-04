@@ -24,7 +24,7 @@ module.exports = function targetRuntimes() {
   // eslint-disable-next-line no-console
   console.log('es-compat: checking compatibility for targets', final);
 
-  // [ { name, oldestVersion } ]
+  // [ { name, version } ]
   return Object.entries(final).map(([name, version]) => ({ name, version }));
 };
 
