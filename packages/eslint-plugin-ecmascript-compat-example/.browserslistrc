@@ -1,48 +1,18 @@
-### Supports all ES2019 features
-# Chrome >= 73
+#
+# Docs: https://github.com/browserslist/browserslist
+#
 
-### Supports some ES2019 features
-# Chrome >= 66
+### Supports all ES2019 features
+Chrome >= 73
 
 ### Supports no ES2019 features
-# Chrome >= 65
+Chrome >= 65
 
 ### Supports all ES2018 features
-# Chrome >= 64
-
-### Supports some ES2018 features
-# Chrome >= 62
+Chrome >= 64
 
 ### Supports no ES2018 features
 Chrome >= 59
 
 ### Supports no ES2016 features
 Chrome >= 46
-
-### Other desktop browsers
-# Edge >= 0
-# Explorer >= 0
-# Firefox >= 0
-# Opera >= 0
-# Safari >= 0
-
-### Mobile browsers
-# Android >= 0
-# ChromeAndroid >= 0
-# FirefoxAndroid >= 0
-# iOS >= 0
-# OperaMobile >= 0
-# QQAndroid >= 0
-# Samsung >= 0
-# UCAndroid >= 0
-
-### Browsers without MDN compatibility data
-# Baidu >= 0
-# BlackBerry >= 0
-# ExplorerMobile >= 0
-# kaios >= 0
-# last 1 OperaMini versions
-
-### Other runtimes
-# Electron >= 0  # gets mapped to equivalent Chrome version
-# Node >= 0
