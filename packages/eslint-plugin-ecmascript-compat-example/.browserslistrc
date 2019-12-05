@@ -16,6 +16,9 @@
 ### Supports no ES2018 features
 Chrome >= 59
 
+### Supports no ES2016 features
+Chrome >= 46
+
 ### Other desktop browsers
 # Edge >= 0
 # Explorer >= 0

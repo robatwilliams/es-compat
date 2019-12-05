@@ -45,3 +45,11 @@ Promise.prototype.finally;
 /./s.test('dotAll flag');
 
 /\p{Script=Hiragana}+/u.test('Unicode property escape');
+
+/**
+ * ES2016
+ */
+foo.includes();
+Array.prototype.includes;
+
+foo ** bar;

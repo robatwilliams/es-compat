@@ -29,7 +29,7 @@ It doesn't check browser/runtime-specific APIs (see [eslint-plugin-compat](https
 - ✅ [ES2019](https://flaviocopes.com/es2019)<sup>1, 2</sup>
 - ✅ [ES2018](https://flaviocopes.com/es2018)
 - ❌ [ES2017](https://flaviocopes.com/es2017) 🙏
-- ❌ [ES2016](https://flaviocopes.com/es2016) 🙏
+- ✅ [ES2016](https://flaviocopes.com/es2016)
 - ❌ [ES2015 (ES6)](https://flaviocopes.com/es6) - not [yet](https://github.com/robatwilliams/es-compat/issues/7) implemented
 - ⛔ ES5<sup>3</sup>
 
