@@ -1,7 +1,7 @@
 const eslint = require('eslint');
 const esPlugin = require('eslint-plugin-es');
 const compatData = require('mdn-browser-compat-data');
-const { noRestrictedSyntaxPrototypeMethod } = require('../ruleOptionsUtil');
+const { noRestrictedSyntaxPrototypeMethod } = require('./ruleOptionsUtil');
 
 const coreRules = new eslint.Linter().getRules();
 
