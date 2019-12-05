@@ -25,13 +25,15 @@ It doesn't check browser/runtime-specific APIs (see [eslint-plugin-compat](https
 
 ## ECMAScript version coverage
 
-- ❌ [ES2020](https://v8.dev/features/tags/es2020) (draft)
+- ❌ [ES2020](https://v8.dev/features/tags/es2020) (draft) 🙏
 - ✅ [ES2019](https://flaviocopes.com/es2019)<sup>1, 2</sup>
 - ✅ [ES2018](https://flaviocopes.com/es2018)
-- ❌ [ES2017](https://flaviocopes.com/es2017)
-- ❌ [ES2016](https://flaviocopes.com/es2016)
-- ❌ [ES2015 (ES6)](https://flaviocopes.com/es6)
+- ❌ [ES2017](https://flaviocopes.com/es2017) 🙏
+- ❌ [ES2016](https://flaviocopes.com/es2016) 🙏
+- ❌ [ES2015 (ES6)](https://flaviocopes.com/es6) - not [yet](https://github.com/robatwilliams/es-compat/issues/7) implemented
 - ⛔ ES5<sup>3</sup>
+
+🙏 = To be implemented for v1.0.0 MVP
 
 <details>
 <summary><sup>n</sup> Expand for footnotes...</summary>
@@ -50,27 +52,9 @@ Because JavaScript is untyped, detection of some features' usage (namely prototy
 
 The MDN compatibility dataset has very good coverage of the top ~6 desktop and mobile browsers, and Node.js (much more than [kangax/compat-table](https://github.com/kangax/compat-table)). In case of missing data (support unknown, or unknown in which version support was added), we currently assume support.
 
-## Backlog
-
-### Completeness
-
-- 🙏 Cover all ECMAScript versions 2016-20 (see section above) - for v1.0.0 MVP
-- Cover ES2015 (ES6). It's pretty old, and includes a _lot_ of features.
-
-### Enhancements
-
-- Allow specifying polyfills used, to exclude them from support checking
-- Include in error messages details of target runtimes not supporting the feature. Or look it up on MDN yourself...
-- Option to forbid features if compatibility data is missing for a target runtime
-
-### Ideas
-
-- Given no targets (or a flag), report where the code will work
-- Provide suggestions on how to make code more widely compatible
-
 ## Contributing
 
-Contributions (code, bug reports, ideas...) and [feedback](https://github.com/robatwilliams/es-compat/issues/1) welcome.
+Contributions and [feedback](https://github.com/robatwilliams/es-compat/issues/1) welcome. Please see the GitHub issues or create one, as appropriate.
 
 ## Related
 
