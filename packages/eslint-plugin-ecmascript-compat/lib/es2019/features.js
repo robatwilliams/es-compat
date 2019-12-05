@@ -1,10 +1,19 @@
+const eslint = require('eslint');
 const esPlugin = require('eslint-plugin-es');
 const compatData = require('mdn-browser-compat-data');
-const ruleConfigs = require('./ruleConfigs');
+const { noRestrictedSyntaxPrototypeMethod } = require('../ruleOptionsUtil');
+
+const coreRules = new eslint.Linter().getRules();
 
 module.exports = [
   {
-    ruleConfig: ruleConfigs.noArrayFlatMethods,
+    ruleConfig: {
+      definition: coreRules.get('no-restricted-syntax'),
+      options: [
+        ...noRestrictedSyntaxPrototypeMethod('Array.prototype.flat', 'ES2019'),
+        ...noRestrictedSyntaxPrototypeMethod('Array.prototype.flatMap', 'ES2019'),
+      ],
+    },
     compatFeatures: [
       compatData.javascript.builtins.Array.flat,
       compatData.javascript.builtins.Array.flatMap,
@@ -15,7 +24,10 @@ module.exports = [
     compatFeatures: [compatData.javascript.builtins.JSON.json_superset],
   },
   {
-    ruleConfig: ruleConfigs.noObjectFromEntries,
+    ruleConfig: {
+      definition: coreRules.get('no-restricted-properties'),
+      options: [{ object: 'Object', property: 'fromEntries', message: '(ES2019)' }],
+    },
     compatFeatures: [compatData.javascript.builtins.Object.fromEntries],
   },
   {
@@ -23,7 +35,15 @@ module.exports = [
     compatFeatures: [compatData.javascript.statements.try_catch.optional_catch_binding],
   },
   {
-    ruleConfig: ruleConfigs.noStringTrimSideMethods,
+    ruleConfig: {
+      definition: coreRules.get('no-restricted-syntax'),
+      options: [
+        ...noRestrictedSyntaxPrototypeMethod('String.prototype.trimLeft', 'ES2019'),
+        ...noRestrictedSyntaxPrototypeMethod('String.prototype.trimRight', 'ES2019'),
+        ...noRestrictedSyntaxPrototypeMethod('String.prototype.trimStart', 'ES2019'),
+        ...noRestrictedSyntaxPrototypeMethod('String.prototype.trimEnd', 'ES2019'),
+      ],
+    },
     compatFeatures: [
       // trimRight and trimLeft are alternates of these
       compatData.javascript.builtins.String.trimEnd,

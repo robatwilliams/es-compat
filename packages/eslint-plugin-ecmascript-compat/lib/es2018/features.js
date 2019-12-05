@@ -1,6 +1,9 @@
+const eslint = require('eslint');
 const esPlugin = require('eslint-plugin-es');
 const compatData = require('mdn-browser-compat-data');
-const ruleConfigs = require('./ruleConfigs');
+const { noRestrictedSyntaxPrototypeMethod } = require('../ruleOptionsUtil');
+
+const coreRules = new eslint.Linter().getRules();
 
 module.exports = [
   {
@@ -18,7 +21,10 @@ module.exports = [
     ],
   },
   {
-    ruleConfig: ruleConfigs.noPromiseFinally,
+    ruleConfig: {
+      definition: coreRules.get('no-restricted-syntax'),
+      options: noRestrictedSyntaxPrototypeMethod('Promise.prototype.finally', 'ES2018'),
+    },
     compatFeatures: [compatData.javascript.builtins.Promise.finally],
   },
   {
