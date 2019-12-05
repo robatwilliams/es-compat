@@ -1,4 +1,7 @@
+<!-- prettier-ignore-start -->
 [![npm version](https://badge.fury.io/js/check-es-compat.svg)](https://badge.fury.io/js/check-es-compat)
+[![npm downloads](https://img.shields.io/npm/dm/check-es-compat.svg)](http://www.npmtrends.com/check-es-compat)
+<!-- prettier-ignore-end -->
 
 # check-es-compat
 

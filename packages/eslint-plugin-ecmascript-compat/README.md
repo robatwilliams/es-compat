@@ -1,4 +1,7 @@
+<!-- prettier-ignore-start -->
 [![npm version](https://badge.fury.io/js/eslint-plugin-ecmascript-compat.svg)](https://badge.fury.io/js/eslint-plugin-ecmascript-compat)
+[![npm downloads](https://img.shields.io/npm/dm/eslint-plugin-ecmascript-compat.svg)](http://www.npmtrends.com/eslint-plugin-ecmascript-compat)
+<!-- prettier-ignore-end -->
 
 # eslint-plugin-ecmascript-compat
 
