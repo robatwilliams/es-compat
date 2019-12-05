@@ -1,4 +1,4 @@
-# ECMAScript versions
+# ECMAScript features by version
 
 Static detectability of recently-added features
 
