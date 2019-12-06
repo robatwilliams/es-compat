@@ -1,0 +1,45 @@
+const { RuleTester } = require('eslint');
+const rule = require('../rule');
+
+process.env.BROWSERSLIST = 'Chrome >= 62';
+
+const ruleTester = new RuleTester({
+  parserOptions: {
+    ecmaVersion: 2020,
+  },
+});
+
+ruleTester.run('compat', rule, {
+  valid: [],
+  invalid: [
+    {
+      code: 'const foo = 100n;',
+      errors: [{ message: 'ES2020 BigInt is forbidden.' }],
+    },
+    {
+      code: "async function foo() { await import(''); }",
+      errors: [{ message: "ES2020 'import()' syntax is forbidden." }],
+    },
+    {
+      code: 'globalThis.foo;',
+      errors: [
+        {
+          message:
+            "Unexpected use of 'globalThis'. ES2020 global 'globalThis' is forbidden",
+        },
+      ],
+    },
+    {
+      code: 'Promise.allSettled();',
+      errors: [{ message: "ES2020 'Promise.allSettled' function is forbidden." }],
+    },
+    {
+      code: 'foo.matchAll();',
+      errors: [{ message: "ES2020 method 'String.prototype.matchAll' is forbidden" }],
+    },
+    {
+      code: 'String.prototype.matchAll;',
+      errors: [{ message: "ES2020 method 'String.prototype.matchAll' is forbidden" }],
+    },
+  ],
+});

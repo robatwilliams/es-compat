@@ -12,7 +12,7 @@ Static detectability of recently-added features
 | --------------------------- | ------------------------- | ------------ |
 | `BigInt`                    | es/no-bigint              | 67           |
 | Dynamic `import()`          | es/no-dynamic-import      | 63           |
-| `globalThis`                | no-undef                  | 71           |
+| `globalThis`                | no-restricted-globals     | 71           |
 | `Promise.allSettled`        | es/no-promise-all-settled | 76           |
 | `String.prototype.matchAll` | 😐 no-restricted-syntax   | 73           |
 

@@ -1,4 +1,20 @@
 /**
+ * ES2020
+ */
+foo = 100n;
+
+async function interestingBitIsInside() {
+  await import('');
+}
+
+globalThis.foo;
+
+Promise.allSettled();
+
+foo.matchAll();
+String.prototype.matchAll;
+
+/**
  * ES2019
  */
 foo.flat();
