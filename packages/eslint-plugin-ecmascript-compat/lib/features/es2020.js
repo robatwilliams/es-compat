@@ -26,11 +26,11 @@ module.exports = [
     },
     compatFeatures: [compatData.javascript.builtins.globalThis],
   },
-  // For some reason, this rule doesn't work even standalone outside a unit test
-  // {
-  //   ruleConfig: { definition: esPlugin.rules['no-promise-all-settled'] },
-  //   compatFeatures: [compatData.javascript.builtins.Promise.allSettled],
-  // },
+  {
+    // Rule requires the ES6 global, Promise
+    ruleConfig: { definition: esPlugin.rules['no-promise-all-settled'] },
+    compatFeatures: [compatData.javascript.builtins.Promise.allSettled],
+  },
   {
     // May false positive for Cache/Clients.matchAll()
     ruleConfig: {

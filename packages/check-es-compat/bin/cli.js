@@ -25,6 +25,10 @@ function execute(files) {
       // Latest version, so all features work
       ecmaVersion: 2020,
     },
+    globals: [
+      // ES6 global, required by no-promise-all-settled
+      'Promise:readonly',
+    ],
     rules: {
       'ecmascript-compat/compat': 'error',
     },

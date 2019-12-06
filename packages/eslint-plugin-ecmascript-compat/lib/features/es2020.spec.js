@@ -7,6 +7,10 @@ const ruleTester = new RuleTester({
   parserOptions: {
     ecmaVersion: 2020,
   },
+  globals: {
+    // ES6 global, required by no-promise-all-settled
+    Promise: 'readonly',
+  },
 });
 
 ruleTester.run('compat', rule, {
