@@ -63,6 +63,29 @@ Promise.prototype.finally;
 /\p{Script=Hiragana}+/u.test('Unicode property escape');
 
 /**
+ * ES2017
+ */
+async function foo() {}
+
+Atomics.add(buffer, 0, 2);
+
+Object.getOwnPropertyDescriptors();
+
+Object.entries();
+
+Object.values();
+
+new SharedArrayBuffer();
+
+str.padStart();
+String.prototype.padStart;
+str.padEnd();
+String.prototype.padEnd;
+
+// prettier-ignore
+foo(bar,);
+
+/**
  * ES2016
  */
 foo.includes();

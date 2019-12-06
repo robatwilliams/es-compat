@@ -26,6 +26,12 @@ function execute(files) {
       ecmaVersion: 2020,
     },
     globals: [
+      // ES2017 global, required by es/no-atomics
+      'Atomics:readonly',
+
+      // ES2017 global, required by es/no-shared-array-buffer
+      'SharedArrayBuffer:readonly',
+
       // ES6 global, required by no-promise-all-settled
       'Promise:readonly',
     ],
