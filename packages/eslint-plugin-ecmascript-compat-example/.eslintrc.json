@@ -2,7 +2,7 @@
   "root": true,
   "plugins": ["ecmascript-compat"],
   "parserOptions": { "ecmaVersion": 2020 },
-  "env": { "es2017": true },
+  "env": { "es2020": true },
   "rules": {
     "ecmascript-compat/compat": "error"
   }

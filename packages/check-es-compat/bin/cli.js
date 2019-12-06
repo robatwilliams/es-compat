@@ -29,6 +29,9 @@ function execute(files) {
       // ES2017 global, required by es/no-atomics
       'Atomics:readonly',
 
+      // ES2020 global, required by es/no-bigint
+      'BigInt:readonly',
+
       // ES2017 global, required by es/no-shared-array-buffer
       'SharedArrayBuffer:readonly',
 

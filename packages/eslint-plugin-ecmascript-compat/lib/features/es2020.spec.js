@@ -8,6 +8,9 @@ const ruleTester = new RuleTester({
     ecmaVersion: 2020,
   },
   globals: {
+    // ES2020 global, required by es/no-bigint
+    BigInt: 'readonly',
+
     // ES6 global, required by no-promise-all-settled
     Promise: 'readonly',
   },
@@ -18,6 +21,10 @@ ruleTester.run('compat', rule, {
   invalid: [
     {
       code: 'const foo = 100n;',
+      errors: [{ message: 'ES2020 BigInt is forbidden.' }],
+    },
+    {
+      code: 'BigInt(100);',
       errors: [{ message: 'ES2020 BigInt is forbidden.' }],
     },
     {

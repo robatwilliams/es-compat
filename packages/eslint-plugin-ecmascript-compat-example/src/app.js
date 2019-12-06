@@ -2,6 +2,7 @@
  * ES2020
  */
 foo = 100n;
+BigInt(100);
 
 async function interestingBitIsInside() {
   await import('');
