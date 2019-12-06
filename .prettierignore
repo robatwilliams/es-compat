@@ -1,2 +1,4 @@
 lerna.json
 package-lock.json
+
+/packages/*/coverage
