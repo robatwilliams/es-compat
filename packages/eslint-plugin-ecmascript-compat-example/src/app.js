@@ -49,7 +49,7 @@ async function interestingBitIsInside() {
   }
 }
 
-const foo = { ...bar };
+foo = { ...bar };
 const { a, ...rest } = foo;
 
 foo.finally();
