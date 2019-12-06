@@ -25,18 +25,9 @@ function execute(files) {
       // Latest version, so all features work
       ecmaVersion: 2020,
     },
-    globals: [
-      // ES2017 global, required by es/no-atomics
-      'Atomics:readonly',
-
-      // ES2020 global, required by es/no-bigint
-      'BigInt:readonly',
-
-      // ES2017 global, required by es/no-shared-array-buffer
-      'SharedArrayBuffer:readonly',
-
-      // ES6 global, required by no-promise-all-settled
-      'Promise:readonly',
+    envs: [
+      // Latest globals; some rules rely on ones introduced in ES2015/2017/2020
+      'es2020',
     ],
     rules: {
       'ecmascript-compat/compat': 'error',
