@@ -9,6 +9,13 @@ function isFeatureSupportedByTargets(feature, targets) {
 }
 
 function isFeatureSupportedByTarget(feature, target) {
+  if (feature.compatFeatures.includes(undefined)) {
+    const summary = feature.compatFeatures.map(compatFeature => typeof compatFeature);
+    const ruleDescription = feature.ruleConfig.definition.meta.docs.description;
+
+    throw new Error(`Sparse compatFeatures for rule '${ruleDescription}': ${summary}`);
+  }
+
   return feature.compatFeatures.every(compatFeature =>
     isCompatFeatureSupportedByTarget(compatFeature, target)
   );

@@ -166,3 +166,31 @@ it('uses primary support record where multiple ones exist', () => {
   );
   expect(secondaryForbidden[0]).toBe(feature);
 });
+
+it('explains what the problem is when compat feature not found in MDN data', () => {
+  const feature = {
+    ruleConfig: {
+      definition: {
+        meta: {
+          docs: { description: 'some rule' },
+        },
+      },
+    },
+    compatFeatures: [
+      // Unsupported compatFeature first, to test that validation does not short-circuit
+      {
+        __compat: {
+          support: {
+            chrome: { version_added: '72' },
+          },
+        },
+      },
+      // Typically when wrong path to compatData node used
+      undefined,
+    ],
+  };
+
+  expect(() => {
+    forbiddenFeatures([feature], [{ name: 'chrome', version: '73' }]);
+  }).toThrow("Sparse compatFeatures for rule 'some rule': object,undefined");
+});
