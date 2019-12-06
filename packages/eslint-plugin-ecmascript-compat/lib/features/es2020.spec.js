@@ -11,7 +11,7 @@ const ruleTester = new RuleTester({
     // ES2020 global, required by es/no-bigint
     BigInt: 'readonly',
 
-    // ES6 global, required by no-promise-all-settled
+    // ES6 global, required by es/no-promise-all-settled
     Promise: 'readonly',
   },
 });
