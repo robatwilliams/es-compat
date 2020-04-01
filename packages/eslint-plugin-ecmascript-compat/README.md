@@ -21,6 +21,15 @@ npm install --save-dev eslint-plugin-ecmascript-compat
 }
 ```
 
+Or in place of the above configuration, you can just use:
+
+```json
+// .eslintrc.json
+{
+  "extends": ["plugin:ecmascript-compat/recommended"]
+}
+```
+
 ```
 // .browserslistrc
 Chrome >= 64
