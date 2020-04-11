@@ -14,6 +14,11 @@ npm install --save-dev eslint-plugin-ecmascript-compat
 ```json
 // .eslintrc.json
 {
+  "extends": ["plugin:ecmascript-compat/recommended"]
+}
+
+// Alternatively
+{
   "plugins": ["ecmascript-compat"],
   "rules": {
     "ecmascript-compat/compat": "error"
