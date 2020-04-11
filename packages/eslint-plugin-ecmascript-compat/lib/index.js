@@ -3,9 +3,9 @@ module.exports = {
     recommended: {
       plugins: ['ecmascript-compat'],
       rules: {
-        'ecmascript-compat/compat': 'error'
-      }
-    }
+        'ecmascript-compat/compat': 'error',
+      },
+    },
   },
   rules: {
     compat: require('./rule'),
