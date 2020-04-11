@@ -5,6 +5,7 @@ const targetRuntimes = require('./targetRuntimes');
 
 module.exports = {
   meta: {
+    type: 'problem',
     schema: [], // no options
   },
   create(context) {
