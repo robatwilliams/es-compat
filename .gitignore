@@ -1,6 +1,8 @@
 /node_modules
 /packages/*/node_modules
 
-/packages/*/coverage
+# Patterns for /packages must go in the individual packages, as that's the only place
+# where lerna publish will look. See https://github.com/robatwilliams/es-compat/issues/8 .
+# Not using .npmignore files, to avoid possibility of getting out of sync.
 
 # Adding something? Might also need to go in .prettierignore
