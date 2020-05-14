@@ -12,8 +12,8 @@ module.exports = {
     const targets = targetRuntimes();
     const delegateeConfigs = compatibility
       .forbiddenFeatures(features, targets)
-      .map(feature => feature.ruleConfig);
-    const visitors = delegateeConfigs.map(config => createDelegatee(config, context));
+      .map((feature) => feature.ruleConfig);
+    const visitors = delegateeConfigs.map((config) => createDelegatee(config, context));
 
     return delegatingVisitor(visitors);
   },

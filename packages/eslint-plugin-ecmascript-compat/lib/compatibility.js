@@ -1,22 +1,22 @@
 /* eslint-disable camelcase, no-underscore-dangle */
 
 function forbiddenFeatures(features, targets) {
-  return features.filter(feature => !isFeatureSupportedByTargets(feature, targets));
+  return features.filter((feature) => !isFeatureSupportedByTargets(feature, targets));
 }
 
 function isFeatureSupportedByTargets(feature, targets) {
-  return targets.every(target => isFeatureSupportedByTarget(feature, target));
+  return targets.every((target) => isFeatureSupportedByTarget(feature, target));
 }
 
 function isFeatureSupportedByTarget(feature, target) {
   if (feature.compatFeatures.includes(undefined)) {
-    const summary = feature.compatFeatures.map(compatFeature => typeof compatFeature);
+    const summary = feature.compatFeatures.map((compatFeature) => typeof compatFeature);
     const ruleDescription = feature.ruleConfig.definition.meta.docs.description;
 
     throw new Error(`Sparse compatFeatures for rule '${ruleDescription}': ${summary}`);
   }
 
-  return feature.compatFeatures.every(compatFeature =>
+  return feature.compatFeatures.every((compatFeature) =>
     isCompatFeatureSupportedByTarget(compatFeature, target)
   );
 }
