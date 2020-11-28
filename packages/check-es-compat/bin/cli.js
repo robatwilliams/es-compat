@@ -19,7 +19,10 @@ if (args.length === 0) {
 
 function execute(files) {
   const eslintCLI = new eslint.CLIEngine({
-    useEslintrc: false, // ignore any config files
+    // Ignore any config files
+    useEslintrc: false,
+    ignore: false,
+
     plugins: ['ecmascript-compat'],
     parserOptions: {
       // Latest version, so all features work
