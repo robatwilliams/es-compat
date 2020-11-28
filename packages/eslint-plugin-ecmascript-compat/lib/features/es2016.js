@@ -15,6 +15,6 @@ module.exports = [
   },
   {
     ruleConfig: { definition: esPlugin.rules['no-exponential-operators'] },
-    compatFeatures: [compatData.javascript.operators.arithmetic.exponentiation],
+    compatFeatures: [compatData.javascript.operators.exponentiation],
   },
 ];
