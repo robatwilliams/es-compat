@@ -23,6 +23,10 @@ module.exports = [
     compatFeatures: [compatData.javascript.statements.import_meta],
   },
   {
+    ruleConfig: { definition: esPlugin.rules['no-export-ns-from'] },
+    compatFeatures: [compatData.javascript.statements.export.namespace],
+  },
+  {
     // Rule requires the ES6 global, Promise
     ruleConfig: { definition: esPlugin.rules['no-promise-all-settled'] },
     compatFeatures: [compatData.javascript.builtins.Promise.allSettled],

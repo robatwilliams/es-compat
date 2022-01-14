@@ -7,7 +7,7 @@ jest.resetModules();
 const ruleTester = new RuleTester({
   parserOptions: {
     ecmaVersion: 2020,
-    sourceType: 'module', // import.meta can only be used in an ES module
+    sourceType: 'module', // import.meta and namespace exports can only be used in an ES module
   },
   globals: {
     // ES2020 global, required by es/no-bigint
@@ -43,6 +43,10 @@ ruleTester.run('compat', require('../rule'), {
     {
       code: 'import.meta;',
       errors: [{ message: "ES2020 'import.meta' meta property is forbidden." }],
+    },
+    {
+      code: 'export * as nmspace from "./other";',
+      errors: [{ message: "ES2020 'export * as ns' are forbidden." }],
     },
     {
       code: 'Promise.allSettled();',
