@@ -1,7 +1,7 @@
 const { RuleTester } = require('eslint');
-const rule = require('../rule');
 
 process.env.BROWSERSLIST = 'Chrome >= 62';
+jest.resetModules();
 
 const ruleTester = new RuleTester({
   parserOptions: {
@@ -16,7 +16,7 @@ const ruleTester = new RuleTester({
   },
 });
 
-ruleTester.run('compat', rule, {
+ruleTester.run('compat', require('../rule'), {
   valid: [],
   invalid: [
     {
