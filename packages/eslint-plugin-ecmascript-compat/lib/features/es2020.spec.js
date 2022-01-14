@@ -49,6 +49,10 @@ ruleTester.run('compat', require('../rule'), {
       errors: [{ message: "ES2020 'export * as ns' are forbidden." }],
     },
     {
+      code: 'foo ?? fallback',
+      errors: [{ message: 'ES2020 nullish coalescing operators are forbidden.' }],
+    },
+    {
       code: 'Promise.allSettled();',
       errors: [{ message: "ES2020 'Promise.allSettled' function is forbidden." }],
     },

@@ -27,6 +27,10 @@ module.exports = [
     compatFeatures: [compatData.javascript.statements.export.namespace],
   },
   {
+    ruleConfig: { definition: esPlugin.rules['no-nullish-coalescing-operators'] },
+    compatFeatures: [compatData.javascript.operators.nullish_coalescing],
+  },
+  {
     // Rule requires the ES6 global, Promise
     ruleConfig: { definition: esPlugin.rules['no-promise-all-settled'] },
     compatFeatures: [compatData.javascript.builtins.Promise.allSettled],
