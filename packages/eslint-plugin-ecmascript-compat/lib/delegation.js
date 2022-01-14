@@ -32,14 +32,14 @@ function createDelegatee(config, rootContext) {
 function delegatingVisitor(delegatees) {
   const delegator = {};
 
-  delegatees.forEach(visitor => {
+  delegatees.forEach((visitor) => {
     for (const [key] of Object.entries(visitor)) {
       delegator[key] = (...args) => delegate(key, args);
     }
   });
 
   function delegate(key, args) {
-    delegatees.forEach(visitor => {
+    delegatees.forEach((visitor) => {
       if (visitor[key]) {
         visitor[key](...args);
       }
