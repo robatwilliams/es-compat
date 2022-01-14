@@ -1,6 +1,6 @@
 const browserslist = require('browserslist');
 const _ = require('lodash');
-const compatData = require('mdn-browser-compat-data');
+const compatData = require('@mdn/browser-compat-data');
 
 module.exports = function targetRuntimes() {
   // ['chrome 50', ...]
