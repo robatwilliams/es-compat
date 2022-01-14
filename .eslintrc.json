@@ -15,7 +15,7 @@
   ],
   "plugins": ["import"],
   "parserOptions": {
-    "ecmaVersion": 2018
+    "ecmaVersion": 2021
   },
   "settings": {
     "jest": {
@@ -25,7 +25,7 @@
     }
   },
   "env": {
-    "es2017": true,
+    "es2021": true,
     "node": true
   },
   "reportUnusedDisableDirectives": true,
