@@ -7,6 +7,20 @@ const coreRules = new eslint.Linter().getRules();
 
 module.exports = [
   {
+    ruleConfig: {
+      definition: coreRules.get('no-restricted-properties'),
+      options: [{ object: 'Atomics', property: 'notify', message: '(ES2020)' }],
+    },
+    compatFeatures: [compatData.javascript.builtins.Atomics.notify],
+  },
+  {
+    ruleConfig: {
+      definition: coreRules.get('no-restricted-properties'),
+      options: [{ object: 'Atomics', property: 'wait', message: '(ES2020)' }],
+    },
+    compatFeatures: [compatData.javascript.builtins.Atomics.wait],
+  },
+  {
     ruleConfig: { definition: esPlugin.rules['no-bigint'] },
     compatFeatures: [compatData.javascript.builtins.BigInt],
   },

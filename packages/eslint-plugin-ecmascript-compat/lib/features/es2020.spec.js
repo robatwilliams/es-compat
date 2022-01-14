@@ -25,6 +25,14 @@ ruleTester.run('compat', require('../rule'), {
   valid: [],
   invalid: [
     {
+      code: 'Atomics.notify();',
+      errors: [{ message: "'Atomics.notify' is restricted from being used. (ES2020)" }],
+    },
+    {
+      code: 'Atomics.wait();',
+      errors: [{ message: "'Atomics.wait' is restricted from being used. (ES2020)" }],
+    },
+    {
       code: 'const foo = 100n;',
       errors: [{ message: 'ES2020 BigInt is forbidden.' }],
     },

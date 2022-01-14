@@ -8,18 +8,18 @@ Static detectability of recently-added features
 
 ### ES2020
 
-| Name                                | ESLint / eslint-plugin-es          | Chrome since |
-| ----------------------------------- | ---------------------------------- | ------------ |
-| `Atomics.{notify, wait, waitAsync}` | no-restricted-properties           | 68           |
-| `BigInt`                            | es/no-bigint                       | 67           |
-| Dynamic `import()`                  | es/no-dynamic-import               | 63           |
-| `globalThis`                        | es/no-global-this                  | 71           |
-| `import.meta`                       | es/no-import-meta                  | 64           |
-| Module namespace exports            | es/no-export-ns-from               | 72           |
-| Nullish coalescing (`??`)           | es/no-nullish-coalescing-operators | 80           |
-| Optional chaining (`?.`)            | es/no-optional-chaining            | 80           |
-| `Promise.allSettled`                | es/no-promise-all-settled          | 76           |
-| `String.prototype.matchAll`         | 😐 no-restricted-syntax            | 73           |
+| Name                        | ESLint / eslint-plugin-es          | Chrome since |
+| --------------------------- | ---------------------------------- | ------------ |
+| `Atomics.{notify, wait}`    | no-restricted-properties           | 68           |
+| `BigInt`                    | es/no-bigint                       | 67           |
+| Dynamic `import()`          | es/no-dynamic-import               | 63           |
+| `globalThis`                | es/no-global-this                  | 71           |
+| `import.meta`               | es/no-import-meta                  | 64           |
+| Module namespace exports    | es/no-export-ns-from               | 72           |
+| Nullish coalescing (`??`)   | es/no-nullish-coalescing-operators | 80           |
+| Optional chaining (`?.`)    | es/no-optional-chaining            | 80           |
+| `Promise.allSettled`        | es/no-promise-all-settled          | 76           |
+| `String.prototype.matchAll` | 😐 no-restricted-syntax            | 73           |
 
 ### ES2019
 
