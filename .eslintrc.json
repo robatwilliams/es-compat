@@ -17,6 +17,13 @@
   "parserOptions": {
     "ecmaVersion": 2018
   },
+  "settings": {
+    "jest": {
+      // Auto-detection not working in monorepo structure
+      // https://github.com/jest-community/eslint-plugin-jest/issues/686#issuecomment-706452934
+      "version": 27
+    }
+  },
   "env": {
     "es2017": true,
     "node": true
