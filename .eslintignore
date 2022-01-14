@@ -1,5 +1,2 @@
-# Only root node_modules are ignored by default
-/packages/*/node_modules
-
 # Example has deliberate errors for demonstration purposes
 /packages/eslint-plugin-ecmascript-compat-example
