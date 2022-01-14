@@ -33,8 +33,8 @@ It doesn't check browser/runtime-specific APIs (see [eslint-plugin-compat](https
 - ✅ [ES2018](https://flaviocopes.com/es2018)
 - ✅ [ES2017](https://flaviocopes.com/es2017)
 - ✅ [ES2016](https://flaviocopes.com/es2016)
-- ❌ [ES2015 (ES6)](https://flaviocopes.com/es6) - not [yet](https://github.com/robatwilliams/es-compat/issues/7) implemented
-- ⛔ ES5<sup>3</sup>
+- ⛔ [ES2015 (ES6)](https://flaviocopes.com/es6)<sup>3</sup>
+- ⛔ ES5<sup>4</sup>
 
 <details>
 <summary><sup>n</sup> Expand for footnotes...</summary>
@@ -43,7 +43,9 @@ It doesn't check browser/runtime-specific APIs (see [eslint-plugin-compat](https
 
 <sup>2</sup> Excluding `Symbol.prototype.description`; as a debug feature, it's not worth the false positives that arise due to its name and not being a method.
 
-<sup>3</sup> ES5 is out of scope; it's over 10 years old and [supported](https://caniuse.com/#feat=es5) even in IE10.
+<sup>3</sup> ES2015 (ES6) is out of scope; it's been [supported](https://caniuse.com/#feat=es6) by evergreen browsers for many years. Assisting you to continue supporting [IE11](https://death-to-ie11.com/) is not a goal of this tool.
+
+<sup>4</sup> ES5 is out of scope; it's over 10 years old and [supported](https://caniuse.com/es6#feat=es5) even in IE10.
 
 </details>
 
