@@ -66,6 +66,6 @@ Contributions and [feedback](https://github.com/robatwilliams/es-compat/issues/1
 - [eslint-plugin-compat](https://github.com/amilajack/eslint-plugin-compat) - for browser APIs
 - [doiuse](https://github.com/anandthakker/doiuse) - for CSS
 - [eslint-plugin-es](https://github.com/mysticatea/eslint-plugin-es)\*
-- [mdn-browser-compat-data](https://github.com/mdn/browser-compat-data)\*
+- [@mdn/browser-compat-data](https://github.com/mdn/browser-compat-data)\*
 
 \* Thanks to these projects in particular (and many others) for making this project possible.

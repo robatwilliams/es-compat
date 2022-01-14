@@ -1,6 +1,6 @@
 const browserslist = require('browserslist');
 const _ = require('lodash');
-const compatData = require('mdn-browser-compat-data');
+const compatData = require('@mdn/browser-compat-data');
 
 module.exports = function targetRuntimes() {
   // ['chrome 50', ...]
@@ -39,13 +39,11 @@ function isKnownFamily(name) {
   return isKnown;
 }
 
-// browserslist -> mdn-browser-compat-data (where necessary and available)
+// browserslist -> @mdn/browser-compat-data (where necessary and available)
 /* eslint-disable camelcase */
 const familyNameMapping = {
   and_chr: 'chrome_android',
   and_ff: 'firefox_android',
-  and_qq: 'qq_android',
-  and_uc: 'uc_android',
   android: 'webview_android',
   ios_saf: 'safari_ios',
   node: 'nodejs',
