@@ -39,7 +39,7 @@ function isKnownFamily(name) {
   return isKnown;
 }
 
-// browserslist -> mdn-browser-compat-data (where necessary and available)
+// browserslist -> @mdn/browser-compat-data (where necessary and available)
 /* eslint-disable camelcase */
 const familyNameMapping = {
   and_chr: 'chrome_android',
