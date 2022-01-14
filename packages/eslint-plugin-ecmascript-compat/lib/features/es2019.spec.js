@@ -1,7 +1,8 @@
 const { RuleTester } = require('eslint');
-const rule = require('../rule');
 
+// Browser that doesn't support any features of this version - see es-versions.md
 process.env.BROWSERSLIST = 'Chrome >= 65';
+jest.resetModules();
 
 const ruleTester = new RuleTester({
   parserOptions: {
@@ -9,7 +10,7 @@ const ruleTester = new RuleTester({
   },
 });
 
-ruleTester.run('compat', rule, {
+ruleTester.run('compat', require('../rule'), {
   valid: [
     {
       code: 'const flat = residentialAddress.flat;',
