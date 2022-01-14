@@ -44,8 +44,6 @@ function isKnownFamily(name) {
 const familyNameMapping = {
   and_chr: 'chrome_android',
   and_ff: 'firefox_android',
-  and_qq: 'qq_android',
-  and_uc: 'uc_android',
   android: 'webview_android',
   ios_saf: 'safari_ios',
   node: 'nodejs',
