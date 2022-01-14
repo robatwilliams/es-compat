@@ -10,7 +10,7 @@ Static detectability of recently-added features
 
 | Name                                | ESLint / eslint-plugin-es          | Chrome since |
 | ----------------------------------- | ---------------------------------- | ------------ |
-| `Atomics.{notify, wait, waitAsync}` | ❌                                 | 68           |
+| `Atomics.{notify, wait, waitAsync}` | no-restricted-properties           | 68           |
 | `BigInt`                            | es/no-bigint                       | 67           |
 | Dynamic `import()`                  | es/no-dynamic-import               | 63           |
 | `globalThis`                        | es/no-global-this                  | 71           |
