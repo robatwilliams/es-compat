@@ -24,10 +24,7 @@ module.exports = [
     compatFeatures: [compatData.javascript.builtins.JSON.json_superset],
   },
   {
-    ruleConfig: {
-      definition: coreRules.get('no-restricted-properties'),
-      options: [{ object: 'Object', property: 'fromEntries', message: '(ES2019)' }],
-    },
+    ruleConfig: { definition: esPlugin.rules['no-object-fromentries'] },
     compatFeatures: [compatData.javascript.builtins.Object.fromEntries],
   },
   {

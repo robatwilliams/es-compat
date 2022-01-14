@@ -27,7 +27,7 @@ Static detectability of recently-added features
 | ------------------------------------- | ---------------------------- | ------------ |
 | `Array.prototype.{flat, flatMap}`     | 😐 no-restricted-syntax      | 69           |
 | JSON superset                         | es/no-json-superset          | 66           |
-| `Object.fromEntries`                  | no-restricted-properties     | 73           |
+| `Object.fromEntries`                  | es/no-object-fromentries     | 73           |
 | Optional `catch` binding              | es/no-optional-catch-binding | 66           |
 | Revised `Function.prototype.toString` | ❌                           |
 | Stable `Array.prototype.sort`         | ❌                           |

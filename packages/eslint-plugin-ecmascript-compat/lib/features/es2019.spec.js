@@ -35,9 +35,7 @@ ruleTester.run('compat', require('../rule'), {
     },
     {
       code: 'Object.fromEntries();',
-      errors: [
-        { message: "'Object.fromEntries' is restricted from being used. (ES2019)" },
-      ],
+      errors: [{ message: "ES2019 'Object.fromEntries' method is forbidden." }],
     },
     {
       code: 'try {} catch {}',
