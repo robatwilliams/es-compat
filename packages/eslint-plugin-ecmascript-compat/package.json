@@ -37,7 +37,7 @@
   "dependencies": {
     "browserslist": "^4.8.0",
     "eslint-plugin-es": "^2.0.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "mdn-browser-compat-data": "^1.0.25"
   },
   "devDependencies": {
