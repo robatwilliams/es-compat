@@ -1,5 +1,7 @@
 # Contributing
 
+Please get in touch before spending any significant time preparing contributions.
+
 ## Prerequisites
 
 - Node.js, version as per packages' `package.json` `engines` field
