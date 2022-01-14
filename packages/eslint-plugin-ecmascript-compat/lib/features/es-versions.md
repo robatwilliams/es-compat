@@ -6,15 +6,20 @@ Static detectability of recently-added features
 - 😐 = statically detectable, but chance of false positives
 - 👎 = statically detectable, but not worth the false positives
 
-### ES2020 (draft)
+### ES2020
 
-| Name                        | ESLint / eslint-plugin-es | Chrome since |
-| --------------------------- | ------------------------- | ------------ |
-| `BigInt`                    | es/no-bigint              | 67           |
-| Dynamic `import()`          | es/no-dynamic-import      | 63           |
-| `globalThis`                | no-restricted-globals     | 71           |
-| `Promise.allSettled`        | es/no-promise-all-settled | 76           |
-| `String.prototype.matchAll` | 😐 no-restricted-syntax   | 73           |
+| Name                                | ESLint / eslint-plugin-es          | Chrome since |
+| ----------------------------------- | ---------------------------------- | ------------ |
+| `Atomics.{notify, wait, waitAsync}` | ❌                                 | 68           |
+| `BigInt`                            | es/no-bigint                       | 67           |
+| Dynamic `import()`                  | es/no-dynamic-import               | 63           |
+| `globalThis`                        | no-restricted-globals              | 71           |
+| `import.meta`                       | es/no-import-meta                  | 64           |
+| Module namespace exports            | es/no-export-ns-from               | 72           |
+| Nullish coalescing (`??`)           | es/no-nullish-coalescing-operators | 80           |
+| Optional chaining (`?.`)            | es/no-optional-chaining            | 80           |
+| `Promise.allSettled`                | es/no-promise-all-settled          | 76           |
+| `String.prototype.matchAll`         | 😐 no-restricted-syntax            | 73           |
 
 ### ES2019
 
