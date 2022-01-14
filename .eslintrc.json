@@ -87,8 +87,6 @@
       "extends": ["plugin:jest/recommended", "plugin:jest/style"],
       "plugins": ["jest"],
       "rules": {
-        "no-process-env": "off"
-
         // TODO more jest plugin rules - https://github.com/jest-community/eslint-plugin-jest
       }
     }
