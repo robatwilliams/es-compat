@@ -41,8 +41,8 @@
     "mdn-browser-compat-data": "^1.0.25"
   },
   "devDependencies": {
-    "eslint": "^6.7.1",
-    "jest": "27"
+    "eslint": "^8.6.0",
+    "jest": "^27.4.7"
   },
   "peerDependencies": {
     "eslint": ">=4.19.1"

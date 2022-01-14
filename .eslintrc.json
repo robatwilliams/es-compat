@@ -15,10 +15,17 @@
   ],
   "plugins": ["import"],
   "parserOptions": {
-    "ecmaVersion": 2018
+    "ecmaVersion": 2021
+  },
+  "settings": {
+    "jest": {
+      // Auto-detection not working in monorepo structure
+      // https://github.com/jest-community/eslint-plugin-jest/issues/686#issuecomment-706452934
+      "version": 27
+    }
   },
   "env": {
-    "es2017": true,
+    "es2021": true,
     "node": true
   },
   "reportUnusedDisableDirectives": true,
@@ -80,8 +87,6 @@
       "extends": ["plugin:jest/recommended", "plugin:jest/style"],
       "plugins": ["jest"],
       "rules": {
-        "no-process-env": "off"
-
         // TODO more jest plugin rules - https://github.com/jest-community/eslint-plugin-jest
       }
     }
