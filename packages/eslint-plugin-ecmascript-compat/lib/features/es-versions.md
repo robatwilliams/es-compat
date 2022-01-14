@@ -6,15 +6,20 @@ Static detectability of recently-added features
 - 😐 = statically detectable, but chance of false positives
 - 👎 = statically detectable, but not worth the false positives
 
-### ES2020 (draft)
+### ES2020
 
-| Name                        | ESLint / eslint-plugin-es | Chrome since |
-| --------------------------- | ------------------------- | ------------ |
-| `BigInt`                    | es/no-bigint              | 67           |
-| Dynamic `import()`          | es/no-dynamic-import      | 63           |
-| `globalThis`                | no-restricted-globals     | 71           |
-| `Promise.allSettled`        | es/no-promise-all-settled | 76           |
-| `String.prototype.matchAll` | 😐 no-restricted-syntax   | 73           |
+| Name                        | ESLint / eslint-plugin-es          | Chrome since |
+| --------------------------- | ---------------------------------- | ------------ |
+| `Atomics.{notify, wait}`    | no-restricted-properties           | 68           |
+| `BigInt`                    | es/no-bigint                       | 67           |
+| Dynamic `import()`          | es/no-dynamic-import               | 63           |
+| `globalThis`                | es/no-global-this                  | 71           |
+| `import.meta`               | es/no-import-meta                  | 64           |
+| Module namespace exports    | es/no-export-ns-from               | 72           |
+| Nullish coalescing (`??`)   | es/no-nullish-coalescing-operators | 80           |
+| Optional chaining (`?.`)    | es/no-optional-chaining            | 80           |
+| `Promise.allSettled`        | es/no-promise-all-settled          | 76           |
+| `String.prototype.matchAll` | 😐 no-restricted-syntax            | 73           |
 
 ### ES2019
 
@@ -48,8 +53,8 @@ Static detectability of recently-added features
 | ------------------------------------- | -------------------------------------- | ------------ |
 | Async functions                       | es/no-async-functions                  | 55           |
 | Atomics                               | es/no-atomics                          | 68           |
-| `Object.getOwnPropertyDescriptors`    | es/no-object-getownpropertydescriptors | 54           |
 | `Object.entries`                      | es/no-object-entries                   | 54           |
+| `Object.getOwnPropertyDescriptors`    | es/no-object-getownpropertydescriptors | 54           |
 | `Object.values`                       | es/no-object-values                    | 54           |
 | SharedArrayBuffer                     | es/no-shared-array-buffer              | 68           |
 | `String.prototype.{padStart, padEnd}` | 😐 no-restricted-syntax                | 57           |

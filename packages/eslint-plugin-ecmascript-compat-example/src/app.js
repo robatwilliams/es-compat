@@ -1,5 +1,5 @@
 /**
- * ES2020
+ * ES2020 (all implemented, but these examples not complete)
  */
 foo = 100n;
 BigInt(100);
