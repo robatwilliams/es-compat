@@ -19,6 +19,10 @@ module.exports = [
     compatFeatures: [compatData.javascript.builtins.globalThis],
   },
   {
+    ruleConfig: { definition: esPlugin.rules['no-import-meta'] },
+    compatFeatures: [compatData.javascript.statements.import_meta],
+  },
+  {
     // Rule requires the ES6 global, Promise
     ruleConfig: { definition: esPlugin.rules['no-promise-all-settled'] },
     compatFeatures: [compatData.javascript.builtins.Promise.allSettled],
