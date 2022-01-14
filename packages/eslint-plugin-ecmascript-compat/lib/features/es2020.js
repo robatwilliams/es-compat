@@ -15,15 +15,7 @@ module.exports = [
     compatFeatures: [compatData.javascript.statements.import.dynamic_import],
   },
   {
-    ruleConfig: {
-      definition: coreRules.get('no-restricted-globals'),
-      options: [
-        {
-          name: 'globalThis',
-          message: "ES2020 global 'globalThis' is forbidden",
-        },
-      ],
-    },
+    ruleConfig: { definition: esPlugin.rules['no-global-this'] },
     compatFeatures: [compatData.javascript.builtins.globalThis],
   },
   {

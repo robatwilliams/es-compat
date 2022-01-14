@@ -12,6 +12,9 @@ const ruleTester = new RuleTester({
     // ES2020 global, required by es/no-bigint
     BigInt: 'readonly',
 
+    // ES2020 global, required by es/no-global-this
+    globalThis: 'readonly',
+
     // ES6 global, required by es/no-promise-all-settled
     Promise: 'readonly',
   },
@@ -34,12 +37,7 @@ ruleTester.run('compat', require('../rule'), {
     },
     {
       code: 'globalThis.foo;',
-      errors: [
-        {
-          message:
-            "Unexpected use of 'globalThis'. ES2020 global 'globalThis' is forbidden",
-        },
-      ],
+      errors: [{ message: "ES2020 'globalThis' variable is forbidden." }],
     },
     {
       code: 'Promise.allSettled();',

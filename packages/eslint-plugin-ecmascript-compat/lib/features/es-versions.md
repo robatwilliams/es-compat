@@ -13,7 +13,7 @@ Static detectability of recently-added features
 | `Atomics.{notify, wait, waitAsync}` | ❌                                 | 68           |
 | `BigInt`                            | es/no-bigint                       | 67           |
 | Dynamic `import()`                  | es/no-dynamic-import               | 63           |
-| `globalThis`                        | no-restricted-globals              | 71           |
+| `globalThis`                        | es/no-global-this                  | 71           |
 | `import.meta`                       | es/no-import-meta                  | 64           |
 | Module namespace exports            | es/no-export-ns-from               | 72           |
 | Nullish coalescing (`??`)           | es/no-nullish-coalescing-operators | 80           |
