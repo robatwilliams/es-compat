@@ -5,7 +5,7 @@
     "lint": "eslint src/"
   },
   "devDependencies": {
-    "eslint": "^6.7.1",
+    "eslint": "^8.6.0",
     "eslint-plugin-ecmascript-compat": ">=1.0.0-beta"
   }
 }
