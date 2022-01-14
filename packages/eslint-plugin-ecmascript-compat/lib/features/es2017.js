@@ -9,7 +9,7 @@ module.exports = [
   {
     ruleConfig: { definition: esPlugin.rules['no-async-functions'] },
     compatFeatures: [
-      compatData.javascript.operators.async_function_expression,
+      compatData.javascript.operators.async_function,
       compatData.javascript.statements.async_function,
     ],
   },
@@ -54,7 +54,7 @@ module.exports = [
     compatFeatures: [
       compatData.javascript.functions.arrow_functions.trailing_comma,
       compatData.javascript.operators.function.trailing_comma,
-      compatData.javascript.operators.function_star.trailing_comma,
+      compatData.javascript.operators.generator_function.trailing_comma,
       compatData.javascript.statements.generator_function.trailing_comma_in_parameters,
       compatData.javascript.statements.function.trailing_comma_in_parameters,
     ],
