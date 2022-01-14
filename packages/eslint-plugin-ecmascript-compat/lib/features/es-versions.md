@@ -53,8 +53,8 @@ Static detectability of recently-added features
 | ------------------------------------- | -------------------------------------- | ------------ |
 | Async functions                       | es/no-async-functions                  | 55           |
 | Atomics                               | es/no-atomics                          | 68           |
-| `Object.getOwnPropertyDescriptors`    | es/no-object-getownpropertydescriptors | 54           |
 | `Object.entries`                      | es/no-object-entries                   | 54           |
+| `Object.getOwnPropertyDescriptors`    | es/no-object-getownpropertydescriptors | 54           |
 | `Object.values`                       | es/no-object-values                    | 54           |
 | SharedArrayBuffer                     | es/no-shared-array-buffer              | 68           |
 | `String.prototype.{padStart, padEnd}` | 😐 no-restricted-syntax                | 57           |
