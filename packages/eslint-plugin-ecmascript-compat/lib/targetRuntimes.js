@@ -7,7 +7,7 @@ module.exports = function targetRuntimes() {
   const allNamedVersions = browserslist();
 
   // [ { name, version }, ... ]
-  const all = allNamedVersions.map(namedVersion => {
+  const all = allNamedVersions.map((namedVersion) => {
     const [name, version] = namedVersion.split(' ');
     return { name, version };
   });
@@ -15,7 +15,7 @@ module.exports = function targetRuntimes() {
   // { name: oldestVersion }
   const oldestOfEach = _.chain(all)
     .groupBy('name')
-    .mapValues(familyMember => _.sortBy(familyMember, 'version')[0].version)
+    .mapValues((familyMember) => _.sortBy(familyMember, 'version')[0].version)
     .value();
 
   const mapped = _.mapKeys(oldestOfEach, (version, name) => mapFamilyName(name));
