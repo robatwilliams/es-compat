@@ -31,6 +31,10 @@ module.exports = [
     compatFeatures: [compatData.javascript.operators.nullish_coalescing],
   },
   {
+    ruleConfig: { definition: esPlugin.rules['no-optional-chaining'] },
+    compatFeatures: [compatData.javascript.operators.optional_chaining],
+  },
+  {
     // Rule requires the ES6 global, Promise
     ruleConfig: { definition: esPlugin.rules['no-promise-all-settled'] },
     compatFeatures: [compatData.javascript.builtins.Promise.allSettled],

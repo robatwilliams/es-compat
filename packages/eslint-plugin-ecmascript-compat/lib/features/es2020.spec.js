@@ -53,6 +53,10 @@ ruleTester.run('compat', require('../rule'), {
       errors: [{ message: 'ES2020 nullish coalescing operators are forbidden.' }],
     },
     {
+      code: 'fooMaybe?.something',
+      errors: [{ message: 'ES2020 optional chaining is forbidden.' }],
+    },
+    {
       code: 'Promise.allSettled();',
       errors: [{ message: "ES2020 'Promise.allSettled' function is forbidden." }],
     },
