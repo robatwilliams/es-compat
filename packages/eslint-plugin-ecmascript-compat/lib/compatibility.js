@@ -1,5 +1,7 @@
 /* eslint-disable camelcase, no-underscore-dangle */
 
+const compareVersions = require('compare-versions').compare;
+
 function forbiddenFeatures(features, targets) {
   return features.filter((feature) => !isFeatureSupportedByTargets(feature, targets));
 }
@@ -30,7 +32,7 @@ function isCompatFeatureSupportedByTarget(compatFeature, target) {
     return true;
   }
 
-  return !support.isNone && target.version >= versionAdded;
+  return !support.isNone && compareVersions(target.version, versionAdded, '>=');
 }
 
 function getSimpleSupportStatement(compatFeature, target) {
