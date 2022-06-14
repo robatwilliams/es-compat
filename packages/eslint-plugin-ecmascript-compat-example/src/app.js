@@ -1,4 +1,22 @@
 /**
+ * ES2021
+ */
+foo = {};
+foo.replaceAll; // no error
+
+String.prototype.replaceAll;
+
+foo = foo &&= null;
+foo = foo ??= '';
+foo = foo ||= {};
+
+Promise.any();
+
+foo = 1_000_000_00;
+foo = new WeakRef();
+foo = new FinalizationRegistry(() => {});
+
+/**
  * ES2020 (all implemented, but these examples not complete)
  */
 foo = 100n;

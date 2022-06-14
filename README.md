@@ -30,6 +30,7 @@ It doesn't check browser/runtime-specific APIs (see [eslint-plugin-compat](https
 
 ## ECMAScript version coverage
 
+- ✅ [ES2021](https://v8.dev/features/tags/es2021)
 - ✅ [ES2020](https://v8.dev/features/tags/es2020)
 - ✅ [ES2019](https://flaviocopes.com/es2019)<sup>1, 2</sup>
 - ✅ [ES2018](https://flaviocopes.com/es2018)
