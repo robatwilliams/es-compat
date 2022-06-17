@@ -8,7 +8,8 @@ module.exports = function targetRuntimes() {
 
   // [ { name, version }, ... ]
   const all = allNamedVersions.map((namedVersion) => {
-    const [name, version] = namedVersion.split(' ');
+    const [name, versionOrRange] = namedVersion.split(' ');
+    const version = versionOrRange.replace(/-.+/u, '');
     return { name, version };
   });
 
