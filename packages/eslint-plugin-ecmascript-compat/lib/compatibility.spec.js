@@ -7,14 +7,14 @@ it('allows feature in version introduced', () => {
       {
         __compat: {
           support: {
-            chrome: { version_added: '73' },
+            chrome: { version_added: '102' },
           },
         },
       },
     ],
   };
 
-  const forbidden = forbiddenFeatures([feature], [{ name: 'chrome', version: '73' }]);
+  const forbidden = forbiddenFeatures([feature], [{ name: 'chrome', version: '102' }]);
   expect(forbidden).toHaveLength(0);
 });
 
@@ -24,7 +24,7 @@ it('forbids feature in version before introduced', () => {
       {
         __compat: {
           support: {
-            chrome: { version_added: '73' },
+            chrome: { version_added: '102' },
           },
         },
       },
@@ -48,7 +48,7 @@ it('allows feature supported by family in unknown version', () => {
     ],
   };
 
-  const forbidden = forbiddenFeatures([feature], [{ name: 'chrome', version: '73' }]);
+  const forbidden = forbiddenFeatures([feature], [{ name: 'chrome', version: '102' }]);
   expect(forbidden).toHaveLength(0);
 });
 
@@ -65,7 +65,7 @@ it('forbids feature not supported in any version of family', () => {
     ],
   };
 
-  const forbidden = forbiddenFeatures([feature], [{ name: 'chrome', version: '73' }]);
+  const forbidden = forbiddenFeatures([feature], [{ name: 'chrome', version: '102' }]);
   expect(forbidden[0]).toBe(feature);
 });
 
@@ -82,7 +82,7 @@ it('allows feature with unknown support by family', () => {
     ],
   };
 
-  const forbidden = forbiddenFeatures([feature], [{ name: 'chrome', version: '73' }]);
+  const forbidden = forbiddenFeatures([feature], [{ name: 'chrome', version: '102' }]);
   expect(forbidden).toHaveLength(0);
 });
 
@@ -92,7 +92,7 @@ it('allows feature with omitted support entry for mobile target', () => {
       {
         __compat: {
           support: {
-            chrome: { version_added: '73' },
+            chrome: { version_added: '102' },
           },
         },
       },
@@ -101,7 +101,7 @@ it('allows feature with omitted support entry for mobile target', () => {
 
   const forbidden = forbiddenFeatures(
     [feature],
-    [{ name: 'chrome_android', version: '73' }]
+    [{ name: 'chrome_android', version: '102' }]
   );
   expect(forbidden).toHaveLength(0);
 });
@@ -123,7 +123,7 @@ it('forbids feature supported by one target but not another', () => {
   const forbidden = forbiddenFeatures(
     [feature],
     [
-      { name: 'chrome', version: '73' },
+      { name: 'chrome', version: '102' },
       { name: 'firefox', version: '50' },
     ]
   );
@@ -191,6 +191,6 @@ it('explains what the problem is when compat feature not found in MDN data', () 
   };
 
   expect(() => {
-    forbiddenFeatures([feature], [{ name: 'chrome', version: '73' }]);
+    forbiddenFeatures([feature], [{ name: 'chrome', version: '102' }]);
   }).toThrow("Sparse compatFeatures for rule 'some rule': object,undefined");
 });
