@@ -25,15 +25,15 @@ ruleTester.run('compat', require('../rule'), {
       errors: [{ message: "ES2021 method 'String.prototype.replaceAll' is forbidden" }],
     },
     {
-      code: 'const a = b ||= "something";',
+      code: 'a ||= 1;',
       errors: [{ message: 'ES2021 logical assignment operators are forbidden.' }],
     },
     {
-      code: 'const a = b &&= "something";',
+      code: 'a &&= 1;',
       errors: [{ message: 'ES2021 logical assignment operators are forbidden.' }],
     },
     {
-      code: 'const a = b ??= "something";',
+      code: 'a ??= 1;',
       errors: [{ message: 'ES2021 logical assignment operators are forbidden.' }],
     },
     {
