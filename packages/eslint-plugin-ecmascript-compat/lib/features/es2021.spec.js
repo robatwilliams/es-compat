@@ -41,7 +41,7 @@ ruleTester.run('compat', require('../rule'), {
       errors: [{ message: 'ES2021 numeric separators are forbidden.' }],
     },
     {
-      code: 'const a = Promise.any(["Primise1", "Promise2"]);',
+      code: 'const a = Promise.any([]);',
       errors: [{ message: "ES2021 'Promise.any' is forbidden." }],
     },
     {
