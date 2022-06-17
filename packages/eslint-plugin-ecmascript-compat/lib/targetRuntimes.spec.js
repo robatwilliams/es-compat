@@ -38,3 +38,9 @@ it('preserves versions as strings to allow semver', () => {
 
   expect(targetRuntimes()).toEqual([{ name: 'nodejs', version: '0.10.0' }]);
 });
+
+it('handles version range', () => {
+  process.env.BROWSERSLIST = 'iOS 12.2';
+
+  expect(targetRuntimes()).toEqual([{ name: 'safari_ios', version: '12.2-12.5' }]);
+});
