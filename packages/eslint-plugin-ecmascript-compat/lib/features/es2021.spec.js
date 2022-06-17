@@ -18,14 +18,7 @@ const ruleTester = new RuleTester({
 });
 
 ruleTester.run('compat', require('../rule'), {
-  valid: [
-    {
-      code: 'const replaceAll = obj.replaceAll; ',
-    },
-    {
-      code: 'obj.replaceAll = function(){}; ',
-    },
-  ],
+  valid: [],
   invalid: [
     {
       code: '"A dog".replaceAll("dog", "monkey") ',
