@@ -11,7 +11,6 @@ module.exports = [
       definition: coreRules.get('no-restricted-syntax'),
       options: noRestrictedSyntaxPrototypeMethod('String.prototype.replaceAll', 'ES2021'),
     },
-
     compatFeatures: [compatData.javascript.builtins.String.replaceAll],
   },
   {
