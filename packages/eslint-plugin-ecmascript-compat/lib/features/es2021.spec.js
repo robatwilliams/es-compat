@@ -21,23 +21,23 @@ ruleTester.run('compat', require('../rule'), {
   valid: [],
   invalid: [
     {
-      code: '"A dog".replaceAll("dog", "monkey") ',
+      code: '"A dog".replaceAll("dog", "monkey");',
       errors: [{ message: "ES2021 method 'String.prototype.replaceAll' is forbidden" }],
     },
     {
-      code: 'const a = b ||= "something"; ',
+      code: 'const a = b ||= "something";',
       errors: [{ message: 'ES2021 logical assignment operators are forbidden.' }],
     },
     {
-      code: 'const a = b &&= "something"; ',
+      code: 'const a = b &&= "something";',
       errors: [{ message: 'ES2021 logical assignment operators are forbidden.' }],
     },
     {
-      code: 'const a = b ??= "something"; ',
+      code: 'const a = b ??= "something";',
       errors: [{ message: 'ES2021 logical assignment operators are forbidden.' }],
     },
     {
-      code: 'const a = 1_000_00; ',
+      code: 'const a = 1_000_00;',
       errors: [{ message: 'ES2021 numeric separators are forbidden.' }],
     },
     {
