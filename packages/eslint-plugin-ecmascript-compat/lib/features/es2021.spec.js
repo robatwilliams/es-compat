@@ -7,7 +7,6 @@ jest.resetModules();
 const ruleTester = new RuleTester({
   parserOptions: {
     ecmaVersion: 2021,
-    sourceType: 'module', // import.meta and namespace exports can only be used in an ES module
   },
   globals: {
     // ES2021 global, required by es/no-weakrefs
