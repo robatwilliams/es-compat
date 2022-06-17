@@ -10,11 +10,11 @@ Static detectability of recently-added features
 
 | Name                                 | ESLint / eslint-plugin-es          | Chrome since |
 | ------------------------------------ | ---------------------------------- | ------------ |
-| `String.prototype.replaceAll`        | 😐 no-restricted-properties        | 85           |
 | Logical Assignment \|\|=, \&\&=, ??= | es/no-logical-assignment-operators | 85           |
-| `WeakRef and FinalizationRegistry`   | es/no-weakrefs                     | 84           |
-| `Promise.any`                        | es/no-promise-any                  | 85           |
 | Numeric separators                   | es/no-numeric-separators           | 75           |
+| `Promise.any`                        | es/no-promise-any                  | 85           |
+| `String.prototype.replaceAll`        | 😐 no-restricted-properties        | 85           |
+| `WeakRef and FinalizationRegistry`   | es/no-weakrefs                     | 84           |
 
 ### ES2020
 
