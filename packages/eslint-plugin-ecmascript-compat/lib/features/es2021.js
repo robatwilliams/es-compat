@@ -14,9 +14,7 @@ module.exports = [
     compatFeatures: [compatData.javascript.builtins.String.replaceAll],
   },
   {
-    ruleConfig: {
-      definition: esPlugin.rules['no-logical-assignment-operators'],
-    },
+    ruleConfig: { definition: esPlugin.rules['no-logical-assignment-operators'] },
     compatFeatures: [
       compatData.javascript.operators.logical_or_assignment,
       compatData.javascript.operators.logical_and_assignment,
@@ -24,21 +22,15 @@ module.exports = [
     ],
   },
   {
-    ruleConfig: {
-      definition: esPlugin.rules['no-numeric-separators'],
-    },
+    ruleConfig: { definition: esPlugin.rules['no-numeric-separators'] },
     compatFeatures: [compatData.javascript.grammar.numeric_separators],
   },
   {
-    ruleConfig: {
-      definition: esPlugin.rules['no-promise-any'],
-    },
+    ruleConfig: { definition: esPlugin.rules['no-promise-any'] },
     compatFeatures: [compatData.javascript.builtins.Promise.any],
   },
   {
-    ruleConfig: {
-      definition: esPlugin.rules['no-weakrefs'],
-    },
+    ruleConfig: { definition: esPlugin.rules['no-weakrefs'] },
     compatFeatures: [
       compatData.javascript.builtins.WeakRef,
       compatData.javascript.builtins.FinalizationRegistry,
