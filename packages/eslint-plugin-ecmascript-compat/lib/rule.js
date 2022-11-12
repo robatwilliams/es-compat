@@ -12,16 +12,16 @@ module.exports = {
     type: 'problem',
     schema: [
       {
-        "type": "object",
-        "properties": {
-          "polyfills": {
-            "type": "array",
-            "items": {
-              "type": "string"
+        'type': 'object',
+        'properties': {
+          'polyfills': {
+            'type': 'array',
+            'items': {
+              'type': 'string'
             }
           }
         },
-        "additionalProperties": "false",
+        'additionalProperties': 'false',
       }
     ]
   },
