@@ -1,9 +1,9 @@
-function nonPolyfilledFeatures(features, polyfills) {
+function isPolyfilled(feature, polyfills) {
     if (!polyfills?.length) {
-        return features;
+        return false;
     }
 
-    return features.filter(feature => !polyfills.includes(feature.polyfill));
+    return polyfills.includes(feature.polyfill));
 }
 
-module.exports = { nonPolyfilledFeatures };
+module.exports = { isPolyfilled };

@@ -26,7 +26,8 @@ module.exports = {
     ]
   },
   create(context) {
-      const validFeatures = polyfilling.nonPolyfilledFeatures(unsupportedFeatures, context.options?.[0]?.polyfills);
+      const { polyfills } = context.options?.[0] || {};
+      const validFeatures = unsupportedFeatures.filter(feature => !polyfilling.isPolyfilled(feature, polyfills));
 
       const delegateeConfigs = validFeatures.map((feature) => feature.ruleConfig);
       const visitors = delegateeConfigs.map((config) => createDelegatee(config, context));
