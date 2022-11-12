@@ -29,6 +29,7 @@ module.exports = [
   {
     ruleConfig: { definition: esPlugin.rules['no-promise-any'] },
     compatFeatures: [compatData.javascript.builtins.Promise.any],
+    polyfill: 'Promise.prototype.any'
   },
   {
     ruleConfig: { definition: esPlugin.rules['no-weakrefs'] },
