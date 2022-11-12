@@ -1,6 +1,6 @@
 /* eslint-disable camelcase, no-underscore-dangle */
 
-function forbiddenFeatures(features, targets) {
+function unsupportedFeatures(features, targets) {
   return features.filter((feature) => !isFeatureSupportedByTargets(feature, targets));
 }
 

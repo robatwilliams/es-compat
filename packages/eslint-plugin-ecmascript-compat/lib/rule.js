@@ -5,7 +5,7 @@ const polyfilling = require('./polyfilling');
 const targetRuntimes = require('./targetRuntimes');
 
 const targets = targetRuntimes();
-const forbiddenFeatures = compatibility.forbiddenFeatures(features, targets);
+const unsupportedFeatures = compatibility.unsupportedFeatures(features, targets);
 
 module.exports = {
   meta: {
@@ -26,7 +26,7 @@ module.exports = {
     ]
   },
   create(context) {
-      const validFeatures = polyfilling.nonPolyfilledFeatures(forbiddenFeatures, context?.options?.[0]?.polyfills);
+      const validFeatures = polyfilling.nonPolyfilledFeatures(unsupportedFeatures, context?.options?.[0]?.polyfills);
 
       const delegateeConfigs = validFeatures.map((feature) => feature.ruleConfig);
       const visitors = delegateeConfigs.map((config) => createDelegatee(config, context));
