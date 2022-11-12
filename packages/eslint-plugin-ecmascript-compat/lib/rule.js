@@ -26,7 +26,7 @@ module.exports = {
     ]
   },
   create(context) {
-      const { polyfills } = context.options?.[0] || {};
+      const polyfills = context.options?.[0]?.polyfills;
       const validFeatures = unsupportedFeatures.filter(feature => !polyfilling.isPolyfilled(feature, polyfills));
 
       const delegateeConfigs = validFeatures.map((feature) => feature.ruleConfig);
