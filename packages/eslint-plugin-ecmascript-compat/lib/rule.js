@@ -1,7 +1,6 @@
 const compatibility = require('./compatibility');
 const { createDelegatee, delegatingVisitor } = require('./delegation');
 const features = require('./features');
-const polyfilling = require('./polyfilling');
 const targetRuntimes = require('./targetRuntimes');
 
 const targets = targetRuntimes();
@@ -26,10 +25,10 @@ module.exports = {
     ]
   },
   create(context) {
-      const polyfills = context.options?.[0]?.polyfills;
-      const validFeatures = unsupportedFeatures.filter(feature => !polyfilling.isPolyfilled(feature, polyfills));
+      const polyfills = context.options?.[0]?.polyfills ?? [];
+      const forbiddenFeatures = unsupportedFeatures.filter(feature => !polyfills.includes(feature.polyfill));
 
-      const delegateeConfigs = validFeatures.map((feature) => feature.ruleConfig);
+      const delegateeConfigs = forbiddenFeatures.map((feature) => feature.ruleConfig);
       const visitors = delegateeConfigs.map((config) => createDelegatee(config, context));
 
       return delegatingVisitor(visitors);
