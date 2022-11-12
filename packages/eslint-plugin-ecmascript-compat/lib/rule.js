@@ -1,21 +1,36 @@
 const compatibility = require('./compatibility');
 const { createDelegatee, delegatingVisitor } = require('./delegation');
 const features = require('./features');
+const polyfilling = require('./polyfilling');
 const targetRuntimes = require('./targetRuntimes');
 
 const targets = targetRuntimes();
-const delegateeConfigs = compatibility
-  .forbiddenFeatures(features, targets)
-  .map((feature) => feature.ruleConfig);
+const forbiddenFeatures = compatibility.forbiddenFeatures(features, targets);
 
 module.exports = {
   meta: {
     type: 'problem',
-    schema: [], // no options
+    schema: [
+      {
+        "type": "object",
+        "properties": {
+          "polyfills": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": "false",
+      }
+    ]
   },
   create(context) {
-    const visitors = delegateeConfigs.map((config) => createDelegatee(config, context));
+      const validFeatures = polyfilling.nonPolyfilledFeatures(forbiddenFeatures, context?.options?.[0]?.polyfills);
 
-    return delegatingVisitor(visitors);
+      const delegateeConfigs = validFeatures.map((feature) => feature.ruleConfig);
+      const visitors = delegateeConfigs.map((config) => createDelegatee(config, context));
+
+      return delegatingVisitor(visitors);
   },
 };

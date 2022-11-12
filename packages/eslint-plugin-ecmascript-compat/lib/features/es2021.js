@@ -12,6 +12,7 @@ module.exports = [
       options: noRestrictedSyntaxPrototypeMethod('String.prototype.replaceAll', 'ES2021'),
     },
     compatFeatures: [compatData.javascript.builtins.String.replaceAll],
+    polyfill: 'String.prototype.replaceAll',
   },
   {
     ruleConfig: { definition: esPlugin.rules['no-logical-assignment-operators'] },
