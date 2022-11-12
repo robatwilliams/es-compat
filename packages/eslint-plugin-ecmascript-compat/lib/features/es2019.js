@@ -48,7 +48,7 @@ module.exports = [
       definition: coreRules.get('no-restricted-syntax'),
       options: noRestrictedSyntaxPrototypeMethod('String.prototype.trimLeft', 'ES2019'),
     },
-    compatFeatures: [compatData.javascript.builtins.String.trimStart], // not a typo, trimLeft is an alias for trimStart
+    compatFeatures: [compatData.javascript.builtins.String.trimStart], // not a mistake; trimLeft is an alias for trimStart
     polyfill: 'String.prototype.trimLeft',
   },
   {
@@ -64,7 +64,7 @@ module.exports = [
       definition: coreRules.get('no-restricted-syntax'),
       options: noRestrictedSyntaxPrototypeMethod('String.prototype.trimRight', 'ES2019'),
     },
-    compatFeatures: [compatData.javascript.builtins.String.trimEnd], // not a typo, trimRight is an alias for trimEnd
+    compatFeatures: [compatData.javascript.builtins.String.trimEnd], // not a mistake; trimRight is an alias for trimEnd
     polyfill: 'String.prototype.trimRight',
   },
 ];
