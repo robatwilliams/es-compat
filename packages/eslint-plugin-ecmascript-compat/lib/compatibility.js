@@ -54,4 +54,4 @@ function interpretSupport(versionAdded) {
   };
 }
 
-module.exports = { forbiddenFeatures };
+module.exports = { unsupportedFeatures };

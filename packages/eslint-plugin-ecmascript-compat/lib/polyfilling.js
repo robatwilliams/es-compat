@@ -3,7 +3,7 @@ function isPolyfilled(feature, polyfills) {
         return false;
     }
 
-    return polyfills.includes(feature.polyfill));
+    return polyfills.includes(feature.polyfill);
 }
 
 module.exports = { isPolyfilled };
