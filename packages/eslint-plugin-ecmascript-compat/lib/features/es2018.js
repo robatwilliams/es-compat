@@ -26,7 +26,7 @@ module.exports = [
       options: noRestrictedSyntaxPrototypeMethod('Promise.prototype.finally', 'ES2018'),
     },
     compatFeatures: [compatData.javascript.builtins.Promise.finally],
-    polyfill: 'Promise.prototype.finally'
+    polyfill: 'Promise.prototype.finally',
   },
   {
     ruleConfig: { definition: esPlugin.rules['no-regexp-lookbehind-assertions'] },

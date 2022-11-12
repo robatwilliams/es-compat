@@ -31,7 +31,7 @@ module.exports = [
   {
     ruleConfig: { definition: esPlugin.rules['no-global-this'] },
     compatFeatures: [compatData.javascript.builtins.globalThis],
-    polyfill: 'globalThis'
+    polyfill: 'globalThis',
   },
   {
     ruleConfig: { definition: esPlugin.rules['no-import-meta'] },

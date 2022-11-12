@@ -11,26 +11,28 @@ module.exports = {
     type: 'problem',
     schema: [
       {
-        'type': 'object',
-        'properties': {
-          'polyfills': {
-            'type': 'array',
-            'items': {
-              'type': 'string'
-            }
-          }
+        type: 'object',
+        properties: {
+          polyfills: {
+            type: 'array',
+            items: {
+              type: 'string',
+            },
+          },
         },
-        'additionalProperties': 'false',
-      }
-    ]
+        additionalProperties: false,
+      },
+    ],
   },
   create(context) {
-      const polyfills = context.options?.[0]?.polyfills ?? [];
-      const forbiddenFeatures = unsupportedFeatures.filter(feature => !polyfills.includes(feature.polyfill));
+    const polyfills = context.options?.[0]?.polyfills ?? [];
+    const forbiddenFeatures = unsupportedFeatures.filter(
+      (feature) => !polyfills.includes(feature.polyfill)
+    );
 
-      const delegateeConfigs = forbiddenFeatures.map((feature) => feature.ruleConfig);
-      const visitors = delegateeConfigs.map((config) => createDelegatee(config, context));
+    const delegateeConfigs = forbiddenFeatures.map((feature) => feature.ruleConfig);
+    const visitors = delegateeConfigs.map((config) => createDelegatee(config, context));
 
-      return delegatingVisitor(visitors);
+    return delegatingVisitor(visitors);
   },
 };
