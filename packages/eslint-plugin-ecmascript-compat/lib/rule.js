@@ -51,8 +51,8 @@ module.exports = {
       (feature) => !polyfills.includes(feature.polyfill)
     );
 
-    const visitors = forbiddenFeatures.map(
-      (feature) => createDelegatee(feature.ruleConfig, context)
+    const visitors = forbiddenFeatures.map((feature) =>
+      createDelegatee(feature.ruleConfig, context)
     );
 
     return delegatingVisitor(visitors);
