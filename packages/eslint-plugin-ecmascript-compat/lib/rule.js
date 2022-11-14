@@ -47,13 +47,10 @@ module.exports = {
   },
   create(context) {
     const polyfills = context.options?.[0]?.polyfills ?? [];
-    const forbiddenFeatures = unsupportedFeatures.filter(
-      (feature) => !polyfills.includes(feature.polyfill)
-    );
 
-    const visitors = forbiddenFeatures.map((feature) =>
-      createDelegatee(feature.ruleConfig, context)
-    );
+    const visitors = unsupportedFeatures
+      .filter((feature) => !polyfills.includes(feature.polyfill))
+      .map((feature) => createDelegatee(feature.ruleConfig, context));
 
     return delegatingVisitor(visitors);
   },
