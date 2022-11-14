@@ -18,7 +18,16 @@ const ruleTester = new RuleTester({
 });
 
 ruleTester.run('compat', require('../rule'), {
-  valid: [],
+  valid: [
+    {
+      code: '"A dog".replaceAll("dog", "monkey");',
+      options: [{ polyfills: ['String.prototype.replaceAll'] }],
+    },
+    {
+      code: 'const a = Promise.any([]);',
+      options: [{ polyfills: ['Promise.prototype.any'] }],
+    },
+  ],
   invalid: [
     {
       code: '"A dog".replaceAll("dog", "monkey");',

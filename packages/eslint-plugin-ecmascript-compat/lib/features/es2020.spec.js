@@ -22,7 +22,26 @@ const ruleTester = new RuleTester({
 });
 
 ruleTester.run('compat', require('../rule'), {
-  valid: [],
+  valid: [
+    {
+      code: 'globalThis.foo;',
+      options: [{ polyfills: ['globalThis'] }],
+    },
+    {
+      code: 'Promise.allSettled();',
+      options: [{ polyfills: ['Promise.prototype.allSettled'] }],
+      errors: [{ message: "ES2020 'Promise.allSettled' function is forbidden." }],
+    },
+    {
+      code: 'foo.matchAll();',
+      options: [{ polyfills: ['String.prototype.matchAll'] }],
+      errors: [{ message: "ES2020 method 'String.prototype.matchAll' is forbidden" }],
+    },
+    {
+      code: 'String.prototype.matchAll;',
+      options: [{ polyfills: ['String.prototype.matchAll'] }],
+    },
+  ],
   invalid: [
     {
       code: 'Atomics.notify();',

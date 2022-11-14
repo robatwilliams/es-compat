@@ -18,6 +18,34 @@ ruleTester.run('compat', require('../rule'), {
     {
       code: 'residentialAddress.flat = flat;',
     },
+    {
+      code: 'foo.flat();',
+      options: [{ polyfills: ['Array.prototype.flat'] }],
+    },
+    {
+      code: 'Array.prototype.flatMap;',
+      options: [{ polyfills: ['Array.prototype.flatMap'] }],
+    },
+    {
+      code: 'Object.fromEntries();',
+      options: [{ polyfills: ['Object.fromEntries'] }],
+    },
+    {
+      code: 'foo.trimLeft();',
+      options: [{ polyfills: ['String.prototype.trimLeft'] }],
+    },
+    {
+      code: 'String.prototype.trimRight;',
+      options: [{ polyfills: ['String.prototype.trimRight'] }],
+    },
+    {
+      code: 'String.prototype.trimStart;',
+      options: [{ polyfills: ['String.prototype.trimStart'] }],
+    },
+    {
+      code: 'foo.trimEnd;',
+      options: [{ polyfills: ['String.prototype.trimEnd'] }],
+    },
   ],
   invalid: [
     {
@@ -46,7 +74,15 @@ ruleTester.run('compat', require('../rule'), {
       errors: [{ message: "ES2019 method 'String.prototype.trimLeft' is forbidden" }],
     },
     {
-      code: 'String.prototype.trimEnd;',
+      code: 'String.prototype.trimRight;',
+      errors: [{ message: "ES2019 method 'String.prototype.trimRight' is forbidden" }],
+    },
+    {
+      code: 'String.prototype.trimStart;',
+      errors: [{ message: "ES2019 method 'String.prototype.trimStart' is forbidden" }],
+    },
+    {
+      code: 'foo.trimEnd();',
       errors: [{ message: "ES2019 method 'String.prototype.trimEnd' is forbidden" }],
     },
   ],

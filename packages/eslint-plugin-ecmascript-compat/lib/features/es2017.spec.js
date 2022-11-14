@@ -18,7 +18,36 @@ const ruleTester = new RuleTester({
 });
 
 ruleTester.run('compat', require('../rule'), {
-  valid: [],
+  valid: [
+    {
+      code: 'Object.getOwnPropertyDescriptors();',
+      options: [{ polyfills: ['Object.getOwnPropertyDescriptors'] }],
+    },
+    {
+      code: 'Object.entries();',
+      options: [{ polyfills: ['Object.entries'] }],
+    },
+    {
+      code: 'Object.values();',
+      options: [{ polyfills: ['Object.values'] }],
+    },
+    {
+      code: 'str.padStart();',
+      options: [{ polyfills: ['String.prototype.padStart'] }],
+    },
+    {
+      code: 'String.prototype.padStart;',
+      options: [{ polyfills: ['String.prototype.padStart'] }],
+    },
+    {
+      code: 'str.padEnd();',
+      options: [{ polyfills: ['String.prototype.padEnd'] }],
+    },
+    {
+      code: 'String.prototype.padEnd;',
+      options: [{ polyfills: ['String.prototype.padEnd'] }],
+    },
+  ],
   invalid: [
     {
       code: 'async function foo() {}',

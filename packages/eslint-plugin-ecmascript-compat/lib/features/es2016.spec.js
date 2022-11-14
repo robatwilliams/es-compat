@@ -11,7 +11,16 @@ const ruleTester = new RuleTester({
 });
 
 ruleTester.run('compat', require('../rule'), {
-  valid: [],
+  valid: [
+    {
+      code: 'foo.includes();',
+      options: [{ polyfills: ['Array.prototype.includes'] }],
+    },
+    {
+      code: 'Array.prototype.includes;',
+      options: [{ polyfills: ['Array.prototype.includes'] }],
+    },
+  ],
   invalid: [
     {
       code: 'foo.includes();',
