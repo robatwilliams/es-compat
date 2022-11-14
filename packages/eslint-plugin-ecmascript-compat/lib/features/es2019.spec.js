@@ -23,7 +23,7 @@ ruleTester.run('compat', require('../rule'), {
       options: [{ polyfills: ['Array.prototype.flat'] }],
     },
     {
-      code: 'Array.prototype.flatMap;',
+      code: 'foo.flatMap();',
       options: [{ polyfills: ['Array.prototype.flatMap'] }],
     },
     {
@@ -35,15 +35,15 @@ ruleTester.run('compat', require('../rule'), {
       options: [{ polyfills: ['String.prototype.trimLeft'] }],
     },
     {
-      code: 'String.prototype.trimRight;',
+      code: 'foo.trimRight();',
       options: [{ polyfills: ['String.prototype.trimRight'] }],
     },
     {
-      code: 'String.prototype.trimStart;',
+      code: 'foo.trimStart();',
       options: [{ polyfills: ['String.prototype.trimStart'] }],
     },
     {
-      code: 'foo.trimEnd;',
+      code: 'foo.trimEnd();',
       options: [{ polyfills: ['String.prototype.trimEnd'] }],
     },
   ],

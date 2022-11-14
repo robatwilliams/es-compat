@@ -36,15 +36,7 @@ ruleTester.run('compat', require('../rule'), {
       options: [{ polyfills: ['String.prototype.padStart'] }],
     },
     {
-      code: 'String.prototype.padStart;',
-      options: [{ polyfills: ['String.prototype.padStart'] }],
-    },
-    {
       code: 'str.padEnd();',
-      options: [{ polyfills: ['String.prototype.padEnd'] }],
-    },
-    {
-      code: 'String.prototype.padEnd;',
       options: [{ polyfills: ['String.prototype.padEnd'] }],
     },
   ],

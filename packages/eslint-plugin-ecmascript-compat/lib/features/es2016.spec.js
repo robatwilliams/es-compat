@@ -16,10 +16,6 @@ ruleTester.run('compat', require('../rule'), {
       code: 'foo.includes();',
       options: [{ polyfills: ['Array.prototype.includes'] }],
     },
-    {
-      code: 'Array.prototype.includes;',
-      options: [{ polyfills: ['Array.prototype.includes'] }],
-    },
   ],
   invalid: [
     {

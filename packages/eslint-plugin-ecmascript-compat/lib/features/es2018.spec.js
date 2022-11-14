@@ -16,10 +16,6 @@ ruleTester.run('compat', require('../rule'), {
       code: 'foo.finally();',
       options: [{ polyfills: ['Promise.prototype.finally'] }],
     },
-    {
-      code: 'Promise.prototype.finally;',
-      options: [{ polyfills: ['Promise.prototype.finally'] }],
-    },
   ],
   invalid: [
     {
