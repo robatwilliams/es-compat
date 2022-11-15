@@ -22,7 +22,20 @@ const ruleTester = new RuleTester({
 });
 
 ruleTester.run('compat', require('../rule'), {
-  valid: [],
+  valid: [
+    {
+      code: 'globalThis.foo;',
+      options: [{ polyfills: ['globalThis'] }],
+    },
+    {
+      code: 'Promise.allSettled();',
+      options: [{ polyfills: ['Promise.prototype.allSettled'] }],
+    },
+    {
+      code: 'foo.matchAll();',
+      options: [{ polyfills: ['String.prototype.matchAll'] }],
+    },
+  ],
   invalid: [
     {
       code: 'Atomics.notify();',

@@ -21,7 +21,15 @@ npm install --save-dev eslint-plugin-ecmascript-compat
 {
   "plugins": ["ecmascript-compat"],
   "rules": {
-    "ecmascript-compat/compat": "error"
+    "ecmascript-compat/compat": [
+      "error",
+      {
+        // Optionally, specify provided polyfills
+        "polyfills": [
+          "Array.prototype.includes"
+        ]
+      }
+    ]
   }
 }
 ```
@@ -31,6 +39,10 @@ npm install --save-dev eslint-plugin-ecmascript-compat
 Chrome >= 64
 Firefox >= 58
 ```
+
+<!--- Absolute link, in order to work from NPM website --->
+
+The optional `polyfills` option is used to specify polyfills that your application loads. These features are therefore considered supported in all browsers. Features that are polyfillable and can be specified here can be found in the [rule schema](https://github.com/robatwilliams/es-compat/blob/master/packages/eslint-plugin-ecmascript-compat/lib/rule.js).
 
 For example usage, see sibling directory: `eslint-plugin-ecmascript-compat-example`
 

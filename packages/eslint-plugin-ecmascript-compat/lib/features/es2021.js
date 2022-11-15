@@ -12,6 +12,7 @@ module.exports = [
       options: noRestrictedSyntaxPrototypeMethod('String.prototype.replaceAll', 'ES2021'),
     },
     compatFeatures: [compatData.javascript.builtins.String.replaceAll],
+    polyfill: 'String.prototype.replaceAll',
   },
   {
     ruleConfig: { definition: esPlugin.rules['no-logical-assignment-operators'] },
@@ -28,6 +29,7 @@ module.exports = [
   {
     ruleConfig: { definition: esPlugin.rules['no-promise-any'] },
     compatFeatures: [compatData.javascript.builtins.Promise.any],
+    polyfill: 'Promise.prototype.any',
   },
   {
     ruleConfig: { definition: esPlugin.rules['no-weakrefs'] },

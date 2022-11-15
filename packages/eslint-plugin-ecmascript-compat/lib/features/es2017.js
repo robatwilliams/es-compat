@@ -21,14 +21,17 @@ module.exports = [
   {
     ruleConfig: { definition: esPlugin.rules['no-object-getownpropertydescriptors'] },
     compatFeatures: [compatData.javascript.builtins.Object.getOwnPropertyDescriptors],
+    polyfill: 'Object.getOwnPropertyDescriptors',
   },
   {
     ruleConfig: { definition: esPlugin.rules['no-object-entries'] },
     compatFeatures: [compatData.javascript.builtins.Object.entries],
+    polyfill: 'Object.entries',
   },
   {
     ruleConfig: { definition: esPlugin.rules['no-object-values'] },
     compatFeatures: [compatData.javascript.builtins.Object.values],
+    polyfill: 'Object.values',
   },
   {
     // Rule requires the ES2017 global, SharedArrayBuffer
@@ -41,6 +44,7 @@ module.exports = [
       options: noRestrictedSyntaxPrototypeMethod('String.prototype.padStart', 'ES2017'),
     },
     compatFeatures: [compatData.javascript.builtins.String.padStart],
+    polyfill: 'String.prototype.padStart',
   },
   {
     ruleConfig: {
@@ -48,6 +52,7 @@ module.exports = [
       options: noRestrictedSyntaxPrototypeMethod('String.prototype.padEnd', 'ES2017'),
     },
     compatFeatures: [compatData.javascript.builtins.String.padEnd],
+    polyfill: 'String.prototype.padEnd',
   },
   {
     ruleConfig: { definition: esPlugin.rules['no-trailing-function-commas'] },

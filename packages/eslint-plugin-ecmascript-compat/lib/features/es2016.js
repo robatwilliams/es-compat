@@ -12,6 +12,7 @@ module.exports = [
       options: noRestrictedSyntaxPrototypeMethod('Array.prototype.includes', 'ES2016'),
     },
     compatFeatures: [compatData.javascript.builtins.Array.includes],
+    polyfill: 'Array.prototype.includes',
   },
   {
     ruleConfig: { definition: esPlugin.rules['no-exponential-operators'] },

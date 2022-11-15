@@ -31,6 +31,7 @@ module.exports = [
   {
     ruleConfig: { definition: esPlugin.rules['no-global-this'] },
     compatFeatures: [compatData.javascript.builtins.globalThis],
+    polyfill: 'globalThis',
   },
   {
     ruleConfig: { definition: esPlugin.rules['no-import-meta'] },
@@ -52,6 +53,7 @@ module.exports = [
     // Rule requires the ES6 global, Promise
     ruleConfig: { definition: esPlugin.rules['no-promise-all-settled'] },
     compatFeatures: [compatData.javascript.builtins.Promise.allSettled],
+    polyfill: 'Promise.prototype.allSettled',
   },
   {
     // May false positive for Cache/Clients.matchAll()
@@ -60,5 +62,6 @@ module.exports = [
       options: noRestrictedSyntaxPrototypeMethod('String.prototype.matchAll', 'ES2020'),
     },
     compatFeatures: [compatData.javascript.builtins.String.matchAll],
+    polyfill: 'String.prototype.matchAll',
   },
 ];
