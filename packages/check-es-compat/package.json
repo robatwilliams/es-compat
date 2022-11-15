@@ -1,6 +1,6 @@
 {
   "name": "check-es-compat",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "CLI tool for checking JavaScript code compatibility with target browsers and Node.js versions",
   "keywords": [
     "browser",
@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "eslint": "^8.6.0",
-    "eslint-plugin-ecmascript-compat": "^2.1.0"
+    "eslint-plugin-ecmascript-compat": "^2.2.0"
   },
   "engines": {
     "node": ">=14.8.0"

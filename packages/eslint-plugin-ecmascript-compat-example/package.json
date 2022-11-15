@@ -6,7 +6,7 @@
   },
   "devDependencies": {
     "eslint": "^8.6.0",
-    "eslint-plugin-ecmascript-compat": "^2.1.0"
+    "eslint-plugin-ecmascript-compat": "^2.2.0"
   },
-  "version": "2.1.0"
+  "version": "2.2.0"
 }
