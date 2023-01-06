@@ -44,5 +44,5 @@ async function execute(files) {
   const formatter = await eslint.loadFormatter();
   console.log(formatter.format(results));
 
-  return { hasErrors: results.errorCount > 0 };
+  return { hasErrors: results.some((result) => result.errorCount > 0) };
 }
