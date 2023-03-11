@@ -194,3 +194,29 @@ it('explains what the problem is when compat feature not found in MDN data', () 
     unsupportedFeatures([feature], [{ name: 'chrome', version: '73' }]);
   }).toThrow("Sparse compatFeatures for rule 'some rule': object,undefined");
 });
+
+it('version compare', () => {
+  const feature = {
+    compatFeatures: [
+      {
+        __compat: {
+          support: {
+            chrome: [
+              { version_added: '49' },
+            ],
+          },
+        },
+      },
+    ],
+  };
+  function getUnsupportedFeaturesByChromeVersion(version) {
+    return unsupportedFeatures(
+      [feature],
+      [{ name: 'chrome', version }]
+    )
+  }
+  expect(getUnsupportedFeaturesByChromeVersion('9')).toHaveLength(1);
+  expect(getUnsupportedFeaturesByChromeVersion('100')).toHaveLength(0);
+  expect(getUnsupportedFeaturesByChromeVersion('100-101')).toHaveLength(0);
+  expect(getUnsupportedFeaturesByChromeVersion('all')).toHaveLength(0);
+});

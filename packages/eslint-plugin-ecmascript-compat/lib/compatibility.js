@@ -30,7 +30,7 @@ function isCompatFeatureSupportedByTarget(compatFeature, target) {
     return true;
   }
 
-  return !support.isNone && target.version >= versionAdded;
+  return !support.isNone && compareVersions(target.version, versionAdded) >= 0;
 }
 
 function getSimpleSupportStatement(compatFeature, target) {
@@ -52,6 +52,31 @@ function interpretSupport(versionAdded) {
     isNone: versionAdded === false,
     isVersionUnknown: versionAdded === true,
   };
+}
+
+// the code generate by chatGPT
+// support all version types obtained from the browserslist. (npx browserslist  '>=0%')
+// 1. a.b.c
+// 2. a.b.c-d.e.f
+// 3. all
+function compareVersions(version1, version2) {
+  function getVersionNumber(version) {
+    if (version === 'all') {
+      return Infinity;
+    }
+    // discard version after "-"
+    const match = version.match(/^(\d+)(?:\.(\d+))?(?:\.(\d+))?(?:\-\d+\.\d+)?$/);
+    if (!match) {
+      return 0;
+    }
+    const major = Number(match[1]) * 1000000000;
+    const minor = Number(match[2] || 0) * 1000000;
+    const patch = Number(match[3] || 0) * 1000;
+    return major + minor + patch;
+  }
+  const v1 = getVersionNumber(version1.split('-')[0]);
+  const v2 = getVersionNumber(version2.split('-')[0]);
+  return v1 > v2 ? 1 : v1 < v2 ? -1 : 0;
 }
 
 module.exports = { unsupportedFeatures };
