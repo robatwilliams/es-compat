@@ -6,6 +6,21 @@ Static detectability of recently-added features
 - 😐 = statically detectable, but chance of false positives
 - 👎 = statically detectable, but not worth the false positives
 
+### ES2022
+
+| Name                                   | ESLint / eslint-plugin-es                    | Chrome since |
+| -------------------------------------- | -------------------------------------------- | ------------ |
+| Arbitrary module namespaces            | es-x/no-arbitrary-module-namespace-names     |              |
+| `{Array, String}.prototype.at()`       | 😐 no-restricted-syntax                      |              |
+| Class instance fields                  | es-x/no-class-fields                         |              |
+| Class static initialization block      | es-x/no-class-static-block                   |              |
+| Error `cause`                          | es-x/no-error-cause                          |              |
+| `Object.hasOwn`                        | es-x/no-object-hasown                        |              |
+| Private slot checks (`#x in obj`)      | es-x/no-private-in                           |              |
+| Top-level `await`                      | es-x/no-top-level-await                      |              |
+| RegExp match indices (`/d` flag)       | es-x/no-regexp-d-flag                        |              |
+| RegExp Unicode property escapes (2022) | es-x/no-regexp-unicode-property-escapes-2022 |              |
+
 ### ES2021
 
 | Name                                 | ESLint / eslint-plugin-es          | Chrome since |
