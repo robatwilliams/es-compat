@@ -20,7 +20,7 @@ You might not need a transpiler or polyfills.
 
 Or, you may be transpiling your own code but not prebuilt 3rd-party libraries - leaving you open to breakages when they use new language features.
 
-[ESLint](https://eslint.org) supports targeting a specific ECMAScript version, and [eslint-plugin-es](https://github.com/mysticatea/eslint-plugin-es) allows forbidding individual language features. However when building applications, what we target are particular browser/runtime versions. This project lets you check compatibility by specifying those targets directly via a browserslist. It will figure out which individual features you can use, by looking up those targets in the [MDN compatibility dataset](https://github.com/mdn/browser-compat-data).
+[ESLint](https://eslint.org) supports targeting a specific ECMAScript version, and [eslint-plugin-es-x](https://github.com/eslint-community/eslint-plugin-es-x) allows forbidding individual language features. However when building applications, what we target are particular browser/runtime versions. This project lets you check compatibility by specifying those targets directly via a browserslist. It will figure out which individual features you can use, by looking up those targets in the [MDN compatibility dataset](https://github.com/mdn/browser-compat-data).
 
 ## Scope
 
@@ -66,7 +66,7 @@ Contributions and [feedback](https://github.com/robatwilliams/es-compat/issues/1
 
 - [eslint-plugin-compat](https://github.com/amilajack/eslint-plugin-compat) - for browser APIs
 - [doiuse](https://github.com/anandthakker/doiuse) - for CSS
-- [eslint-plugin-es](https://github.com/mysticatea/eslint-plugin-es)\*
+- [eslint-plugin-es-x](https://github.com/eslint-community/eslint-plugin-es-x) (formerly [eslint-plugin-es](https://github.com/mysticatea/eslint-plugin-es))\*
 - [@mdn/browser-compat-data](https://github.com/mdn/browser-compat-data)\*
 
 \* Thanks to these projects in particular (and many others) for making this project possible.
