@@ -1,5 +1,5 @@
 const eslint = require('eslint');
-const esPlugin = require('eslint-plugin-es');
+const esPlugin = require('eslint-plugin-es-x');
 const compatData = require('@mdn/browser-compat-data');
 const { noRestrictedSyntaxPrototypeMethod } = require('./ruleOptionsUtil');
 
