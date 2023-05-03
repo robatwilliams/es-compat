@@ -30,11 +30,11 @@ module.exports = [
   },
   {
     ruleConfig: { definition: esPlugin.rules['no-regexp-lookbehind-assertions'] },
-    compatFeatures: [compatData.javascript.builtins.RegExp.lookbehind_assertion],
+    compatFeatures: [compatData.javascript.regular_expressions.lookbehind_assertion],
   },
   {
     ruleConfig: { definition: esPlugin.rules['no-regexp-named-capture-groups'] },
-    compatFeatures: [compatData.javascript.builtins.RegExp.named_capture_groups],
+    compatFeatures: [compatData.javascript.regular_expressions.named_capturing_group],
   },
   {
     ruleConfig: { definition: esPlugin.rules['no-regexp-s-flag'] },
@@ -49,6 +49,8 @@ module.exports = [
        */
       definition: esPlugin.rules['no-regexp-unicode-property-escapes'],
     },
-    compatFeatures: [compatData.javascript.builtins.RegExp.property_escapes],
+    compatFeatures: [
+      compatData.javascript.regular_expressions.unicode_character_class_escape,
+    ],
   },
 ];

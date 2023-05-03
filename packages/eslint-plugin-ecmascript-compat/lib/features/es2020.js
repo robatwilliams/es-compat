@@ -26,7 +26,7 @@ module.exports = [
   },
   {
     ruleConfig: { definition: esPlugin.rules['no-dynamic-import'] },
-    compatFeatures: [compatData.javascript.statements.import.dynamic_import],
+    compatFeatures: [compatData.javascript.operators.import],
   },
   {
     ruleConfig: { definition: esPlugin.rules['no-global-this'] },
@@ -35,7 +35,7 @@ module.exports = [
   },
   {
     ruleConfig: { definition: esPlugin.rules['no-import-meta'] },
-    compatFeatures: [compatData.javascript.statements.import_meta],
+    compatFeatures: [compatData.javascript.operators.import_meta],
   },
   {
     ruleConfig: { definition: esPlugin.rules['no-export-ns-from'] },
