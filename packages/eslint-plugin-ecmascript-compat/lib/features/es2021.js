@@ -19,7 +19,7 @@ module.exports = [
     compatFeatures: [
       compatData.javascript.operators.logical_or_assignment,
       compatData.javascript.operators.logical_and_assignment,
-      compatData.javascript.operators.logical_nullish_assignment,
+      compatData.javascript.operators.nullish_coalescing_assignment,
     ],
   },
   {
