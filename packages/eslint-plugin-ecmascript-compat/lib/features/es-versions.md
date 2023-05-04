@@ -8,18 +8,18 @@ Static detectability of recently-added features
 
 ### ES2022
 
-| Name                                   | ESLint / eslint-plugin-es                    | Chrome since |
-| -------------------------------------- | -------------------------------------------- | ------------ |
-| Arbitrary module namespace names       | es-x/no-arbitrary-module-namespace-names     | see #XXX     |
-| `{Array, String}.prototype.at()`       | 😐 no-restricted-syntax                      | 92           |
-| Class fields                           | es-x/no-class-fields                         | 72, 74       |
-| Class static initialization block      | es-x/no-class-static-block                   | 94           |
-| Error `cause`                          | es-x/no-error-cause                          | 93           |
-| `Object.hasOwn`                        | es-x/no-object-hasown                        | 93           |
-| Private slot checks (`#x in obj`)      | es-x/no-private-in                           | 91           |
-| Top-level `await`                      | es-x/no-top-level-await                      | 89           |
-| RegExp match indices (`/d` flag)       | es-x/no-regexp-d-flag                        | 90           |
-| RegExp Unicode property escapes (2022) | es-x/no-regexp-unicode-property-escapes-2022 | see #XXX     |
+| Name                                         | ESLint / eslint-plugin-es                    | Chrome since |
+| -------------------------------------------- | -------------------------------------------- | ------------ |
+| Arbitrary module namespace names             | es-x/no-arbitrary-module-namespace-names     | see #XXX     |
+| `{Array, String, TypedArray}.prototype.at()` | 😐 es-x/no-array-string-prototype-at         | 92           |
+| Class fields                                 | es-x/no-class-fields                         | 72, 74       |
+| Class static initialization block            | es-x/no-class-static-block                   | 94           |
+| Error `cause`                                | es-x/no-error-cause                          | 93           |
+| `Object.hasOwn`                              | es-x/no-object-hasown                        | 93           |
+| Private slot checks (`#x in obj`)            | es-x/no-private-in                           | 91           |
+| Top-level `await`                            | es-x/no-top-level-await                      | 89           |
+| RegExp match indices (`/d` flag)             | es-x/no-regexp-d-flag                        | 90           |
+| RegExp Unicode property escapes (2022)       | es-x/no-regexp-unicode-property-escapes-2022 | see #XXX     |
 
 ### ES2021
 

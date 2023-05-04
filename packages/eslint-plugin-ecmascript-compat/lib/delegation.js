@@ -1,16 +1,25 @@
 function createDelegatee(config, rootContext) {
   const { definition, options } = config;
 
-  // All methods except report() are added later. Define necessary ones for used rules.
-  const contextLaterAddedMethods = {
+  // All except report() are added later. Define necessary ones for used rules.
+  // https://eslint.org/docs/latest/extend/custom-rules#the-context-object
+  const contextLaterAdded = {
     getScope: () => rootContext.getScope(),
     getSourceCode: () => rootContext.getSourceCode(),
+
+    get settings() {
+      return rootContext.settings;
+    },
+
+    get parserServices() {
+      return rootContext.parserServices;
+    },
   };
 
   // Would use ES Proxy, but context's properties aren't overridable
   const context = {
     ...rootContext,
-    ...contextLaterAddedMethods,
+    ...contextLaterAdded,
     options,
     report,
   };
