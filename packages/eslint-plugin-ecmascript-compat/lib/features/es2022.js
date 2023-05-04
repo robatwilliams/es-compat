@@ -31,6 +31,10 @@ module.exports = [
     compatFeatures: [compatData.javascript.builtins.Object.hasOwn],
   },
   {
+    ruleConfig: { definition: esPlugin.rules['no-private-in'] },
+    compatFeatures: [compatData.javascript.classes.private_class_fields_in],
+  },
+  {
     ruleConfig: { definition: esPlugin.rules['no-top-level-await'] },
     compatFeatures: [compatData.javascript.operators.await.top_level],
   },

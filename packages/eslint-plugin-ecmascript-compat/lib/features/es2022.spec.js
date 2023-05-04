@@ -56,3 +56,23 @@ ruleTester.run('compat', require('../rule'), {
     },
   ],
 });
+
+// Browser that supports private fields but not `in` on them - see es-versions.md
+process.env.BROWSERSLIST = 'Chrome >= 90';
+jest.resetModules();
+
+const ruleTester2 = new RuleTester({
+  parserOptions: {
+    ecmaVersion: 2022,
+  },
+});
+
+ruleTester2.run('compat', require('../rule'), {
+  valid: [],
+  invalid: [
+    {
+      code: 'class A { #field; foo() { #field in this; } }',
+      errors: [{ message: 'ES2022 private in (`#field in object`) is forbidden.' }],
+    },
+  ],
+});
