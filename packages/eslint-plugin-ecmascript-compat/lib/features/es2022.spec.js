@@ -41,5 +41,9 @@ ruleTester.run('compat', require('../rule'), {
       code: 'class A { a = 0 }',
       errors: [{ message: 'ES2020 field [a] is forbidden.' }],
     },
+    {
+      code: 'class A { static { } }',
+      errors: [{ message: 'ES2022 class static block is forbidden.' }],
+    },
   ],
 });

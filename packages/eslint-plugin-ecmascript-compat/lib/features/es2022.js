@@ -22,4 +22,8 @@ module.exports = [
       compatData.javascript.classes.static_class_fields,
     ],
   },
+  {
+    ruleConfig: { definition: esPlugin.rules['no-class-static-block'] },
+    compatFeatures: [compatData.javascript.classes.static_initialization_blocks],
+  },
 ];
