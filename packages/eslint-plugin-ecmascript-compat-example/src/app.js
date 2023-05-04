@@ -1,4 +1,31 @@
 /**
+ * ES2022
+ */
+[].at(1);
+'Foo'.at(1);
+
+class A {
+  a = 0;
+}
+
+class B {
+  static {}
+}
+
+Object.hasOwn({}, 'prop');
+
+class C {
+  #field;
+  foo() {
+    #field in this;
+  }
+}
+
+/./d.test('d flag');
+
+await Promise.resolve();
+
+/**
  * ES2021
  */
 foo = {};
@@ -22,7 +49,7 @@ foo = new FinalizationRegistry(() => {});
 foo = 100n;
 BigInt(100);
 
-async function interestingBitIsInside() {
+async function interestingBitIsInside2() {
   await import('');
 }
 
@@ -62,7 +89,7 @@ String.prototype.trimEnd;
  * ES2018
  */
 async function* asyncGenerator() {}
-async function interestingBitIsInside() {
+async function interestingBitIsInside1() {
   for await (const bar of bar) {
   }
 }

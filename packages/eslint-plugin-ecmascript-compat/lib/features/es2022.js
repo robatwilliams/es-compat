@@ -27,6 +27,7 @@ module.exports = [
     compatFeatures: [compatData.javascript.classes.static_initialization_blocks],
   },
   // need plugin v6 for this
+  // need to add to example proj
   // {
   //   ruleConfig: { definition: esPlugin.rules['no-error-cause'] },
   //   compatFeatures: [compatData.javascript.builtins.Error.options_cause_parameter],
