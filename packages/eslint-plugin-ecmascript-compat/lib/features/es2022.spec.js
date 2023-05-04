@@ -51,6 +51,10 @@ ruleTester.run('compat', require('../rule'), {
       errors: [{ message: "ES2022 'Object.hasOwn' method is forbidden." }],
     },
     {
+      code: '/./d;',
+      errors: [{ message: "ES2022 RegExp 'd' flag is forbidden." }],
+    },
+    {
       code: 'await true;',
       errors: [{ message: "ES2022 top-level 'await' is forbidden." }],
     },

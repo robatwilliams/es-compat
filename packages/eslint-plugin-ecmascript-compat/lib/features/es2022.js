@@ -35,6 +35,10 @@ module.exports = [
     compatFeatures: [compatData.javascript.classes.private_class_fields_in],
   },
   {
+    ruleConfig: { definition: esPlugin.rules['no-regexp-d-flag'] },
+    compatFeatures: [compatData.javascript.builtins.RegExp.hasIndices],
+  },
+  {
     ruleConfig: { definition: esPlugin.rules['no-top-level-await'] },
     compatFeatures: [compatData.javascript.operators.await.top_level],
   },
