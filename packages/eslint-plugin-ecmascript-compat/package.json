@@ -38,7 +38,7 @@
   "dependencies": {
     "@mdn/browser-compat-data": "^5.2.55",
     "browserslist": "^4.8.0",
-    "eslint-plugin-es-x": "^5.4.0",
+    "eslint-plugin-es-x": "^6.1.0",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
@@ -46,9 +46,9 @@
     "jest": "^27.4.7"
   },
   "peerDependencies": {
-    "eslint": ">=4.19.1"
+    "eslint": ">=8"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": "^14.18.0 || >=16.0.0"
   }
 }
