@@ -47,6 +47,10 @@ ruleTester.run('compat', require('../rule'), {
       errors: [{ message: 'ES2022 class static block is forbidden.' }],
     },
     {
+      code: "new Error('message', { cause: originalError })",
+      errors: [{ message: 'ES2022 Error Cause is forbidden.' }],
+    },
+    {
       code: "Object.hasOwn(obj, 'prop');",
       errors: [{ message: "ES2022 'Object.hasOwn' method is forbidden." }],
     },

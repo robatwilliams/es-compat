@@ -21,6 +21,8 @@ class C {
   }
 }
 
+new Error('message', { cause: new Error('originalError') });
+
 /./d.test('d flag');
 
 await Promise.resolve();
