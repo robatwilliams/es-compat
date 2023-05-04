@@ -14,4 +14,12 @@ module.exports = [
     ],
     polyfill: '{Array,String,TypedArray}.prototype.at',
   },
+  {
+    ruleConfig: { definition: esPlugin.rules['no-class-fields'] },
+    compatFeatures: [
+      compatData.javascript.classes.public_class_fields,
+      compatData.javascript.classes.private_class_fields,
+      compatData.javascript.classes.static_class_fields,
+    ],
+  },
 ];
