@@ -30,4 +30,8 @@ module.exports = [
     ruleConfig: { definition: esPlugin.rules['no-object-hasown'] },
     compatFeatures: [compatData.javascript.builtins.Object.hasOwn],
   },
+  {
+    ruleConfig: { definition: esPlugin.rules['no-top-level-await'] },
+    compatFeatures: [compatData.javascript.operators.await.top_level],
+  },
 ];

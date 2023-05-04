@@ -7,6 +7,7 @@ jest.resetModules();
 const ruleTester = new RuleTester({
   parserOptions: {
     ecmaVersion: 2022,
+    sourceType: 'module', // top level await can only be used in an ES module
   },
 });
 
@@ -48,6 +49,10 @@ ruleTester.run('compat', require('../rule'), {
     {
       code: "Object.hasOwn(obj, 'prop');",
       errors: [{ message: "ES2022 'Object.hasOwn' method is forbidden." }],
+    },
+    {
+      code: 'await true;',
+      errors: [{ message: "ES2022 top-level 'await' is forbidden." }],
     },
   ],
 });
