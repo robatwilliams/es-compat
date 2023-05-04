@@ -60,7 +60,7 @@ The MDN compatibility dataset has very good coverage of the top ~6 desktop and m
 
 ## Contributing
 
-Contributions and [feedback](https://github.com/robatwilliams/es-compat/issues/1) welcome. Please see the GitHub issues or create one, as appropriate.
+[Contributions](CONTRIBUTING.md) and [feedback](https://github.com/robatwilliams/es-compat/issues/1) welcome. Please see the GitHub issues or create one, as appropriate.
 
 ## Related
 
