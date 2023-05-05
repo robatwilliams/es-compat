@@ -9,7 +9,10 @@ module.exports = function targetRuntimes() {
   // [ { name, version }, ... ]
   const all = allNamedVersions.map((namedVersion) => {
     const [name, version] = namedVersion.split(' ');
-    return { name, version };
+    return {
+      name,
+      version: simplifyVersion(version),
+    };
   });
 
   // { name: oldestVersion }
@@ -22,8 +25,7 @@ module.exports = function targetRuntimes() {
     .value();
 
   const mapped = _.mapKeys(oldestOfEach, (version, name) => mapFamilyName(name));
-  const simplified = _.mapValues(mapped, (version) => simplifyVersion(version));
-  const final = _.pickBy(simplified, (version, name) => isKnownFamily(name));
+  const final = _.pickBy(mapped, (version, name) => isKnownFamily(name));
 
   // eslint-disable-next-line no-console
   console.log('es-compat: checking compatibility for targets', final);
