@@ -17,9 +17,9 @@ Static detectability of recently-added features
 | Error `cause`                                | es-x/no-error-cause                          | 93            |
 | `Object.hasOwn`                              | es-x/no-object-hasown                        | 93            |
 | Private slot checks (`#x in obj`)            | es-x/no-private-in                           | 91            |
-| Top-level `await`                            | es-x/no-top-level-await                      | 89            |
 | RegExp match indices (`/d` flag)             | es-x/no-regexp-d-flag                        | 90            |
 | RegExp Unicode property escapes (2022)       | es-x/no-regexp-unicode-property-escapes-2022 | see issue #63 |
+| Top-level `await`                            | es-x/no-top-level-await                      | 89            |
 
 ### ES2021
 
@@ -56,9 +56,9 @@ Static detectability of recently-added features
 | JSON superset                          | es/no-json-superset                          | 66            |
 | `Object.fromEntries`                   | es/no-object-fromentries                     | 73            |
 | Optional `catch` binding               | es/no-optional-catch-binding                 | 66            |
+| RegExp Unicode property escapes (2019) | es-x/no-regexp-unicode-property-escapes-2019 | see issue #63 |
 | Revised `Function.prototype.toString`  | ❌                                           |
 | Stable `Array.prototype.sort`          | ❌                                           |
-| RegExp Unicode property escapes (2019) | es-x/no-regexp-unicode-property-escapes-2019 | see issue #63 |
 | `String.prototype.trimX` methods       | 😐 no-restricted-syntax                      | 66            |
 | `Symbol.prototype.description`         | 👎 no-restricted-syntax                      | 70            |
 | Well-formed `JSON.stringify`           | ❌                                           |
