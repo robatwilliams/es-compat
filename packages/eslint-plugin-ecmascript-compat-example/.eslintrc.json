@@ -1,7 +1,10 @@
 {
   "root": true,
   "plugins": ["ecmascript-compat"],
-  "parserOptions": { "ecmaVersion": 2021 },
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module"
+  },
   "env": { "es2021": true },
   "rules": {
     "ecmascript-compat/compat": "error"
