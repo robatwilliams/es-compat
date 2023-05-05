@@ -19,7 +19,8 @@ module.exports = function targetRuntimes() {
     .value();
 
   const mapped = _.mapKeys(oldestOfEach, (version, name) => mapFamilyName(name));
-  const final = _.pickBy(mapped, (version, name) => isKnownFamily(name));
+  const simplified = _.mapValues(mapped, (version) => simplifyVersion(version));
+  const final = _.pickBy(simplified, (version, name) => isKnownFamily(name));
 
   // eslint-disable-next-line no-console
   console.log('es-compat: checking compatibility for targets', final);
@@ -54,4 +55,8 @@ const familyNameMapping = {
 
 function mapFamilyName(browserslistName) {
   return familyNameMapping[browserslistName] || browserslistName;
+}
+
+function simplifyVersion(version) {
+  return version.includes('-') ? version.split('-')[0] : version;
 }
