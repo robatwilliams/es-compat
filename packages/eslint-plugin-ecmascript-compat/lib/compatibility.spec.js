@@ -19,6 +19,26 @@ it('supports feature in version introduced', () => {
   expect(unsupported).toHaveLength(0);
 });
 
+it('supports feature in version later than introduced, treating versions as numbers', () => {
+  const feature = {
+    compatFeatures: [
+      {
+        __compat: {
+          support: {
+            safari: { version_added: '9' },
+          },
+        },
+      },
+    ],
+  };
+
+  const unsupported = unsupportedFeatures(
+    [feature],
+    [{ name: 'safari', version: '14.0' }]
+  );
+  expect(unsupported).toHaveLength(0);
+});
+
 it('doesnt support feature in version before introduced', () => {
   const feature = {
     compatFeatures: [
