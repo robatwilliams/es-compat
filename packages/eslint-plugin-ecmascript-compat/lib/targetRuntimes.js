@@ -15,7 +15,10 @@ module.exports = function targetRuntimes() {
   // { name: oldestVersion }
   const oldestOfEach = _.chain(all)
     .groupBy('name')
-    .mapValues((familyMember) => _.sortBy(familyMember, 'version')[0].version)
+    .mapValues(
+      (familyMember) =>
+        familyMember.sort((a, b) => compareVersions(a.version, b.version))[0].version
+    )
     .value();
 
   const mapped = _.mapKeys(oldestOfEach, (version, name) => mapFamilyName(name));
@@ -59,4 +62,20 @@ function mapFamilyName(browserslistName) {
 
 function simplifyVersion(version) {
   return version.includes('-') ? version.split('-')[0] : version;
+}
+
+function compareVersions(a, b) {
+  const aParts = a.split('.').map(Number);
+  const bParts = b.split('.').map(Number);
+
+  for (let i = 0; i < Math.max(aParts.length, bParts.length); i++) {
+    if (aParts[i] === bParts[i]) {
+      // eslint-disable-next-line no-continue
+      continue;
+    }
+
+    return aParts[i] < bParts[i] ? -1 : 1;
+  }
+
+  return 0;
 }
