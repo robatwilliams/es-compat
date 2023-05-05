@@ -50,7 +50,7 @@
     "eqeqeq": ["error", "always", { "null": "never" }],
     "func-names": ["error", "as-needed"],
     "func-style": ["error", "declaration"],
-    "id-length": ["error", { "exceptions": ["_"] }],
+    "id-length": ["error", { "exceptions": ["_", "a", "b", "i"] }],
     "no-unused-vars": ["error", { "ignoreRestSiblings": true }],
     "no-use-before-define": ["error", "nofunc"],
     "spaced-comment": ["error", "always", { "block": { "balanced": true } }],

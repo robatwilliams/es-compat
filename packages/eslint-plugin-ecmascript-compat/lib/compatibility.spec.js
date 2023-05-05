@@ -1,5 +1,6 @@
 /* eslint-disable camelcase */
 const { unsupportedFeatures } = require('./compatibility');
+const features = require('./features');
 
 it('supports feature in version introduced', () => {
   const feature = {
@@ -15,6 +16,26 @@ it('supports feature in version introduced', () => {
   };
 
   const unsupported = unsupportedFeatures([feature], [{ name: 'chrome', version: '73' }]);
+  expect(unsupported).toHaveLength(0);
+});
+
+it('supports feature in version later than introduced, treating versions as numbers', () => {
+  const feature = {
+    compatFeatures: [
+      {
+        __compat: {
+          support: {
+            safari: { version_added: '9' },
+          },
+        },
+      },
+    ],
+  };
+
+  const unsupported = unsupportedFeatures(
+    [feature],
+    [{ name: 'safari', version: '14.0' }]
+  );
   expect(unsupported).toHaveLength(0);
 });
 
@@ -193,4 +214,27 @@ it('explains what the problem is when compat feature not found in MDN data', () 
   expect(() => {
     unsupportedFeatures([feature], [{ name: 'chrome', version: '73' }]);
   }).toThrow("Sparse compatFeatures for rule 'some rule': object,undefined");
+});
+
+it('can rely on all the versions in the compatibility data used being semver or partial semver', () => {
+  // We rely on this to avoid having to deal with ranged versions, for simplicity.
+  // https://github.com/mdn/browser-compat-data/blob/main/schemas/compat-data-schema.md#ranged-versions
+
+  for (const esFeature of features) {
+    for (const compatFeature of esFeature.compatFeatures) {
+      // eslint-disable-next-line no-underscore-dangle
+      for (const supportStatement of Object.values(compatFeature.__compat.support)) {
+        const simpleSupportStatement = Array.isArray(supportStatement)
+          ? supportStatement[0]
+          : supportStatement;
+
+        if (simpleSupportStatement.version_added !== false) {
+          // eslint-disable-next-line jest/no-conditional-expect
+          expect(simpleSupportStatement.version_added).toMatch(
+            /\d+(?<minor>\.\d+(?<patch>\.\d+)?)?/u
+          );
+        }
+      }
+    }
+  }
 });

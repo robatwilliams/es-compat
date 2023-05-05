@@ -12,6 +12,12 @@ it('targets the oldest version of each family', () => {
   expect(targetRuntimes()).toEqual([{ name: 'chrome', version: '50' }]);
 });
 
+it('targets the oldest version of each family, treating versions as numbers', () => {
+  process.env.BROWSERSLIST = 'chrome 9-10';
+
+  expect(targetRuntimes()).toEqual([{ name: 'chrome', version: '9' }]);
+});
+
 it('maps browserslist names to mdn names where necessary', () => {
   process.env.BROWSERSLIST = 'Android >= 0';
 
@@ -36,5 +42,13 @@ it('handles multiple families', () => {
 it('preserves versions as strings to allow semver', () => {
   process.env.BROWSERSLIST = 'Node >= 0';
 
-  expect(targetRuntimes()).toEqual([{ name: 'nodejs', version: '0.10.0' }]);
+  expect(targetRuntimes()).toEqual([{ name: 'nodejs', version: '0.2.0' }]);
+});
+
+it('simplifies version ranges to the start of the range', () => {
+  expect(browserslist('iOS 15')).toEqual(['ios_saf 15.0-15.1']);
+
+  process.env.BROWSERSLIST = 'iOS 15';
+
+  expect(targetRuntimes()).toEqual([{ name: 'safari_ios', version: '15.0' }]);
 });

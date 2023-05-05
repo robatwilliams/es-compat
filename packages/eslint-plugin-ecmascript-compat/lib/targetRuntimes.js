@@ -1,6 +1,7 @@
 const browserslist = require('browserslist');
 const _ = require('lodash');
 const compatData = require('@mdn/browser-compat-data');
+const compareVersions = require('./compareVersions');
 
 module.exports = function targetRuntimes() {
   // ['chrome 50', ...]
@@ -9,13 +10,19 @@ module.exports = function targetRuntimes() {
   // [ { name, version }, ... ]
   const all = allNamedVersions.map((namedVersion) => {
     const [name, version] = namedVersion.split(' ');
-    return { name, version };
+    return {
+      name,
+      version: simplifyVersion(version),
+    };
   });
 
   // { name: oldestVersion }
   const oldestOfEach = _.chain(all)
     .groupBy('name')
-    .mapValues((familyMember) => _.sortBy(familyMember, 'version')[0].version)
+    .mapValues(
+      (familyMember) =>
+        familyMember.sort((a, b) => compareVersions(a.version, b.version))[0].version
+    )
     .value();
 
   const mapped = _.mapKeys(oldestOfEach, (version, name) => mapFamilyName(name));
@@ -54,4 +61,8 @@ const familyNameMapping = {
 
 function mapFamilyName(browserslistName) {
   return familyNameMapping[browserslistName] || browserslistName;
+}
+
+function simplifyVersion(version) {
+  return version.includes('-') ? version.split('-')[0] : version;
 }
