@@ -4,9 +4,10 @@ Please get in touch before spending any significant time preparing contributions
 
 ## Prerequisites
 
-- Node.js, version as per packages' `package.json` `engines` field
-- NPM `^8.1.2` recommended
-- Lerna, just install it globally and [it'll use this project's local version](https://github.com/lerna/lerna/pull/1122) when run
+- Node.js and NPM, versions as per the root `package.json` `engines` field
+- Lerna 4, just install it globally and [it'll use this project's local version](https://github.com/lerna/lerna/pull/1122) when run
+
+Different versions may work, but majorly newer/older tooling versions are likely to cause upheaval in `package-lock.json` files.
 
 ## Workflow
 
