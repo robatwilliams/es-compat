@@ -30,7 +30,7 @@ Static detectability of recently-added features
 | `Promise.any`                          | es/no-promise-any                            | 85            |
 | RegExp Unicode property escapes (2021) | es-x/no-regexp-unicode-property-escapes-2021 | see issue #63 |
 | `String.prototype.replaceAll`          | 😐 no-restricted-properties                  | 85            |
-| `WeakRef and FinalizationRegistry`     | es/no-weakrefs                               | 84            |
+| `WeakRef` and `FinalizationRegistry`   | es/no-weakrefs                               | 84            |
 
 ### ES2020
 
