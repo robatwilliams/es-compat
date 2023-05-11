@@ -28,6 +28,10 @@ ruleTester.run('compat', require('../rule'), {
       options: [{ polyfills: ['globalThis'] }],
     },
     {
+      code: 'BigInt(5)',
+      options: [{ polyfills: ['BigInt'] }],
+    },
+    {
       code: 'Promise.allSettled();',
       options: [{ polyfills: ['Promise.prototype.allSettled'] }],
     },

@@ -19,6 +19,7 @@ module.exports = {
               type: 'string',
               enum: [
                 'globalThis',
+                'BigInt',
                 '{Array,String,TypedArray}.prototype.at',
                 'Array.prototype.flat',
                 'Array.prototype.flatMap',

@@ -23,6 +23,7 @@ module.exports = [
   {
     ruleConfig: { definition: esPlugin.rules['no-bigint'] },
     compatFeatures: [compatData.javascript.builtins.BigInt],
+    polyfill: 'BigInt',
   },
   {
     ruleConfig: { definition: esPlugin.rules['no-dynamic-import'] },
