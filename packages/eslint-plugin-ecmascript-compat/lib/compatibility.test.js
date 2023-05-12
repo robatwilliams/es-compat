@@ -1,8 +1,8 @@
 /* eslint-disable camelcase */
-const assert = require('node:assert');
-const { it } = require('node:test');
-const { unsupportedFeatures } = require('./compatibility');
-const features = require('./features');
+import assert from 'node:assert';
+import { it } from 'node:test';
+import { unsupportedFeatures } from './compatibility';
+import features from './features';
 
 it('supports feature in version introduced', () => {
   const feature = {

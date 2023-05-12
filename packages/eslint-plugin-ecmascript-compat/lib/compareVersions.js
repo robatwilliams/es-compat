@@ -1,4 +1,4 @@
-module.exports = function compareVersions(a, b) {
+export default function compareVersions(a, b) {
   const aParts = a.split('.').map(Number);
   const bParts = b.split('.').map(Number);
 
@@ -12,4 +12,4 @@ module.exports = function compareVersions(a, b) {
   }
 
   return 0;
-};
+}

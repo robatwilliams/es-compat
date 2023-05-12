@@ -1,11 +1,11 @@
-const eslint = require('eslint');
-const esPlugin = require('eslint-plugin-es-x');
-const compatData = require('@mdn/browser-compat-data');
-const { noRestrictedSyntaxPrototypeMethod } = require('./ruleOptionsUtil');
+import eslint from 'eslint';
+import esPlugin from 'eslint-plugin-es-x';
+import compatData from '@mdn/browser-compat-data';
+import { noRestrictedSyntaxPrototypeMethod } from './ruleOptionsUtil';
 
 const coreRules = new eslint.Linter().getRules();
 
-module.exports = [
+export default [
   {
     ruleConfig: { definition: esPlugin.rules['no-async-functions'] },
     compatFeatures: [

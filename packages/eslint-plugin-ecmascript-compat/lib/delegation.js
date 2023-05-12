@@ -1,4 +1,4 @@
-function createDelegatee(config, rootContext) {
+export function createDelegatee(config, rootContext) {
   const { definition, options } = config;
 
   if (!definition) {
@@ -44,7 +44,7 @@ function createDelegatee(config, rootContext) {
   return definition.create(context);
 }
 
-function delegatingVisitor(delegatees) {
+export function delegatingVisitor(delegatees) {
   const delegator = {};
 
   delegatees.forEach((visitor) => {
@@ -63,5 +63,3 @@ function delegatingVisitor(delegatees) {
 
   return delegator;
 }
-
-module.exports = { createDelegatee, delegatingVisitor };

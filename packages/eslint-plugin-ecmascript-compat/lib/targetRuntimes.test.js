@@ -1,7 +1,7 @@
-const assert = require('node:assert');
-const { beforeEach, it } = require('node:test');
-const browserslist = require('browserslist');
-const targetRuntimes = require('./targetRuntimes');
+import assert from 'node:assert';
+import { beforeEach, it } from 'node:test';
+import browserslist from 'browserslist';
+import targetRuntimes from './targetRuntimes';
 
 beforeEach(() => {
   delete process.env.BROWSERSLIST;

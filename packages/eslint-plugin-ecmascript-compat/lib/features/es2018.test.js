@@ -1,4 +1,4 @@
-const { RuleTester } = require('eslint');
+import { RuleTester } from 'eslint';
 
 // Browser that doesn't support any features of this version - see es-versions.md
 process.env.BROWSERSLIST = 'Chrome >= 59';

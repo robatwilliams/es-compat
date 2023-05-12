@@ -1,11 +1,11 @@
-const eslint = require('eslint');
-const compatData = require('@mdn/browser-compat-data');
-const esPlugin = require('eslint-plugin-es-x');
-const { noRestrictedSyntaxPrototypeMethod } = require('./ruleOptionsUtil');
+import eslint from 'eslint';
+import compatData from '@mdn/browser-compat-data';
+import esPlugin from 'eslint-plugin-es-x';
+import { noRestrictedSyntaxPrototypeMethod } from './ruleOptionsUtil';
 
 const coreRules = new eslint.Linter().getRules();
 
-module.exports = [
+export default [
   {
     ruleConfig: {
       definition: coreRules.get('no-restricted-syntax'),
