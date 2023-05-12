@@ -25,8 +25,6 @@ new Error('message', { cause: new Error('originalError') });
 
 /./d.test('d flag');
 
-await Promise.resolve();
-
 /**
  * ES2021
  */
