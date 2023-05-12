@@ -36,6 +36,7 @@
     "no-ternary": "off",
     "no-undefined": "off",
     "one-var": "off",
+    "sort-imports": "off", // using import/order instead
     "sort-keys": "off",
     "strict": "off",
 
