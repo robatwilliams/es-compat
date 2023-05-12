@@ -1,4 +1,5 @@
 import { RuleTester } from 'eslint';
+import rule from '../rule.js';
 
 // Browser that doesn't support any features of this version - see es-versions.md
 process.env.BROWSERSLIST = 'Chrome >= 62';
@@ -20,7 +21,7 @@ const ruleTester = new RuleTester({
   },
 });
 
-ruleTester.run('compat', require('../rule'), {
+ruleTester.run('compat', rule, {
   valid: [
     {
       code: 'globalThis.foo;',
