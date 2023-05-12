@@ -64,13 +64,11 @@
       { "blankLine": "always", "prev": "*", "next": ["cjs-export"] },
 
       { "blankLine": "always", "prev": "*", "next": "block-like" },
-      { "blankLine": "always", "prev": "block-like", "next": "*" },
-
-      { "blankLine": "always", "prev": "cjs-import", "next": "*" },
-      { "blankLine": "any", "prev": "cjs-import", "next": "cjs-import" }
+      { "blankLine": "always", "prev": "block-like", "next": "*" }
     ],
 
-    // eslint-plugin-import - Selection from the ones that are compatible with CommonJS
+    // eslint-plugin-import - selection (not comprehensive)
+    "import/newline-after-import": "error",
     "import/no-extraneous-dependencies": "error",
     "import/order": ["error", { "newlines-between": "never" }]
   }
