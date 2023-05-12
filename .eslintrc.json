@@ -11,7 +11,7 @@
     "eslint:all",
     "prettier",
 
-    "plugin:node/recommended"
+    "plugin:n/recommended"
   ],
   "plugins": ["import"],
   "parserOptions": {
