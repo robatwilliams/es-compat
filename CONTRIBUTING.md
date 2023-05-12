@@ -19,7 +19,7 @@ Different versions may work, but majorly newer/older tooling versions are likely
 - Verify there are no uncommitted changes
 - `npm run ci` in root
 - `npm run lint` in the example project, check number of errors and presence of new expected ones
-- `../check-es-compat/bin/cli.mjs .` in the example project, it should produce the same errors
+- `../check-es-compat/bin/cli.js .` in the example project, it should produce the same errors
 - `lerna clean` then `lerna bootstrap`, verify no changes were introduced (e.g. to `package-lock.json`)
 
 ## Releasing

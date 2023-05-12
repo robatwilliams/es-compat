@@ -3,8 +3,8 @@
   "private": true,
   "scripts": {
     "check": "npm-run-all --parallel check:*",
-    "check:lint": "eslint --no-eslintrc --config=.eslintrc.json **/*.{js,mjs}",
-    "check:prettier": "prettier --check **/*.{js,json,md,mjs}",
+    "check:lint": "eslint --no-eslintrc --config=.eslintrc.json **/*.js",
+    "check:prettier": "prettier --check **/*.{js,json,md}",
     "ci": "npm-run-all check test",
     "postinstall": "lerna bootstrap",
     "test": "lerna run test"
