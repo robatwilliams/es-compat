@@ -1,7 +1,7 @@
-import * as compatibility from './compatibility';
-import { createDelegatee, delegatingVisitor } from './delegation';
-import features from './features';
-import targetRuntimes from './targetRuntimes';
+import * as compatibility from './compatibility.js';
+import { createDelegatee, delegatingVisitor } from './delegation.js';
+import features from './features/index.js';
+import targetRuntimes from './targetRuntimes.js';
 
 export default {
   meta: {

@@ -1,5 +1,5 @@
 import eslint from 'eslint';
-import { createDelegatee, delegatingVisitor } from './delegation';
+import { createDelegatee, delegatingVisitor } from './delegation.js';
 
 const ruleTester = new eslint.RuleTester();
 

@@ -1,5 +1,5 @@
 /* eslint-disable camelcase, no-underscore-dangle */
-import compareVersions from './compareVersions';
+import compareVersions from './compareVersions.js';
 
 export function unsupportedFeatures(features, targets) {
   return features.filter((feature) => !isFeatureSupportedByTargets(feature, targets));

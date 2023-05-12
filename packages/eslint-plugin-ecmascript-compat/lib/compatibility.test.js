@@ -1,8 +1,8 @@
 /* eslint-disable camelcase */
 import assert from 'node:assert';
 import { it } from 'node:test';
-import { unsupportedFeatures } from './compatibility';
-import features from './features';
+import { unsupportedFeatures } from './compatibility.js';
+import features from './features/index.js';
 
 it('supports feature in version introduced', () => {
   const feature = {

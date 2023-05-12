@@ -1,7 +1,7 @@
 import eslint from 'eslint';
 import compatData from '@mdn/browser-compat-data';
 import esPlugin from 'eslint-plugin-es-x';
-import { noRestrictedSyntaxPrototypeMethod } from './ruleOptionsUtil';
+import { noRestrictedSyntaxPrototypeMethod } from './ruleOptionsUtil.js';
 
 const coreRules = new eslint.Linter().getRules();
 

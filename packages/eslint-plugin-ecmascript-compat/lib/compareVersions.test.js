@@ -1,7 +1,6 @@
 import assert from 'node:assert';
 import { test } from 'node:test';
-const compareVersions = require('./compareVersions');
-import compareVersions from './compareVersions';
+import compareVersions from './compareVersions.js';
 
 test('equal', () => {
   assert.strictEqual(compareVersions('1.2.3', '1.2.3'), 0);

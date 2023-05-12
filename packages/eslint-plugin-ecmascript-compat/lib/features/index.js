@@ -1,11 +1,11 @@
-import es2016 from './es2016';
-import es2017 from './es2017';
-import es2018 from './es2018';
-import es2019 from './es2019';
-import es2020 from './es2020';
-import es2021 from './es2021';
-import es2022 from './es2022';
-import es2022 from './es2023';
+import es2016 from './es2016.js';
+import es2017 from './es2017.js';
+import es2018 from './es2018.js';
+import es2019 from './es2019.js';
+import es2020 from './es2020.js';
+import es2021 from './es2021.js';
+import es2022 from './es2022.js';
+import es2023 from './es2023.js';
 
 export default [
   ...es2016,

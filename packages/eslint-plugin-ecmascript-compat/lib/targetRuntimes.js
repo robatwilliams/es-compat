@@ -1,7 +1,7 @@
 import browserslist from 'browserslist';
 import _ from 'lodash';
 import compatData from '@mdn/browser-compat-data';
-import compareVersions from './compareVersions';
+import compareVersions from './compareVersions.js';
 
 export default function targetRuntimes(overrideBrowserslist, browserslistOptions) {
   // ['chrome 50', ...]

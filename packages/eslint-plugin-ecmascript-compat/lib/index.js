@@ -1,4 +1,4 @@
-import rule from './rule';
+import rule from './rule.js';
 
 export default {
   configs: {

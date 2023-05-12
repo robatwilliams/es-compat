@@ -1,7 +1,7 @@
 import assert from 'node:assert';
 import { beforeEach, it } from 'node:test';
 import browserslist from 'browserslist';
-import targetRuntimes from './targetRuntimes';
+import targetRuntimes from './targetRuntimes.js';
 
 beforeEach(() => {
   delete process.env.BROWSERSLIST;
