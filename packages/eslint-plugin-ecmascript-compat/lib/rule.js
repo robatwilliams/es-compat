@@ -18,6 +18,7 @@ module.exports = {
             items: {
               type: 'string',
               enum: [
+                // This list is hard-coded so it can serve as documentation
                 'globalThis',
                 '{Array,String,TypedArray}.prototype.at',
                 'Array.prototype.flat',

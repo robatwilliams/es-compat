@@ -21,6 +21,14 @@ ruleTester.run('compat', require('../rule'), {
       code: '"Foo".at(1);',
       options: [{ polyfills: ['{Array,String,TypedArray}.prototype.at'] }],
     },
+    {
+      code: "new Error('message', { cause: originalError })",
+      options: [{ polyfills: ['Error.cause'] }],
+    },
+    {
+      code: "Object.hasOwn(obj, 'prop');",
+      options: [{ polyfills: ['Object.hasOwn'] }],
+    },
   ],
   invalid: [
     {
