@@ -19,4 +19,8 @@ Firefox >= 58
 
 <!--- Absolute link, in order to work from NPM website --->
 
+It [doesn't currently support](https://github.com/robatwilliams/es-compat/issues/69) ES modules.
+
+<!--- Absolute link, in order to work from NPM website --->
+
 ➡ For more information, see the [main readme](https://github.com/robatwilliams/es-compat#readme).
