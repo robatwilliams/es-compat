@@ -18,14 +18,17 @@ module.exports = {
             items: {
               type: 'string',
               enum: [
+                // This list is hard-coded so it can serve as documentation
                 'globalThis',
                 '{Array,String,TypedArray}.prototype.at',
                 'Array.prototype.flat',
                 'Array.prototype.flatMap',
                 'Array.prototype.includes',
+                'Error.cause',
                 'Object.entries',
                 'Object.fromEntries',
                 'Object.getOwnPropertyDescriptors',
+                'Object.hasOwn',
                 'Object.values',
                 'Promise.prototype.allSettled',
                 'Promise.prototype.any',

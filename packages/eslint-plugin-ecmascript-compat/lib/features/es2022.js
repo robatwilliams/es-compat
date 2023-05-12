@@ -29,10 +29,12 @@ module.exports = [
   {
     ruleConfig: { definition: esPlugin.rules['no-error-cause'] },
     compatFeatures: [compatData.javascript.builtins.Error.Error.options_cause_parameter],
+    polyfill: 'Error.cause',
   },
   {
     ruleConfig: { definition: esPlugin.rules['no-object-hasown'] },
     compatFeatures: [compatData.javascript.builtins.Object.hasOwn],
+    polyfill: 'Object.hasOwn',
   },
   {
     ruleConfig: { definition: esPlugin.rules['no-private-in'] },
