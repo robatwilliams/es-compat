@@ -2,17 +2,5 @@
 # Docs: https://github.com/browserslist/browserslist
 #
 
-### Supports all ES2019 features
-Chrome >= 73
-
-### Supports all ES2018 features
-Chrome >= 64
-
-### Supports all ES2017 features
-Chrome >= 68
-
-### Supports all ES2016 features
-Chrome >= 52
-
-### Supports no ES2016 features
+# Supports no ES2016 features
 Chrome >= 46
