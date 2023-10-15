@@ -39,6 +39,13 @@ it('handles multiple families', () => {
   ]);
 });
 
+it('accepts a override', () => {
+  expect(targetRuntimes('Firefox >= 55,IE >= 10')).toEqual([
+    { name: 'firefox', version: '55' },
+    { name: 'ie', version: '10' },
+  ]);
+});
+
 it('preserves versions as strings to allow semver', () => {
   process.env.BROWSERSLIST = 'Node >= 0';
 

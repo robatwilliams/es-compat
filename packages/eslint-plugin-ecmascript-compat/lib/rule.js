@@ -3,9 +3,6 @@ const { createDelegatee, delegatingVisitor } = require('./delegation');
 const features = require('./features');
 const targetRuntimes = require('./targetRuntimes');
 
-const targets = targetRuntimes();
-const unsupportedFeatures = compatibility.unsupportedFeatures(features, targets);
-
 module.exports = {
   meta: {
     type: 'problem',
@@ -44,12 +41,35 @@ module.exports = {
               ],
             },
           },
+          overrideBrowserslist: {
+            oneOf: [{ type: 'string' }, { type: 'array', items: { type: 'string' } }],
+          },
+          browserslistOptions: {
+            type: 'object',
+            properties: {
+              config: {
+                type: 'string',
+              },
+              path: {
+                type: 'string',
+              },
+              env: {
+                type: 'string',
+              },
+            },
+            additionalProperties: false,
+          },
         },
         additionalProperties: false,
       },
     ],
   },
   create(context) {
+    const overrideBrowserslist = context.options?.[0]?.overrideBrowserslist;
+    const browserslistOptions = context.options?.[0]?.browserslistOptions;
+    const targets = targetRuntimes(overrideBrowserslist, browserslistOptions);
+    const unsupportedFeatures = compatibility.unsupportedFeatures(features, targets);
+
     const polyfills = context.options?.[0]?.polyfills ?? [];
 
     const visitors = unsupportedFeatures

@@ -3,9 +3,16 @@ const _ = require('lodash');
 const compatData = require('@mdn/browser-compat-data');
 const compareVersions = require('./compareVersions');
 
-module.exports = function targetRuntimes() {
+module.exports = function targetRuntimes(overrideBrowserslist, browserslistOptions) {
   // ['chrome 50', ...]
-  const allNamedVersions = browserslist();
+  const allNamedVersions = browserslist(overrideBrowserslist, browserslistOptions);
+
+  if (allNamedVersions.length === 0) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      'es-compat: No browserify configurations found, code will not be checked'
+    );
+  }
 
   // [ { name, version }, ... ]
   const all = allNamedVersions.map((namedVersion) => {
