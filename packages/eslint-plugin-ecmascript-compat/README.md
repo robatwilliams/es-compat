@@ -27,7 +27,11 @@ npm install --save-dev eslint-plugin-ecmascript-compat
         // Optionally, specify provided polyfills
         "polyfills": [
           "Array.prototype.includes"
-        ]
+        ],
+        // Optionally, provide a browserslist to use instead of the project one
+        "overrideBrowserslist": "IE >= 11",
+        // Optionally, specify browserslist options - see https://github.com/browserslist/browserslist#js-api
+        "browserslistOptions": { "env": "legacy" }
       }
     ]
   }
