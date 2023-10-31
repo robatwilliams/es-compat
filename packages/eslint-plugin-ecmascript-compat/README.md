@@ -30,7 +30,7 @@ npm install --save-dev eslint-plugin-ecmascript-compat
         ],
         // Optionally, override the browserslist config in the ESLint config
         "overrideBrowserslist": "IE >= 11",
-        // Optionally, provide browserslist options - see https://github.com/browserslist/browserslist#js-api
+        // Optionally, specify browserslist options - see https://github.com/browserslist/browserslist#js-api
         "browserslistOptions": { "env": "legacy" }
       }
     ]
