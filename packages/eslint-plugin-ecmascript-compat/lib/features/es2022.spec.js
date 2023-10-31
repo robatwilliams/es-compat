@@ -1,15 +1,15 @@
 const { RuleTester } = require('eslint');
 
+// Browser that doesn't support any features of this version - see es-versions.md
+process.env.BROWSERSLIST = 'Chrome >= 71';
+jest.resetModules();
+
 const ruleTester = new RuleTester({
   parserOptions: {
     ecmaVersion: 2022,
     sourceType: 'module', // top level await can only be used in an ES module
   },
 });
-
-// Browser that doesn't support any features of this version - see es-versions.md
-process.env.BROWSERSLIST = 'Chrome >= 71';
-jest.resetModules();
 
 ruleTester.run('compat', require('../rule'), {
   valid: [
@@ -72,6 +72,7 @@ ruleTester.run('compat', require('../rule'), {
     },
     {
       code: 'class A { #field; foo() { #field in this; } }',
+      // Browser that supports private fields but not `in` on them - see es-versions.md
       options: [{ overrideBrowserslist: 'Chrome >= 90' }],
       errors: [{ message: 'ES2022 private in (`#field in object`) is forbidden.' }],
     },
