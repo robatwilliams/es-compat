@@ -57,38 +57,6 @@ It doesn't check browser/runtime-specific APIs (see [eslint-plugin-compat](https
 
 We use a pinned version of `@mdn/browser-compat-data`, because their [SemVer policy](https://github.com/mdn/browser-compat-data#semantic-versioning-policy) allows for breaking changes to the data structure even in minor and patch releases. If you need to use more up to date data, use the `overrides` facility of `package.json` to specify a later version - but be aware that it might break.
 
-## Options
-
-### polyfills
-
-Example:
-
-```
-    'ecmascript-compat/compat': ['error', { polyfills: ['Object.hasOwn'] }]
-```
-
-A array of provided polyfills can be provided in order to not warn about polyfilled features.
-
-### overrideBrowserslist
-
-Example:
-
-```
-    'ecmascript-compat/compat': ['error', { overrideBrowserslist: 'IE >= 11' }]
-```
-
-You can override the browsers list config to a custom definition instead of the default behaviour to find a browsers list file or property in a package.json.
-
-### browserslistOptions
-
-Example:
-
-```
-    'ecmascript-compat/compat': ['error', { browserslistOptions: { env: 'legacy' } }]
-```
-
-You can specify the options provided to browsers list, for example the environment name. See [browserslist API options](https://github.com/browserslist/browserslist#js-api).
-
 ## Limitations
 
 Because JavaScript is untyped, detection of some features' usage (namely prototype methods) through static analysis requires some assumptions to be made. This shouldn't be a problem as long as you avoid creating your own methods having the same names, or write code in an unusual way to deliberately evade detection.

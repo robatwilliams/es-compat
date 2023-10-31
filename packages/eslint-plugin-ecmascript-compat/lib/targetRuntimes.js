@@ -7,13 +7,6 @@ module.exports = function targetRuntimes(overrideBrowserslist, browserslistOptio
   // ['chrome 50', ...]
   const allNamedVersions = browserslist(overrideBrowserslist, browserslistOptions);
 
-  if (allNamedVersions.length === 0) {
-    // eslint-disable-next-line no-console
-    console.warn(
-      'es-compat: No browserify configurations found, code will not be checked'
-    );
-  }
-
   // [ { name, version }, ... ]
   const all = allNamedVersions.map((namedVersion) => {
     const [name, version] = namedVersion.split(' ');
@@ -34,9 +27,6 @@ module.exports = function targetRuntimes(overrideBrowserslist, browserslistOptio
 
   const mapped = _.mapKeys(oldestOfEach, (version, name) => mapFamilyName(name));
   const final = _.pickBy(mapped, (version, name) => isKnownFamily(name));
-
-  // eslint-disable-next-line no-console
-  console.log('es-compat: checking compatibility for targets', final);
 
   // [ { name, version } ]
   return Object.entries(final).map(([name, version]) => ({ name, version }));
