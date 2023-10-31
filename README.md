@@ -61,7 +61,9 @@ We use a pinned version of `@mdn/browser-compat-data`, because their [SemVer pol
 
 Because JavaScript is untyped, detection of some features' usage (namely prototype methods) through static analysis requires some assumptions to be made. This shouldn't be a problem as long as you avoid creating your own methods having the same names, or write code in an unusual way to deliberately evade detection.
 
-The MDN compatibility dataset has very good coverage of the top ~6 desktop and mobile browsers, and Node.js (much more than [kangax/compat-table](https://github.com/kangax/compat-table)). In case of missing data (support unknown, or unknown in which version support was added), we currently assume support.
+Support can only be checked for the [browsers and runtimes covered](https://github.com/mdn/browser-compat-data/tree/main/browsers) by the MDN compatibility dataset.
+
+The MDN compatibility dataset has very good feature coverage of the top ~6 desktop and mobile browsers, and Node.js (much more than [kangax/compat-table](https://github.com/kangax/compat-table)). In case of missing data for a feature (support unknown, or unknown in which version support was added), we currently assume support.
 
 ## Contributing
 
