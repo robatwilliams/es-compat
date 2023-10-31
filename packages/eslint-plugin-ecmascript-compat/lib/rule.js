@@ -46,18 +46,7 @@ module.exports = {
           },
           browserslistOptions: {
             type: 'object',
-            properties: {
-              config: {
-                type: 'string',
-              },
-              path: {
-                type: 'string',
-              },
-              env: {
-                type: 'string',
-              },
-            },
-            additionalProperties: false,
+            additionalProperties: true,
           },
         },
         additionalProperties: false,
