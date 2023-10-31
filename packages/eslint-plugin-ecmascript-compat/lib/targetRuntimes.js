@@ -33,14 +33,7 @@ module.exports = function targetRuntimes(overrideBrowserslist, browserslistOptio
 };
 
 function isKnownFamily(name) {
-  const isKnown = compatData.browsers[name] != null;
-
-  if (!isKnown) {
-    // eslint-disable-next-line no-console
-    console.warn(`es-compat: No compatibility data for target family '${name}'`);
-  }
-
-  return isKnown;
+  return compatData.browsers[name] != null;
 }
 
 // browserslist -> @mdn/browser-compat-data (where necessary and available)
