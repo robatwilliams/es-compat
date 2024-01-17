@@ -20,6 +20,7 @@ module.exports = [
       compatData.javascript.classes.public_class_fields,
       compatData.javascript.classes.private_class_fields,
       compatData.javascript.classes.static_class_fields,
+      compatData.javascript.classes.private_class_methods,
     ],
   },
   {

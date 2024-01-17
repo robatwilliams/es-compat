@@ -47,8 +47,8 @@ ruleTester.run('compat', require('../rule'), {
       errors: [{ message: "ES2022 'Array.prototype.at' method is forbidden." }],
     },
     {
-      code: 'class A { a = 0 }',
-      errors: [{ message: "ES2020 field 'a' is forbidden." }],
+      code: 'class A { #a = 0 }',
+      errors: [{ message: 'ES2020 private field #a is forbidden.' }],
     },
     {
       code: 'class A { static { } }',
