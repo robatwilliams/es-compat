@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@mdn/browser-compat-data": "5.2.55",
-    "browserslist": "^4.8.0",
+    "browserslist": "^4.22.2",
     "eslint-plugin-es-x": "^7.5.0",
     "lodash": "^4.17.21"
   },
