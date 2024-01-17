@@ -84,5 +84,9 @@ ruleTester.run('compat', require('../rule'), {
       code: 'foo.with(1, "a");',
       errors: [{ message: "ES2023 'Array.prototype.with' method is forbidden." }],
     },
+    {
+      code: '#!/usr/bin/env node',
+      errors: [{ message: 'ES2023 Hashbang comments are forbidden.' }],
+    },
   ],
 });

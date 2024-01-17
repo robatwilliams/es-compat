@@ -56,4 +56,10 @@ module.exports = [
     ],
     polyfill: '{Array,TypedArray}.prototype.with',
   },
+  {
+    ruleConfig: {
+      definition: esPlugin.rules['no-hashbang'],
+    },
+    compatFeatures: [compatData.javascript.grammar.hashbang_comments],
+  },
 ];

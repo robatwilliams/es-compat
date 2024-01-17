@@ -1,6 +1,11 @@
 function createDelegatee(config, rootContext) {
   const { definition, options } = config;
 
+  if (!definition) {
+    // May need to update the es-x dependency, or check that the lookup name is not prefixed with es-x/
+    throw new Error('Rule instance not given');
+  }
+
   // All except report() are added later. Define necessary ones for used rules.
   // https://eslint.org/docs/latest/extend/custom-rules#the-context-object
   const contextLaterAdded = {
