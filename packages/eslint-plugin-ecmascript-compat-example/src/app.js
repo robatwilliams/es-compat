@@ -1,4 +1,13 @@
 /**
+ * ES2023
+ */
+[].findLast('a');
+[].toReversed();
+[].toSorted();
+[].toSpliced(1);
+[].with(1, 'a');
+
+/**
  * ES2022
  */
 [].at(1);
