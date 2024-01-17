@@ -6,4 +6,5 @@ module.exports = [
   ...require('./es2020'),
   ...require('./es2021'),
   ...require('./es2022'),
+  ...require('./es2023'),
 ];

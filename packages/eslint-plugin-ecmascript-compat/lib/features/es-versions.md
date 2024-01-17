@@ -8,16 +8,16 @@ Static detectability of recently-added features
 
 ### ES2023
 
-| Name                                        | ESLint / eslint-plugin-es                         | Chrome since  |
-| ------------------------------------------- | ------------------------------------------------- | ------------- |
-| `Array.prototype.{findLast, findLastIndex}` | 😐 es-x/no-array-prototype-findlast-findlastindex | 97            |
-| `Array.prototype.toReversed`                | 😐 es-x/no-array-prototype-toreversed             | 110           |
-| `Array.prototype.toSorted`                  | 😐 es-x/no-array-prototype-tosorted               | 110           |
-| `Array.prototype.toSpliced`                 | 😐 es-x/no-array-prototype-tospliced              | 110           |
-| `Array.prototype.with`                      | 😐 es-x/no-array-prototype-with                   | 110           |
-| Hashbang Grammar                            | es-x/no-hashbang                                  | 74            |
-| Symbols as WeakMap keys                     | ❌                                                | 108           |
-| RegExp Unicode property escapes (2023)      | s-x/no-regexp-unicode-property-escapes-2023       | see issue #63 |
+| Name | ESLint / eslint-plugin-es | Chrome since |
+| --- | --- | --- |
+| `{Array, TypedArray}.prototype.{findLast, findLastIndex}` | 😐 es-x/no-array-prototype-findlast-findlastindex | 97 |
+| `{Array, TypedArray}.prototype.toReversed` | 😐 es-x/no-array-prototype-toreversed | 110 |
+| `{Array, TypedArray}.prototype.toSorted` | 😐 es-x/no-array-prototype-tosorted | 110 |
+| `Array.prototype.toSpliced` | 😐 es-x/no-array-prototype-tospliced | 110 |
+| `{Array, TypedArray}.prototype.with` | 😐 es-x/no-array-prototype-with | 110 |
+| Hashbang Grammar | es-x/no-hashbang | 74 |
+| Symbols as WeakMap keys | ❌ | 108 |
+| RegExp Unicode property escapes (2023) | es-x/no-regexp-unicode-property-escapes-2023 | see issue #63 |
 
 ### ES2022
 
