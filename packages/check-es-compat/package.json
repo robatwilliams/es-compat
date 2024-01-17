@@ -30,7 +30,7 @@
     "check-es-compat": "bin/cli.mjs"
   },
   "dependencies": {
-    "eslint": "^8.6.0",
+    "eslint": "^8.56.0",
     "eslint-plugin-ecmascript-compat": "^3.1.0"
   },
   "engines": {

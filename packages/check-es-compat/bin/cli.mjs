@@ -27,11 +27,11 @@ async function execute(files) {
       plugins: ['ecmascript-compat'],
       parserOptions: {
         // Latest version, so all features work
-        ecmaVersion: 2022,
+        ecmaVersion: 2023,
       },
       env: {
         // Latest globals, so all features work
-        es2021: true,
+        es2023: true,
       },
       rules: {
         'ecmascript-compat/compat': 'error',
