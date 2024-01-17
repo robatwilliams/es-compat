@@ -48,7 +48,7 @@ ruleTester.run('compat', require('../rule'), {
     },
     {
       code: 'class A { #a = 0 }',
-      errors: [{ message: 'ES2020 private field #a is forbidden.' }],
+      errors: [{ message: 'ES2022 private field #a is forbidden.' }],
     },
     {
       code: 'class A { static { } }',
