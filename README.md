@@ -22,6 +22,12 @@ Or, you may be transpiling your own code but not prebuilt 3rd-party libraries - 
 
 [ESLint](https://eslint.org) supports targeting a specific ECMAScript version, and [eslint-plugin-es-x](https://github.com/eslint-community/eslint-plugin-es-x) allows forbidding individual language features. However when building applications, what we target are particular browser/runtime versions. This project lets you check compatibility by specifying those targets directly via a browserslist. It will figure out which individual features you can use, by looking up those targets in the [MDN compatibility dataset](https://github.com/mdn/browser-compat-data).
 
+## Usage scenario examples
+
+If you're not using a transpiler, run the tool/linter on your source code to ensure you're not using language features that aren't supported in your application's supported browsers.
+
+If you transpile your own code but not 3rd party libraries, run the tool/linter on your output bundles to ensure they're not using language features that aren't supported in your application's supported browsers.
+
 ## Scope
 
 ECMAScript language features only; this includes syntax, built-ins, and methods.
