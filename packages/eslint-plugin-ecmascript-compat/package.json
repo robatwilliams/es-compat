@@ -42,8 +42,7 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "eslint": "^8.56.0",
-    "jest": "^27.4.7"
+    "eslint": "^8.56.0"
   },
   "peerDependencies": {
     "eslint": ">=8"
