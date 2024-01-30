@@ -1,4 +1,6 @@
 /* eslint-disable camelcase */
+const assert = require('node:assert');
+const { it } = require('node:test');
 const { unsupportedFeatures } = require('./compatibility');
 const features = require('./features');
 
@@ -16,7 +18,7 @@ it('supports feature in version introduced', () => {
   };
 
   const unsupported = unsupportedFeatures([feature], [{ name: 'chrome', version: '73' }]);
-  expect(unsupported).toHaveLength(0);
+  assert.deepStrictEqual(unsupported, []);
 });
 
 it('supports feature in version later than introduced, treating versions as numbers', () => {
@@ -36,7 +38,7 @@ it('supports feature in version later than introduced, treating versions as numb
     [feature],
     [{ name: 'safari', version: '14.0' }]
   );
-  expect(unsupported).toHaveLength(0);
+  assert.deepStrictEqual(unsupported, []);
 });
 
 it('doesnt support feature in version before introduced', () => {
@@ -53,7 +55,7 @@ it('doesnt support feature in version before introduced', () => {
   };
 
   const unsupported = unsupportedFeatures([feature], [{ name: 'chrome', version: '72' }]);
-  expect(unsupported[0]).toBe(feature);
+  assert.strictEqual(unsupported[0], feature);
 });
 
 it('supports feature supported by family in unknown version', () => {
@@ -70,7 +72,7 @@ it('supports feature supported by family in unknown version', () => {
   };
 
   const unsupported = unsupportedFeatures([feature], [{ name: 'chrome', version: '73' }]);
-  expect(unsupported).toHaveLength(0);
+  assert.deepStrictEqual(unsupported, []);
 });
 
 it('doesnt support feature not supported in any version of family', () => {
@@ -87,7 +89,7 @@ it('doesnt support feature not supported in any version of family', () => {
   };
 
   const unsupported = unsupportedFeatures([feature], [{ name: 'chrome', version: '73' }]);
-  expect(unsupported[0]).toBe(feature);
+  assert.strictEqual(unsupported[0], feature);
 });
 
 it('supports feature with unknown support by family', () => {
@@ -104,7 +106,7 @@ it('supports feature with unknown support by family', () => {
   };
 
   const unsupported = unsupportedFeatures([feature], [{ name: 'chrome', version: '73' }]);
-  expect(unsupported).toHaveLength(0);
+  assert.deepStrictEqual(unsupported, []);
 });
 
 it('supports feature with omitted support entry for mobile target', () => {
@@ -124,7 +126,7 @@ it('supports feature with omitted support entry for mobile target', () => {
     [feature],
     [{ name: 'chrome_android', version: '73' }]
   );
-  expect(unsupported).toHaveLength(0);
+  assert.deepStrictEqual(unsupported, []);
 });
 
 it('doesnt support feature supported by one target but not another', () => {
@@ -148,7 +150,7 @@ it('doesnt support feature supported by one target but not another', () => {
       { name: 'firefox', version: '50' },
     ]
   );
-  expect(unsupported[0]).toBe(feature);
+  assert.strictEqual(unsupported[0], feature);
 });
 
 it('uses primary support record where multiple ones exist', () => {
@@ -179,13 +181,13 @@ it('uses primary support record where multiple ones exist', () => {
     [feature],
     [{ name: 'nodejs', version: '7.0.0' }]
   );
-  expect(primaryUnsupported).toHaveLength(0);
+  assert.deepStrictEqual(primaryUnsupported, []);
 
   const secondaryUnsupported = unsupportedFeatures(
     [feature],
     [{ name: 'nodejs', version: '6.7.0' }]
   );
-  expect(secondaryUnsupported[0]).toBe(feature);
+  assert.deepStrictEqual(secondaryUnsupported[0], feature);
 });
 
 it('explains what the problem is when compat feature not found in MDN data', () => {
@@ -211,9 +213,10 @@ it('explains what the problem is when compat feature not found in MDN data', () 
     ],
   };
 
-  expect(() => {
-    unsupportedFeatures([feature], [{ name: 'chrome', version: '73' }]);
-  }).toThrow("Sparse compatFeatures for rule 'some rule': object,undefined");
+  assert.throws(
+    () => unsupportedFeatures([feature], [{ name: 'chrome', version: '73' }]),
+    { message: "Sparse compatFeatures for rule 'some rule': object,undefined" }
+  );
 });
 
 it('can rely on all the versions in the compatibility data used being semver or partial semver', () => {
@@ -229,8 +232,8 @@ it('can rely on all the versions in the compatibility data used being semver or 
           : supportStatement;
 
         if (simpleSupportStatement.version_added !== false) {
-          // eslint-disable-next-line jest/no-conditional-expect
-          expect(simpleSupportStatement.version_added).toMatch(
+          assert.match(
+            simpleSupportStatement.version_added,
             /\d+(?<minor>\.\d+(?<patch>\.\d+)?)?/u
           );
         }

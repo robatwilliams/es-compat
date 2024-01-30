@@ -2,7 +2,6 @@ const { RuleTester } = require('eslint');
 
 // Browser that doesn't support any features of this version - see es-versions.md
 process.env.BROWSERSLIST = 'Chrome >= 71';
-jest.resetModules();
 
 const ruleTester = new RuleTester({
   parserOptions: {
