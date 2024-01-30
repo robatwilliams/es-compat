@@ -33,7 +33,7 @@
   "author": "Robat Williams",
   "main": "lib/index.js",
   "scripts": {
-    "test": "jest --env=node"
+    "test": "node --test"
   },
   "dependencies": {
     "@mdn/browser-compat-data": "5.5.6",
@@ -42,13 +42,12 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "eslint": "^8.56.0",
-    "jest": "^27.4.7"
+    "eslint": "^8.56.0"
   },
   "peerDependencies": {
     "eslint": ">=8"
   },
   "engines": {
-    "node": "^14.18.0 || >=16.0.0"
+    "node": ">=16.0.0"
   }
 }
