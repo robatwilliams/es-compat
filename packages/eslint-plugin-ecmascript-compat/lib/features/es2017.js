@@ -1,9 +1,5 @@
-const eslint = require('eslint');
 const esPlugin = require('eslint-plugin-es-x');
 const compatData = require('@mdn/browser-compat-data');
-const { noRestrictedSyntaxPrototypeMethod } = require('./ruleOptionsUtil');
-
-const coreRules = new eslint.Linter().getRules();
 
 module.exports = [
   {
@@ -40,19 +36,14 @@ module.exports = [
   },
   {
     ruleConfig: {
-      definition: coreRules.get('no-restricted-syntax'),
-      options: noRestrictedSyntaxPrototypeMethod('String.prototype.padStart', 'ES2017'),
+      definition: esPlugin.rules['no-string-prototype-padstart-padend'],
+      options: [{ aggressive: true }],
     },
-    compatFeatures: [compatData.javascript.builtins.String.padStart],
-    polyfill: 'String.prototype.padStart',
-  },
-  {
-    ruleConfig: {
-      definition: coreRules.get('no-restricted-syntax'),
-      options: noRestrictedSyntaxPrototypeMethod('String.prototype.padEnd', 'ES2017'),
-    },
-    compatFeatures: [compatData.javascript.builtins.String.padEnd],
-    polyfill: 'String.prototype.padEnd',
+    compatFeatures: [
+      compatData.javascript.builtins.String.padStart,
+      compatData.javascript.builtins.String.padEnd,
+    ],
+    polyfill: 'String.prototype.{padStart,padEnd}',
   },
   {
     ruleConfig: { definition: esPlugin.rules['no-trailing-function-commas'] },

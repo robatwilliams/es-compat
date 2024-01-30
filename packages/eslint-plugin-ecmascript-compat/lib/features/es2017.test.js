@@ -32,11 +32,11 @@ ruleTester.run('compat', require('../rule'), {
     },
     {
       code: 'str.padStart();',
-      options: [{ polyfills: ['String.prototype.padStart'] }],
+      options: [{ polyfills: ['String.prototype.{padStart,padEnd}'] }],
     },
     {
       code: 'str.padEnd();',
-      options: [{ polyfills: ['String.prototype.padEnd'] }],
+      options: [{ polyfills: ['String.prototype.{padStart,padEnd}'] }],
     },
   ],
   invalid: [
@@ -68,19 +68,19 @@ ruleTester.run('compat', require('../rule'), {
     },
     {
       code: 'str.padStart();',
-      errors: [{ message: "ES2017 method 'String.prototype.padStart' is forbidden" }],
+      errors: [{ message: "ES2017 'String.prototype.padStart' method is forbidden." }],
     },
     {
       code: 'String.prototype.padStart;',
-      errors: [{ message: "ES2017 method 'String.prototype.padStart' is forbidden" }],
+      errors: [{ message: "ES2017 'String.prototype.padStart' method is forbidden." }],
     },
     {
       code: 'str.padEnd();',
-      errors: [{ message: "ES2017 method 'String.prototype.padEnd' is forbidden" }],
+      errors: [{ message: "ES2017 'String.prototype.padEnd' method is forbidden." }],
     },
     {
       code: 'String.prototype.padEnd;',
-      errors: [{ message: "ES2017 method 'String.prototype.padEnd' is forbidden" }],
+      errors: [{ message: "ES2017 'String.prototype.padEnd' method is forbidden." }],
     },
     {
       code: 'foo(bar,);',

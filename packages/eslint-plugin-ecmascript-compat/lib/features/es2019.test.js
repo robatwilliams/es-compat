@@ -12,18 +12,12 @@ const ruleTester = new RuleTester({
 ruleTester.run('compat', require('../rule'), {
   valid: [
     {
-      code: 'const flat = residentialAddress.flat;',
-    },
-    {
-      code: 'residentialAddress.flat = flat;',
-    },
-    {
       code: 'foo.flat();',
-      options: [{ polyfills: ['Array.prototype.flat'] }],
+      options: [{ polyfills: ['Array.prototype.{flat,flatMap}'] }],
     },
     {
       code: 'foo.flatMap();',
-      options: [{ polyfills: ['Array.prototype.flatMap'] }],
+      options: [{ polyfills: ['Array.prototype.{flat,flatMap}'] }],
     },
     {
       code: 'Object.fromEntries();',
@@ -31,29 +25,29 @@ ruleTester.run('compat', require('../rule'), {
     },
     {
       code: 'foo.trimLeft();',
-      options: [{ polyfills: ['String.prototype.trimLeft'] }],
+      options: [{ polyfills: ['String.prototype.{trimStart,trimEnd}'] }],
     },
     {
       code: 'foo.trimRight();',
-      options: [{ polyfills: ['String.prototype.trimRight'] }],
+      options: [{ polyfills: ['String.prototype.{trimStart,trimEnd}'] }],
     },
     {
       code: 'foo.trimStart();',
-      options: [{ polyfills: ['String.prototype.trimStart'] }],
+      options: [{ polyfills: ['String.prototype.{trimStart,trimEnd}'] }],
     },
     {
       code: 'foo.trimEnd();',
-      options: [{ polyfills: ['String.prototype.trimEnd'] }],
+      options: [{ polyfills: ['String.prototype.{trimStart,trimEnd}'] }],
     },
   ],
   invalid: [
     {
       code: 'foo.flat();',
-      errors: [{ message: "ES2019 method 'Array.prototype.flat' is forbidden" }],
+      errors: [{ message: "ES2019 'Array.prototype.flat' method is forbidden." }],
     },
     {
       code: 'Array.prototype.flatMap;',
-      errors: [{ message: "ES2019 method 'Array.prototype.flatMap' is forbidden" }],
+      errors: [{ message: "ES2019 'Array.prototype.flatMap' method is forbidden." }],
     },
     {
       // eslint-disable-next-line no-irregular-whitespace
@@ -70,19 +64,19 @@ ruleTester.run('compat', require('../rule'), {
     },
     {
       code: 'foo.trimLeft();',
-      errors: [{ message: "ES2019 method 'String.prototype.trimLeft' is forbidden" }],
+      errors: [{ message: "ES2019 'String.prototype.trimLeft' method is forbidden." }],
     },
     {
       code: 'String.prototype.trimRight;',
-      errors: [{ message: "ES2019 method 'String.prototype.trimRight' is forbidden" }],
+      errors: [{ message: "ES2019 'String.prototype.trimRight' method is forbidden." }],
     },
     {
       code: 'String.prototype.trimStart;',
-      errors: [{ message: "ES2019 method 'String.prototype.trimStart' is forbidden" }],
+      errors: [{ message: "ES2019 'String.prototype.trimStart' method is forbidden." }],
     },
     {
       code: 'foo.trimEnd();',
-      errors: [{ message: "ES2019 method 'String.prototype.trimEnd' is forbidden" }],
+      errors: [{ message: "ES2019 'String.prototype.trimEnd' method is forbidden." }],
     },
   ],
 });

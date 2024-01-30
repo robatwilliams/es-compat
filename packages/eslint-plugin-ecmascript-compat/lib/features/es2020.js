@@ -1,7 +1,6 @@
 const eslint = require('eslint');
 const esPlugin = require('eslint-plugin-es-x');
 const compatData = require('@mdn/browser-compat-data');
-const { noRestrictedSyntaxPrototypeMethod } = require('./ruleOptionsUtil');
 
 const coreRules = new eslint.Linter().getRules();
 
@@ -58,8 +57,8 @@ module.exports = [
   {
     // May false positive for Cache/Clients.matchAll()
     ruleConfig: {
-      definition: coreRules.get('no-restricted-syntax'),
-      options: noRestrictedSyntaxPrototypeMethod('String.prototype.matchAll', 'ES2020'),
+      definition: esPlugin.rules['no-string-prototype-matchall'],
+      options: [{ aggressive: true }],
     },
     compatFeatures: [compatData.javascript.builtins.String.matchAll],
     polyfill: 'String.prototype.matchAll',

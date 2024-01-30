@@ -1,15 +1,11 @@
-const eslint = require('eslint');
 const compatData = require('@mdn/browser-compat-data');
 const esPlugin = require('eslint-plugin-es-x');
-const { noRestrictedSyntaxPrototypeMethod } = require('./ruleOptionsUtil');
-
-const coreRules = new eslint.Linter().getRules();
 
 module.exports = [
   {
     ruleConfig: {
-      definition: coreRules.get('no-restricted-syntax'),
-      options: noRestrictedSyntaxPrototypeMethod('String.prototype.replaceAll', 'ES2021'),
+      definition: esPlugin.rules['no-string-prototype-replaceall'],
+      options: [{ aggressive: true }],
     },
     compatFeatures: [compatData.javascript.builtins.String.replaceAll],
     polyfill: 'String.prototype.replaceAll',

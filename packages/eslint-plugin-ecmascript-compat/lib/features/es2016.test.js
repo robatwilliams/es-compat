@@ -19,11 +19,11 @@ ruleTester.run('compat', require('../rule'), {
   invalid: [
     {
       code: 'foo.includes();',
-      errors: [{ message: "ES2016 method 'Array.prototype.includes' is forbidden" }],
+      errors: [{ message: "ES2016 'Array.prototype.includes' method is forbidden." }],
     },
     {
       code: 'Array.prototype.includes;',
-      errors: [{ message: "ES2016 method 'Array.prototype.includes' is forbidden" }],
+      errors: [{ message: "ES2016 'Array.prototype.includes' method is forbidden." }],
     },
     {
       code: 'foo ** bar',

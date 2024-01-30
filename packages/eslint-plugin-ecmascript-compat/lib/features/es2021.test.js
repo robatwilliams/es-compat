@@ -30,7 +30,7 @@ ruleTester.run('compat', require('../rule'), {
   invalid: [
     {
       code: '"A dog".replaceAll("dog", "monkey");',
-      errors: [{ message: "ES2021 method 'String.prototype.replaceAll' is forbidden" }],
+      errors: [{ message: "ES2021 'String.prototype.replaceAll' method is forbidden." }],
     },
     {
       code: 'a ||= 1;',

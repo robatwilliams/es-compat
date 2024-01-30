@@ -35,11 +35,11 @@ ruleTester.run('compat', require('../rule'), {
     },
     {
       code: 'foo.finally();',
-      errors: [{ message: "ES2018 method 'Promise.prototype.finally' is forbidden" }],
+      errors: [{ message: "ES2018 'Promise.prototype.finally' method is forbidden." }],
     },
     {
       code: 'Promise.prototype.finally;',
-      errors: [{ message: "ES2018 method 'Promise.prototype.finally' is forbidden" }],
+      errors: [{ message: "ES2018 'Promise.prototype.finally' method is forbidden." }],
     },
     {
       code: "/(?<=a)b/.test('look-behind assertion');",

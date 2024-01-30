@@ -1,26 +1,17 @@
-const eslint = require('eslint');
 const esPlugin = require('eslint-plugin-es-x');
 const compatData = require('@mdn/browser-compat-data');
-const { noRestrictedSyntaxPrototypeMethod } = require('./ruleOptionsUtil');
-
-const coreRules = new eslint.Linter().getRules();
 
 module.exports = [
   {
     ruleConfig: {
-      definition: coreRules.get('no-restricted-syntax'),
-      options: noRestrictedSyntaxPrototypeMethod('Array.prototype.flat', 'ES2019'),
+      definition: esPlugin.rules['no-array-prototype-flat'],
+      options: [{ aggressive: true }],
     },
-    compatFeatures: [compatData.javascript.builtins.Array.flat],
-    polyfill: 'Array.prototype.flat',
-  },
-  {
-    ruleConfig: {
-      definition: coreRules.get('no-restricted-syntax'),
-      options: noRestrictedSyntaxPrototypeMethod('Array.prototype.flatMap', 'ES2019'),
-    },
-    compatFeatures: [compatData.javascript.builtins.Array.flatMap],
-    polyfill: 'Array.prototype.flatMap',
+    compatFeatures: [
+      compatData.javascript.builtins.Array.flat,
+      compatData.javascript.builtins.Array.flatMap,
+    ],
+    polyfill: 'Array.prototype.{flat,flatMap}',
   },
   {
     ruleConfig: { definition: esPlugin.rules['no-json-superset'] },
@@ -37,34 +28,13 @@ module.exports = [
   },
   {
     ruleConfig: {
-      definition: coreRules.get('no-restricted-syntax'),
-      options: noRestrictedSyntaxPrototypeMethod('String.prototype.trimStart', 'ES2019'),
+      definition: esPlugin.rules['no-string-prototype-trimstart-trimend'],
+      options: [{ aggressive: true }],
     },
-    compatFeatures: [compatData.javascript.builtins.String.trimStart],
-    polyfill: 'String.prototype.trimStart',
-  },
-  {
-    ruleConfig: {
-      definition: coreRules.get('no-restricted-syntax'),
-      options: noRestrictedSyntaxPrototypeMethod('String.prototype.trimLeft', 'ES2019'),
-    },
-    compatFeatures: [compatData.javascript.builtins.String.trimStart], // not a mistake; trimLeft is an alias for trimStart
-    polyfill: 'String.prototype.trimLeft',
-  },
-  {
-    ruleConfig: {
-      definition: coreRules.get('no-restricted-syntax'),
-      options: noRestrictedSyntaxPrototypeMethod('String.prototype.trimEnd', 'ES2019'),
-    },
-    compatFeatures: [compatData.javascript.builtins.String.trimEnd],
-    polyfill: 'String.prototype.trimEnd',
-  },
-  {
-    ruleConfig: {
-      definition: coreRules.get('no-restricted-syntax'),
-      options: noRestrictedSyntaxPrototypeMethod('String.prototype.trimRight', 'ES2019'),
-    },
-    compatFeatures: [compatData.javascript.builtins.String.trimEnd], // not a mistake; trimRight is an alias for trimEnd
-    polyfill: 'String.prototype.trimRight',
+    compatFeatures: [
+      compatData.javascript.builtins.String.trimStart,
+      compatData.javascript.builtins.String.trimEnd,
+    ],
+    polyfill: 'String.prototype.{trimStart,trimEnd}',
   },
 ];

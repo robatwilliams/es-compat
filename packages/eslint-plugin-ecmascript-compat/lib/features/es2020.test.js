@@ -82,11 +82,11 @@ ruleTester.run('compat', require('../rule'), {
     },
     {
       code: 'foo.matchAll();',
-      errors: [{ message: "ES2020 method 'String.prototype.matchAll' is forbidden" }],
+      errors: [{ message: "ES2020 'String.prototype.matchAll' method is forbidden." }],
     },
     {
       code: 'String.prototype.matchAll;',
-      errors: [{ message: "ES2020 method 'String.prototype.matchAll' is forbidden" }],
+      errors: [{ message: "ES2020 'String.prototype.matchAll' method is forbidden." }],
     },
   ],
 });
