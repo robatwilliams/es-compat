@@ -33,7 +33,7 @@
   "author": "Robat Williams",
   "main": "lib/index.js",
   "scripts": {
-    "test": "jest --env=node"
+    "test": "node --test"
   },
   "dependencies": {
     "@mdn/browser-compat-data": "5.5.6",
