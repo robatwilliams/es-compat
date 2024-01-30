@@ -37,6 +37,7 @@ module.exports = {
                 'String.prototype.matchAll',
                 'String.prototype.{padStart,padEnd}',
                 'String.prototype.replaceAll',
+                'String.prototype.{trimLeft,trimRight}',
                 'String.prototype.{trimStart,trimEnd}',
               ],
             },

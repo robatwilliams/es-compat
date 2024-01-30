@@ -25,11 +25,11 @@ ruleTester.run('compat', require('../rule'), {
     },
     {
       code: 'foo.trimLeft();',
-      options: [{ polyfills: ['String.prototype.{trimStart,trimEnd}'] }],
+      options: [{ polyfills: ['String.prototype.{trimLeft,trimRight}'] }],
     },
     {
       code: 'foo.trimRight();',
-      options: [{ polyfills: ['String.prototype.{trimStart,trimEnd}'] }],
+      options: [{ polyfills: ['String.prototype.{trimLeft,trimRight}'] }],
     },
     {
       code: 'foo.trimStart();',

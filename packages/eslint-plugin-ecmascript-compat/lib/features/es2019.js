@@ -37,4 +37,16 @@ module.exports = [
     ],
     polyfill: 'String.prototype.{trimStart,trimEnd}',
   },
+  {
+    ruleConfig: {
+      definition: esPlugin.rules['no-string-prototype-trimleft-trimright'],
+      options: [{ aggressive: true }],
+    },
+    compatFeatures: [
+      // Not a mistake; trimLeft/trimRight are aliases for trimStart/trimEnd
+      compatData.javascript.builtins.String.trimStart,
+      compatData.javascript.builtins.String.trimEnd,
+    ],
+    polyfill: 'String.prototype.{trimLeft,trimRight}',
+  },
 ];
