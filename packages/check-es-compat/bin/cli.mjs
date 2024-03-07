@@ -19,7 +19,7 @@ if (args.length === 0) {
 
 async function execute(files) {
   const eslint = new ESLint({
-    // Ignore any config; it's for project's own linting rather than this tool.
+    // Ignore any config; it's for target's own linter setup rather than this tool.
     useEslintrc: false,
     ignore: false,
     allowInlineConfig: false,
