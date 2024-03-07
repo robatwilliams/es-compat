@@ -22,7 +22,7 @@ async function execute(files) {
     // Ignore any config files
     useEslintrc: false,
     ignore: false,
-	allowInlineConfig: false,
+    allowInlineConfig: false,
 
     baseConfig: {
       plugins: ['ecmascript-compat'],
