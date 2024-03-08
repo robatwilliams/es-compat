@@ -1,9 +1,10 @@
-const browserslist = require('browserslist');
-const _ = require('lodash');
-const compatData = require('@mdn/browser-compat-data');
-const compareVersions = require('./compareVersions');
+import browserslist from 'browserslist';
+import _ from 'lodash';
+// Import assertions aren't yet stage 4 so aren't supported by ESLint
+import compatData from '@mdn/browser-compat-data/forLegacyNode';
+import compareVersions from './compareVersions.js';
 
-module.exports = function targetRuntimes(overrideBrowserslist, browserslistOptions) {
+export default function targetRuntimes(overrideBrowserslist, browserslistOptions) {
   // ['chrome 50', ...]
   const allNamedVersions = browserslist(overrideBrowserslist, browserslistOptions);
 
@@ -30,7 +31,7 @@ module.exports = function targetRuntimes(overrideBrowserslist, browserslistOptio
 
   // [ { name, version } ]
   return Object.entries(final).map(([name, version]) => ({ name, version }));
-};
+}
 
 function isKnownFamily(name) {
   return compatData.browsers[name] != null;

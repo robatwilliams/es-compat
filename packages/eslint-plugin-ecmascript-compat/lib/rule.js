@@ -1,9 +1,9 @@
-const compatibility = require('./compatibility');
-const { createDelegatee, delegatingVisitor } = require('./delegation');
-const features = require('./features');
-const targetRuntimes = require('./targetRuntimes');
+import * as compatibility from './compatibility.js';
+import { createDelegatee, delegatingVisitor } from './delegation.js';
+import features from './features/index.js';
+import targetRuntimes from './targetRuntimes.js';
 
-module.exports = {
+export default {
   meta: {
     type: 'problem',
     schema: [

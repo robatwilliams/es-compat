@@ -1,11 +1,12 @@
-const eslint = require('eslint');
-const compatData = require('@mdn/browser-compat-data');
-const esPlugin = require('eslint-plugin-es-x');
-const { noRestrictedSyntaxPrototypeMethod } = require('./ruleOptionsUtil');
+import eslint from 'eslint';
+// Import assertions aren't yet stage 4 so aren't supported by ESLint
+import compatData from '@mdn/browser-compat-data/forLegacyNode';
+import esPlugin from 'eslint-plugin-es-x';
+import { noRestrictedSyntaxPrototypeMethod } from './ruleOptionsUtil.js';
 
 const coreRules = new eslint.Linter().getRules();
 
-module.exports = [
+export default [
   {
     ruleConfig: {
       definition: coreRules.get('no-restricted-syntax'),

@@ -1,4 +1,6 @@
-module.exports = {
+import rule from './rule.js';
+
+export default {
   configs: {
     recommended: {
       plugins: ['ecmascript-compat'],
@@ -8,6 +10,6 @@ module.exports = {
     },
   },
   rules: {
-    compat: require('./rule'),
+    compat: rule,
   },
 };

@@ -1,7 +1,7 @@
-const assert = require('node:assert');
-const { test } = require('node:test');
-const features = require('./features');
-const rule = require('./rule');
+import assert from 'node:assert';
+import { test } from 'node:test';
+import features from './features/index.js';
+import rule from './rule.js';
 
 test('polyfills accepted in the schema exactly match those supported', () => {
   const schemaPolyfills = rule.meta.schema[0].properties.polyfills.items.enum;

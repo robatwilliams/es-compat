@@ -1,7 +1,7 @@
 /* eslint-disable camelcase, no-underscore-dangle */
-const compareVersions = require('./compareVersions');
+import compareVersions from './compareVersions.js';
 
-function unsupportedFeatures(features, targets) {
+export function unsupportedFeatures(features, targets) {
   return features.filter((feature) => !isFeatureSupportedByTargets(feature, targets));
 }
 
@@ -54,5 +54,3 @@ function interpretSupport(versionAdded) {
     isVersionUnknown: versionAdded === true,
   };
 }
-
-module.exports = { unsupportedFeatures };

@@ -1,5 +1,5 @@
-const eslint = require('eslint');
-const { createDelegatee, delegatingVisitor } = require('./delegation');
+import eslint from 'eslint';
+import { createDelegatee, delegatingVisitor } from './delegation.js';
 
 const ruleTester = new eslint.RuleTester();
 

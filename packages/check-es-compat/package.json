@@ -26,8 +26,9 @@
   },
   "license": "MIT",
   "author": "Robat Williams",
+  "type": "module",
   "bin": {
-    "check-es-compat": "bin/cli.mjs"
+    "check-es-compat": "bin/cli.js"
   },
   "dependencies": {
     "eslint": "^8.56.0",

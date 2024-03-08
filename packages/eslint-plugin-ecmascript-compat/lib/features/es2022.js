@@ -1,7 +1,8 @@
-const compatData = require('@mdn/browser-compat-data');
-const esPlugin = require('eslint-plugin-es-x');
+// Import assertions aren't yet stage 4 so aren't supported by ESLint
+import compatData from '@mdn/browser-compat-data/forLegacyNode';
+import esPlugin from 'eslint-plugin-es-x';
 
-module.exports = [
+export default [
   {
     ruleConfig: {
       definition: esPlugin.rules['no-array-string-prototype-at'],

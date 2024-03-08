@@ -1,4 +1,4 @@
-function noRestrictedSyntaxPrototypeMethod(method, esVersionName) {
+export function noRestrictedSyntaxPrototypeMethod(method, esVersionName) {
   const [builtin, , name] = method.split('.');
   const message = `${esVersionName} method '${method}' is forbidden`;
 
@@ -13,7 +13,3 @@ function noRestrictedSyntaxPrototypeMethod(method, esVersionName) {
     },
   ];
 }
-
-module.exports = {
-  noRestrictedSyntaxPrototypeMethod,
-};
