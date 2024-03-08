@@ -1,6 +1,7 @@
 import browserslist from 'browserslist';
 import _ from 'lodash';
-import compatData from '@mdn/browser-compat-data';
+// Import assertions aren't yet stage 4 so aren't supported by ESLint
+import compatData from '@mdn/browser-compat-data/forLegacyNode';
 import compareVersions from './compareVersions.js';
 
 export default function targetRuntimes(overrideBrowserslist, browserslistOptions) {
