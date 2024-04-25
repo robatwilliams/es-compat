@@ -5,19 +5,21 @@ import rule from '../rule.js';
 process.env.BROWSERSLIST = 'Chrome >= 62';
 
 const ruleTester = new RuleTester({
-  parserOptions: {
-    ecmaVersion: 2020,
-    sourceType: 'module', // import.meta and namespace exports can only be used in an ES module
-  },
-  globals: {
-    // ES2020 global, required by es/no-bigint
-    BigInt: 'readonly',
+  languageOptions: {
+    parserOptions: {
+      ecmaVersion: 2020,
+      sourceType: 'module', // import.meta and namespace exports can only be used in an ES module
+      globals: {
+        // ES2020 global, required by es/no-bigint
+        BigInt: 'readonly',
 
-    // ES2020 global, required by es/no-global-this
-    globalThis: 'readonly',
+        // ES2020 global, required by es/no-global-this
+        globalThis: 'readonly',
 
-    // ES6 global, required by es/no-promise-all-settled
-    Promise: 'readonly',
+        // ES6 global, required by es/no-promise-all-settled
+        Promise: 'readonly',
+      },
+    },
   },
 });
 
@@ -39,11 +41,17 @@ ruleTester.run('compat', rule, {
   invalid: [
     {
       code: 'Atomics.notify();',
-      errors: [{ message: "'Atomics.notify' is restricted from being used. (ES2020)" }],
+      errors: [
+        { message: "'Atomics.notify' is restricted from being used. (ES2020)" },
+        { message: "ES2017 'Atomics' class is forbidden." },
+      ],
     },
     {
       code: 'Atomics.wait();',
-      errors: [{ message: "'Atomics.wait' is restricted from being used. (ES2020)" }],
+      errors: [
+        { message: "'Atomics.wait' is restricted from being used. (ES2020)" },
+        { message: "ES2017 'Atomics' class is forbidden." },
+      ],
     },
     {
       code: 'const foo = 100n;',

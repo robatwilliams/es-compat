@@ -1,12 +1,13 @@
 {
   "name": "eslint-plugin-ecmascript-compat-example",
   "private": true,
+  "type": "module",
   "scripts": {
     "lint": "eslint src/"
   },
   "devDependencies": {
-    "eslint": "^8.56.0",
-    "eslint-plugin-ecmascript-compat": "^3.2.1"
+    "eslint-plugin-ecmascript-compat": "workspace:*",
+    "globals": "^15.0.0"
   },
   "version": "3.2.1"
 }

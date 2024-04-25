@@ -1,6 +1,9 @@
 import rule from './rule.js';
 
-export default {
+const plugin = {
+  meta: {
+    name: 'ecmascript-compat',
+  },
   configs: {
     recommended: {
       plugins: ['ecmascript-compat'],
@@ -13,3 +16,5 @@ export default {
     compat: rule,
   },
 };
+
+export default plugin;

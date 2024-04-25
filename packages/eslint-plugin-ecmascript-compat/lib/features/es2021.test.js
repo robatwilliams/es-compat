@@ -5,15 +5,17 @@ import rule from '../rule.js';
 process.env.BROWSERSLIST = 'Chrome >= 74';
 
 const ruleTester = new RuleTester({
-  parserOptions: {
-    ecmaVersion: 2021,
-  },
-  globals: {
-    // ES2021 global, required by es/no-weakrefs
-    WeakRef: 'readonly',
-    FinalizationRegistry: 'readonly',
-    // ES6 global, required by es/no-promise-all-settled
-    Promise: 'readonly',
+  languageOptions: {
+    parserOptions: {
+      ecmaVersion: 2021,
+      globals: {
+        // ES2021 global, required by es/no-weakrefs
+        WeakRef: 'readonly',
+        FinalizationRegistry: 'readonly',
+        // ES6 global, required by es/no-promise-all-settled
+        Promise: 'readonly',
+      },
+    },
   },
 });
 

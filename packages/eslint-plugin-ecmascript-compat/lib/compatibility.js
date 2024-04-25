@@ -18,7 +18,7 @@ function isFeatureSupportedByTarget(feature, target) {
   }
 
   return feature.compatFeatures.every((compatFeature) =>
-    isCompatFeatureSupportedByTarget(compatFeature, target)
+    isCompatFeatureSupportedByTarget(compatFeature, target),
   );
 }
 

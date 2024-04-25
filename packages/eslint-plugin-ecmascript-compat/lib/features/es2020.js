@@ -1,22 +1,20 @@
-import eslint from 'eslint';
+import eslintUnsafe from 'eslint/use-at-your-own-risk';
 import esPlugin from 'eslint-plugin-es-x';
 // Import assertions aren't yet stage 4 so aren't supported by ESLint
 import compatData from '@mdn/browser-compat-data/forLegacyNode';
 import { noRestrictedSyntaxPrototypeMethod } from './ruleOptionsUtil.js';
 
-const coreRules = new eslint.Linter().getRules();
-
 export default [
   {
     ruleConfig: {
-      definition: coreRules.get('no-restricted-properties'),
+      definition: eslintUnsafe.builtinRules.get('no-restricted-properties'),
       options: [{ object: 'Atomics', property: 'notify', message: '(ES2020)' }],
     },
     compatFeatures: [compatData.javascript.builtins.Atomics.notify],
   },
   {
     ruleConfig: {
-      definition: coreRules.get('no-restricted-properties'),
+      definition: eslintUnsafe.builtinRules.get('no-restricted-properties'),
       options: [{ object: 'Atomics', property: 'wait', message: '(ES2020)' }],
     },
     compatFeatures: [compatData.javascript.builtins.Atomics.wait],
@@ -59,7 +57,7 @@ export default [
   {
     // May false positive for Cache/Clients.matchAll()
     ruleConfig: {
-      definition: coreRules.get('no-restricted-syntax'),
+      definition: eslintUnsafe.builtinRules.get('no-restricted-syntax'),
       options: noRestrictedSyntaxPrototypeMethod('String.prototype.matchAll', 'ES2020'),
     },
     compatFeatures: [compatData.javascript.builtins.String.matchAll],

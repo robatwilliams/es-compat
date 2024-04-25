@@ -5,9 +5,11 @@ import rule from '../rule.js';
 process.env.BROWSERSLIST = 'Chrome >= 71';
 
 const ruleTester = new RuleTester({
-  parserOptions: {
-    ecmaVersion: 2022,
-    sourceType: 'module', // top level await can only be used in an ES module
+  languageOptions: {
+    parserOptions: {
+      ecmaVersion: 2022,
+      sourceType: 'module', // top level await can only be used in an ES module
+    },
   },
 });
 

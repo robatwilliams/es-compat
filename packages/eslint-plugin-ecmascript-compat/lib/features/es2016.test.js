@@ -5,8 +5,10 @@ import rule from '../rule.js';
 process.env.BROWSERSLIST = 'Chrome >= 46';
 
 const ruleTester = new RuleTester({
-  parserOptions: {
-    ecmaVersion: 2016,
+  languageOptions: {
+    parserOptions: {
+      ecmaVersion: 2016,
+    },
   },
 });
 

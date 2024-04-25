@@ -1,9 +1,10 @@
 import eslint from 'eslint';
+import eslintUnsafe from 'eslint/use-at-your-own-risk';
 import { createDelegatee, delegatingVisitor } from './delegation.js';
 
 const ruleTester = new eslint.RuleTester();
 
-const noVarRule = new eslint.Linter().getRules().get('no-var');
+const noVarRule = eslintUnsafe.builtinRules.get('no-var');
 
 const rule = {
   create(context) {

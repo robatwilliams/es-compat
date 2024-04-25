@@ -5,15 +5,17 @@ import rule from '../rule.js';
 process.env.BROWSERSLIST = 'Chrome >= 53';
 
 const ruleTester = new RuleTester({
-  parserOptions: {
-    ecmaVersion: 2017,
-  },
-  globals: {
-    // ES2017 global, required by es/no-atomics
-    Atomics: 'readonly',
+  languageOptions: {
+    parserOptions: {
+      ecmaVersion: 2017,
+      globals: {
+        // ES2017 global, required by es/no-atomics
+        Atomics: 'readonly',
 
-    // ES2017 global, required by es/no-shared-array-buffer
-    SharedArrayBuffer: 'readonly',
+        // ES2017 global, required by es/no-shared-array-buffer
+        SharedArrayBuffer: 'readonly',
+      },
+    },
   },
 });
 

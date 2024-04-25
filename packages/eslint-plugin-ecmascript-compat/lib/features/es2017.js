@@ -1,10 +1,8 @@
-import eslint from 'eslint';
+import eslintUnsafe from 'eslint/use-at-your-own-risk';
 import esPlugin from 'eslint-plugin-es-x';
 // Import assertions aren't yet stage 4 so aren't supported by ESLint
 import compatData from '@mdn/browser-compat-data/forLegacyNode';
 import { noRestrictedSyntaxPrototypeMethod } from './ruleOptionsUtil.js';
-
-const coreRules = new eslint.Linter().getRules();
 
 export default [
   {
@@ -41,7 +39,7 @@ export default [
   },
   {
     ruleConfig: {
-      definition: coreRules.get('no-restricted-syntax'),
+      definition: eslintUnsafe.builtinRules.get('no-restricted-syntax'),
       options: noRestrictedSyntaxPrototypeMethod('String.prototype.padStart', 'ES2017'),
     },
     compatFeatures: [compatData.javascript.builtins.String.padStart],
@@ -49,7 +47,7 @@ export default [
   },
   {
     ruleConfig: {
-      definition: coreRules.get('no-restricted-syntax'),
+      definition: eslintUnsafe.builtinRules.get('no-restricted-syntax'),
       options: noRestrictedSyntaxPrototypeMethod('String.prototype.padEnd', 'ES2017'),
     },
     compatFeatures: [compatData.javascript.builtins.String.padEnd],

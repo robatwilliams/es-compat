@@ -36,7 +36,7 @@ it('supports feature in version later than introduced, treating versions as numb
 
   const unsupported = unsupportedFeatures(
     [feature],
-    [{ name: 'safari', version: '14.0' }]
+    [{ name: 'safari', version: '14.0' }],
   );
   assert.deepStrictEqual(unsupported, []);
 });
@@ -124,7 +124,7 @@ it('supports feature with omitted support entry for mobile target', () => {
 
   const unsupported = unsupportedFeatures(
     [feature],
-    [{ name: 'chrome_android', version: '73' }]
+    [{ name: 'chrome_android', version: '73' }],
   );
   assert.deepStrictEqual(unsupported, []);
 });
@@ -148,7 +148,7 @@ it('doesnt support feature supported by one target but not another', () => {
     [
       { name: 'chrome', version: '73' },
       { name: 'firefox', version: '50' },
-    ]
+    ],
   );
   assert.strictEqual(unsupported[0], feature);
 });
@@ -179,13 +179,13 @@ it('uses primary support record where multiple ones exist', () => {
 
   const primaryUnsupported = unsupportedFeatures(
     [feature],
-    [{ name: 'nodejs', version: '7.0.0' }]
+    [{ name: 'nodejs', version: '7.0.0' }],
   );
   assert.deepStrictEqual(primaryUnsupported, []);
 
   const secondaryUnsupported = unsupportedFeatures(
     [feature],
-    [{ name: 'nodejs', version: '6.7.0' }]
+    [{ name: 'nodejs', version: '6.7.0' }],
   );
   assert.deepStrictEqual(secondaryUnsupported[0], feature);
 });
@@ -215,7 +215,7 @@ it('explains what the problem is when compat feature not found in MDN data', () 
 
   assert.throws(
     () => unsupportedFeatures([feature], [{ name: 'chrome', version: '73' }]),
-    { message: "Sparse compatFeatures for rule 'some rule': object,undefined" }
+    { message: "Sparse compatFeatures for rule 'some rule': object,undefined" },
   );
 });
 
@@ -234,7 +234,7 @@ it('can rely on all the versions in the compatibility data used being semver or 
         if (simpleSupportStatement.version_added !== false) {
           assert.match(
             simpleSupportStatement.version_added,
-            /\d+(?<minor>\.\d+(?<patch>\.\d+)?)?/u
+            /\d+(?<minor>\.\d+(?<patch>\.\d+)?)?/u,
           );
         }
       }
