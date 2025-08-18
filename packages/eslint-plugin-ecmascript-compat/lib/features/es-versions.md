@@ -6,6 +6,17 @@ Static detectability of recently-added features
 - 😐 = statically detectable, but chance of false positives
 - 👎 = statically detectable, but not worth the false positives
 
+### ES2024
+
+| Name | ESLint / eslint-plugin-es | Chrome since |
+| --- | --- | --- |
+| `Promise.withResolvers` | es-x/no-promise-withresolvers | 119 |
+| `String.prototype.{isWellFormed, toWellFormed}` | 😐 es-x/no-string-prototype-iswellformed-towellformed | 111 |
+| `{Object, Map}.groupBy` | es-x/no-object-map-groupby | 117 |
+| `Atomics.waitAsync` | es-x/no-atomics-waitasync | 87 |
+| Resizable and Growable ArrayBuffers | es-x/no-resizable-and-growable-arraybuffers | 111 |
+| RegExp `v` flag (unicodeSets) | es-x/no-regexp-v-flag | 112 |
+
 ### ES2023
 
 | Name | ESLint / eslint-plugin-es | Chrome since |

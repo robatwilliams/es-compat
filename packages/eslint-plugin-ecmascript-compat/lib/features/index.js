@@ -6,6 +6,7 @@ import es2020 from './es2020.js';
 import es2021 from './es2021.js';
 import es2022 from './es2022.js';
 import es2023 from './es2023.js';
+import es2024 from './es2024.js';
 
 export default [
   ...es2016,
@@ -16,4 +17,5 @@ export default [
   ...es2021,
   ...es2022,
   ...es2023,
+  ...es2024,
 ];
