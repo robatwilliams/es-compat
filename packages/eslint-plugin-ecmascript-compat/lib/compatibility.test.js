@@ -219,7 +219,7 @@ it('explains what the problem is when compat feature not found in MDN data', () 
   );
 });
 
-it('can rely on all the versions in the compatibility data used being semver or partial semver', () => {
+it('can rely on all the versions in the compatibility data used being semver, partial semver, or preview', () => {
   // We rely on this to avoid having to deal with ranged versions, for simplicity.
   // https://github.com/mdn/browser-compat-data/blob/main/schemas/compat-data-schema.md#ranged-versions
 
@@ -232,9 +232,10 @@ it('can rely on all the versions in the compatibility data used being semver or 
           : supportStatement;
 
         if (simpleSupportStatement.version_added !== false) {
+          // Allow semver versions and "preview" for Safari Technology Preview
           assert.match(
             simpleSupportStatement.version_added,
-            /\d+(?<minor>\.\d+(?<patch>\.\d+)?)?/u
+            /^(?:\d+(?:\.\d+(?:\.\d+)?)?|preview)$/u
           );
         }
       }
