@@ -23,3 +23,11 @@ test('partial on one side', () => {
 test('when it matters to treat parts as numbers', () => {
   assert.strictEqual(compareVersions('9', '10'), -1);
 });
+
+test('preview version handling', () => {
+  assert.strictEqual(compareVersions('preview', 'preview'), 0);
+  assert.strictEqual(compareVersions('preview', '100'), 1);
+  assert.strictEqual(compareVersions('100', 'preview'), -1);
+  assert.strictEqual(compareVersions('preview', '1.2.3'), 1);
+  assert.strictEqual(compareVersions('1.2.3', 'preview'), -1);
+});

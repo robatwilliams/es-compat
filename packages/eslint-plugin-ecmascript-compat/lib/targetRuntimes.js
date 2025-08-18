@@ -22,7 +22,7 @@ export default function targetRuntimes(overrideBrowserslist, browserslistOptions
     .groupBy('name')
     .mapValues(
       (familyMember) =>
-        familyMember.sort((a, b) => compareVersions(a.version, b.version))[0].version
+        familyMember.sort((a, b) => compareVersions(a.version, b.version))[0].version,
     )
     .value();
 

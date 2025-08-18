@@ -46,7 +46,14 @@ export default [
       compatData.javascript.builtins.ArrayBuffer.resize,
       compatData.javascript.builtins.ArrayBuffer.resizable,
       compatData.javascript.builtins.ArrayBuffer.maxByteLength,
-      // TODO: Transfer methods should have a separate rule
+    ],
+  },
+  {
+    ruleConfig: {
+      definition: esPlugin.rules['no-arraybuffer-prototype-transfer'],
+      options: [{ aggressive: true }],
+    },
+    compatFeatures: [
       compatData.javascript.builtins.ArrayBuffer.transfer,
       compatData.javascript.builtins.ArrayBuffer.transferToFixedLength,
     ],

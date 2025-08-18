@@ -10,7 +10,7 @@ Static detectability of recently-added features
 
 | Name | ESLint / eslint-plugin-es | Chrome since |
 | --- | --- | --- |
-| `ArrayBuffer.prototype.{transfer,transferToFixedLength}` | ❓ (separate rule needed) | 114 |
+| `ArrayBuffer.prototype.{transfer,transferToFixedLength}` | es-x/no-arraybuffer-prototype-transfer | 114 |
 | `Atomics.waitAsync` | es-x/no-atomics-waitasync | 87 |
 | `Promise.withResolvers` | es-x/no-promise-withresolvers | 119 |
 | RegExp `v` flag (unicodeSets) | es-x/no-regexp-v-flag | 112 |
