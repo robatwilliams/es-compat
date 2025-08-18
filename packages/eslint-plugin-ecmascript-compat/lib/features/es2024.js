@@ -44,6 +44,9 @@ export default [
     },
     compatFeatures: [
       compatData.javascript.builtins.ArrayBuffer.resize,
+      compatData.javascript.builtins.ArrayBuffer.resizable,
+      compatData.javascript.builtins.ArrayBuffer.maxByteLength,
+      // TODO: Transfer methods should have a separate rule
       compatData.javascript.builtins.ArrayBuffer.transfer,
       compatData.javascript.builtins.ArrayBuffer.transferToFixedLength,
     ],

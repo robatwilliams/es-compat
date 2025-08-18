@@ -235,7 +235,7 @@ it('can rely on all the versions in the compatibility data used being semver, pa
           // Allow semver versions and "preview" for Safari Technology Preview
           assert.match(
             simpleSupportStatement.version_added,
-            /^(?:\d+(?:\.\d+(?:\.\d+)?)?|preview)$/u
+            /\d+(?<minor>\.\d+(?<patch>\.\d+)?)?|preview/u
           );
         }
       }

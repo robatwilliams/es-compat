@@ -10,12 +10,13 @@ Static detectability of recently-added features
 
 | Name | ESLint / eslint-plugin-es | Chrome since |
 | --- | --- | --- |
+| `ArrayBuffer.prototype.{transfer,transferToFixedLength}` | ❓ (separate rule needed) | 114 |
+| `Atomics.waitAsync` | es-x/no-atomics-waitasync | 87 |
 | `Promise.withResolvers` | es-x/no-promise-withresolvers | 119 |
+| RegExp `v` flag (unicodeSets) | es-x/no-regexp-v-flag | 112 |
+| Resizable and Growable ArrayBuffers | es-x/no-resizable-and-growable-arraybuffers | 111 |
 | `String.prototype.{isWellFormed, toWellFormed}` | 😐 es-x/no-string-prototype-iswellformed-towellformed | 111 |
 | `{Object, Map}.groupBy` | es-x/no-object-map-groupby | 117 |
-| `Atomics.waitAsync` | es-x/no-atomics-waitasync | 87 |
-| Resizable and Growable ArrayBuffers | es-x/no-resizable-and-growable-arraybuffers | 111 |
-| RegExp `v` flag (unicodeSets) | es-x/no-regexp-v-flag | 112 |
 
 ### ES2023
 

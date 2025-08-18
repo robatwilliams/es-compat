@@ -2,7 +2,7 @@ import { RuleTester } from 'eslint';
 import rule from '../rule.js';
 
 // Browser that doesn't support any features of this version - see es-versions.md
-process.env.BROWSERSLIST = 'Chrome >= 85';
+process.env.BROWSERSLIST = 'Chrome >= 86';
 
 const ruleTester = new RuleTester({
   parserOptions: {

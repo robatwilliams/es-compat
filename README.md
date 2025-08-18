@@ -36,7 +36,7 @@ It doesn't check browser/runtime-specific APIs (see [eslint-plugin-compat](https
 
 ## ECMAScript version coverage
 
-- ✅ [ES2024](https://github.com/tc39/proposals/blob/HEAD/finished-proposals.md)
+- ✅ [ES2024](https://262.ecma-international.org/15.0/)
 - ✅ [ES2023](https://pawelgrzybek.com/whats-new-in-ecmascript-2023)
 - ✅ [ES2022](https://exploringjs.com/impatient-js/ch_new-javascript-features.html#new-in-es2022)
 - ✅ [ES2021](https://v8.dev/features/tags/es2021)
