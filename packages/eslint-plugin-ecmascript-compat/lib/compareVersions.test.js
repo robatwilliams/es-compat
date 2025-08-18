@@ -24,10 +24,16 @@ test('when it matters to treat parts as numbers', () => {
   assert.strictEqual(compareVersions('9', '10'), -1);
 });
 
-test('preview version handling', () => {
+test('preview version equals preview', () => {
   assert.strictEqual(compareVersions('preview', 'preview'), 0);
+});
+
+test('preview version greater than numeric versions', () => {
   assert.strictEqual(compareVersions('preview', '100'), 1);
-  assert.strictEqual(compareVersions('100', 'preview'), -1);
   assert.strictEqual(compareVersions('preview', '1.2.3'), 1);
+});
+
+test('numeric versions less than preview', () => {
+  assert.strictEqual(compareVersions('100', 'preview'), -1);
   assert.strictEqual(compareVersions('1.2.3', 'preview'), -1);
 });
