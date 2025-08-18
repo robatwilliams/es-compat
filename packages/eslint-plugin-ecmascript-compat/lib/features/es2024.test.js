@@ -50,22 +50,30 @@ ruleTester.run('compat', rule, {
     {
       // Obvious string, doesn't need aggressive mode
       code: '"test".isWellFormed();',
-      errors: [{ message: "ES2024 'String.prototype.isWellFormed' method is forbidden." }],
+      errors: [
+        { message: "ES2024 'String.prototype.isWellFormed' method is forbidden." },
+      ],
     },
     {
       // Not obvious, needs aggressive mode
       code: 'foo.isWellFormed();',
-      errors: [{ message: "ES2024 'String.prototype.isWellFormed' method is forbidden." }],
+      errors: [
+        { message: "ES2024 'String.prototype.isWellFormed' method is forbidden." },
+      ],
     },
     {
       // Obvious string, doesn't need aggressive mode
       code: '"test".toWellFormed();',
-      errors: [{ message: "ES2024 'String.prototype.toWellFormed' method is forbidden." }],
+      errors: [
+        { message: "ES2024 'String.prototype.toWellFormed' method is forbidden." },
+      ],
     },
     {
       // Not obvious, needs aggressive mode
       code: 'foo.toWellFormed();',
-      errors: [{ message: "ES2024 'String.prototype.toWellFormed' method is forbidden." }],
+      errors: [
+        { message: "ES2024 'String.prototype.toWellFormed' method is forbidden." },
+      ],
     },
     {
       code: 'Object.groupBy([], () => {});',
@@ -81,7 +89,7 @@ ruleTester.run('compat', rule, {
     },
     {
       code: 'new ArrayBuffer(16, { maxByteLength: 32 });',
-      errors: [{ message: "ES2024 Resizable ArrayBuffer is forbidden." }],
+      errors: [{ message: 'ES2024 Resizable ArrayBuffer is forbidden.' }],
     },
     {
       code: '/test/v;',
